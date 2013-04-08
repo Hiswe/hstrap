@@ -1,0 +1,55 @@
+// Shamefully pasted from
+// http://cssdeck.com/labs/css-checkbox-styles
+// TODO replace with lea verou solution
+// http://lea.verou.me/2013/03/ios-6-switch-style-checkboxes-with-pure-css/
+.h-ios
+  width 100%
+  border 1px solid $dark-grey
+  background white
+  position relative
+  $$input-height()
+  box-shadow inset 2px 2px 0 rgba(0, 0, 0, 0.1)
+
+  &:before, &:after
+    font 12px Arial, sans-serif
+    position absolute
+    z-index 0
+    top 50%
+    margin-top -.5em
+    margin-left -.75em
+    font-weight bold
+
+  &:after
+    content 'NO'
+    color rgba(255, 255, 255, 0.35)
+    left 75%
+    text-shadow -1px -1px 0px rgba(0, 0, 0,.5)
+
+  &:before
+    content 'YES'
+    color $blue
+    left 25%
+
+  label
+    display block
+    width 50%;
+    box-sizing border-box
+
+    transition all .4s ease
+    cursor pointer
+    position absolute
+    top -1px; bottom -1px; left -1px
+    z-index 1
+
+    background #fcfff4
+    border 1px solid
+    border-color rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25)
+
+    background linear-gradient(#fff, #e6e6e6)
+
+  input[type=checkbox]
+    visibility hidden
+
+    &:checked + label
+      left 50%
+      margin-left 1px

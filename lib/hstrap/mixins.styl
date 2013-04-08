@@ -1,0 +1,64 @@
+// Convert px to em, according to fs reference
+px2em(px, ref = $fs)
+  1em * px / ref
+
+// Change the way the browser smooth the font…
+// TODO verify on FF & Opera
+crisp-font-smoothing()
+  -webkit-font-smoothing antialiased
+
+// TODO handle the unquote here
+css-filter()
+  vendor('filter', arguments, only: webkit moz ms official)
+
+// Add alpha chanel to a color
+alpha(color = black, opacity = 0.5)
+  rgba(red(color), green(color), blue(color), opacity)
+
+white(opacity = 0.5)
+  alpha(#FFF, opacity)
+
+black(opacity = 0.5)
+  alpha(#000, opacity)
+
+// Tile the background from borders
+bg-cover()
+  background-size cover
+  background-clip border-box
+  background-origin border-box
+
+// flex box row
+flex-row()
+  display flex
+  align-content stretch
+  flex-direction row
+
+reset-form()
+  appearance none
+  -moz-appearance none
+  -webkit-appearance none
+
+//
+btn-color(light, medium, dark)
+  background linear-gradient(alpha(dark, 0), dark)
+  background-color medium
+
+  &:hover
+    background-color light
+
+  &:active
+    background-color dark
+
+// style input place holder
+placeHolder(color)
+  &:-ms-input-placeholder
+    color color
+
+  &::-webkit-input-placeholder
+     color color
+
+  &:-moz-placeholder /* Firefox 18- */
+     color color
+
+  &::-moz-placeholder  /* Firefox 19+ */
+     color color

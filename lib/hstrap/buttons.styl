@@ -1,0 +1,64 @@
+$depth                = 2px
+$active-depth         = 0
+
+inset-button()
+  box-shadow none
+  transform none
+  margin 0
+
+  &:active
+    transform none
+    border-color  black() white() white(.75) black(.25)
+    box-shadow inset $active-depth $active-depth 0 black(.25)
+
+.h-btn
+  font-size 1em; text-align center; text-shadow 1px 1px 0 white()
+  display inline-block;
+  box-sizing border-box
+  padding .75em 1.5em
+  margin $depth 0 -($depth) $depth $depth
+  vertical-align middle
+  cursor pointer
+  box-shadow $depth $depth 0 black()
+  border 1px solid
+  border-color white(.75) black(.25) black() white()
+
+  btn-color($light-grey, $grey, $dark-grey)
+  bg-cover()
+  transform translate3d(-($depth), -($depth), 0)
+  transform-origin bottom right
+  transition background-color .25s, transform .15s, box-shadow .15s
+
+  .iconic
+    font-size 1.5em
+    line-height .5em
+    vertical-align middle
+
+  &:hover
+    background-color $light-grey
+
+  &:active
+    transform translate3d(-($active-depth), -($active-depth), 0)
+    box-shadow $active-depth $active-depth 0 black(.75)
+    outline 0
+
+  &.h-primary
+    btn-color($light-blue, $blue, $dark-blue)
+
+  &.h-danger
+    btn-color($light-pink, $pink, $dark-pink)
+
+  &.h-primary,
+  &.h-danger
+    color white
+    text-shadow -1px -1px 0 black()
+
+  &[disabled],
+  &.h-disabled
+    cursor default
+    opacity .65
+
+  &.h-mini
+    inset-button()
+    padding 0 .5em
+    font-size px2em(12)

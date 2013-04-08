@@ -1,0 +1,23 @@
+{
+  "name": "hstrap",
+  "description": "Stylus mixins, utilities and styles",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Hiswe/hstrap.git"
+  },
+  "devDependencies": {
+    "stylus": "~0.32.1",
+    "nib": "~0.9.1",
+    "jade": "~0.28.2",
+    "connect": "~2.7.4"
+  },
+  "author": {
+    "name": "Hiswe Halya",
+    "email": "hiswehalya@gmail.com"
+  },
+  "main": "lib/hstrap.js",
+  "engines": {
+    "node": "*"
+  }
+}
