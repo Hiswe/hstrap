@@ -4,7 +4,7 @@ textarea
   display block
   font-size 1em
   padding .35em .35em .35em .5em; margin 0
-  border 1px solid $input-idle
+  border 1px solid $h-input-idle
   box-shadow inset 2px 2px 0 black(.07)
   height $input-height
   transition .5s
@@ -13,16 +13,16 @@ textarea
   $$input-height()
 
   &:focus
-    border-color $input-focus
-    box-shadow inset 2px 2px 0 alpha($input-focus, .3)
+    border-color $h-input-focus
+    box-shadow inset 2px 2px 0 alpha($h-input-focus, .3)
     outline none
 
   &.ng-invalid,
   &.invalid,
   &:invalid
-    color $input-invalid-color
-    border-color $input-invalid
-    box-shadow inset 2px 2px 0 alpha($input-invalid, .3)
+    color $h-input-invalid-color
+    border-color $h-input-invalid
+    box-shadow inset 2px 2px 0 alpha($h-input-invalid, .3)
 
 select
   reset-form()

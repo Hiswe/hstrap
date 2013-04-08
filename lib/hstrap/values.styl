@@ -1,19 +1,27 @@
-$fs = $fs or 16px// Default font-size
-
-$light-blue   = #73D8FF // rgba(115, 216, 255, 1)
-$blue         = #00B7E0 // rgba(0, 183, 254, 1)
-$dark-blue    = #0078A6 // rgba(0, 120, 166, 1)
-
-$light-grey   = #f4f4f4
-$grey         = #e3e3e3
-$dark-grey    = #c2c2c2
-
-$light-pink   = #ff4b95 // rgba(255, 75, 149, 1)
-$pink         = #DF006F // rgba(223, 0, 111, 1)
-$dark-pink    = #96002b // rgba(150, 0, 43, 1)
+// take care of strange ident
+assign(a, b)
+  if a is defined and type(a) isnt 'ident'
+    return a
+  else
+    return b
 
 
-$input-idle           = $dark-grey
-$input-focus          = $blue
-$input-invalid        = $pink
-$input-invalid-color  = $dark-pink
+$h-fs = assign($fs, 16px) // Default font-size
+
+$h-light-blue   = #73D8FF // rgba(115, 216, 255, 1)
+$h-blue         = #00B7E0 // rgba(0, 183, 254, 1)
+$h-dark-blue    = #0078A6 // rgba(0, 120, 166, 1)
+
+$h-light-grey   = #f4f4f4
+$h-grey         = #e3e3e3
+$h-dark-grey    = #c2c2c2
+
+$h-light-pink   = #ff4b95 // rgba(255, 75, 149, 1)
+$h-pink         = #DF006F // rgba(223, 0, 111, 1)
+$h-dark-pink    = #96002b // rgba(150, 0, 43, 1)
+
+
+$h-input-idle           = $h-dark-grey
+$h-input-focus          = $h-blue
+$h-input-invalid        = $h-pink
+$h-input-invalid-color  = $h-dark-pink

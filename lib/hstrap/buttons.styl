@@ -23,7 +23,7 @@ inset-button()
   border 1px solid
   border-color white(.75) black(.25) black() white()
 
-  btn-color($light-grey, $grey, $dark-grey)
+  btn-color($h-light-grey, $h-grey, $h-dark-grey)
   bg-cover()
   transform translate3d(-($depth), -($depth), 0)
   transform-origin bottom right
@@ -35,7 +35,7 @@ inset-button()
     vertical-align middle
 
   &:hover
-    background-color $light-grey
+    background-color $h-light-grey
 
   &:active
     transform translate3d(-($active-depth), -($active-depth), 0)
@@ -43,10 +43,10 @@ inset-button()
     outline 0
 
   &.h-primary
-    btn-color($light-blue, $blue, $dark-blue)
+    btn-color($h-light-blue, $h-blue, $h-dark-blue)
 
   &.h-danger
-    btn-color($light-pink, $pink, $dark-pink)
+    btn-color($h-light-pink, $h-pink, $h-dark-pink)
 
   &.h-primary,
   &.h-danger
