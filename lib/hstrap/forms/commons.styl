@@ -1,13 +1,16 @@
 @import './values'
 @import './mixins'
 
+::-moz-focus-inner
+  border 0
+
 input:not([type="submit"]),
 select,
 .h-select,
 textarea
   display block
   font-size 1em
-  padding .35em .35em .35em .5em; margin 0
+  padding .35em .35em 0 .5em; margin 0
   border 1px solid $h-input-idle
   box-shadow inset 2px 2px 0 black(.07)
   height $input-height
@@ -15,11 +18,12 @@ textarea
   color #555
   width 100%
   $$input-height()
+  outline 0
 
   &:focus
     border-color $h-input-focus
     box-shadow inset 2px 2px 0 alpha($h-input-focus, .3)
-    outline none
+    outline 0
 
   &.ng-invalid,
   &.invalid,
@@ -37,6 +41,15 @@ select
   background-position center right
   // TODO use stylus to embed svg
   background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIxIiBoZWlnaHQ9IjQ1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxyZWN0IGZpbGw9IiNFNUU1RTUiIGhlaWdodD0iNDUiIHdpZHRoPSIxIi8+CiAgPHBvbHlnb24gZmlsbD0iI0U1RTVFNSIgcG9pbnRzPSI2LDIyIDEwLjk5OSwxNCAxNiwyMiAiLz4KICA8cG9seWdvbiBmaWxsPSIjRTVFNUU1IiBwb2ludHM9IjE2LDI1IDExLjAwMSwzMyA2LDI1ICIvPgogPC9nPgo8L3N2Zz4=')
+
+@-moz-document url-prefix() {
+  select {
+    // Firefox don't apply appearance:none...
+    // https://developer.mozilla.org/en-US/docs/CSS/-moz-appearance
+    padding-right 1px
+    background none
+  }
+}
 
 label
   display block
