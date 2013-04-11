@@ -4,8 +4,12 @@
 px2em(px, ref = $h-fs)
   1em * px / ref
 
+// Scale em relative to an em size
+em2em(em, ref = 1)
+  em / ref
+
 // Change the way the browser smooth the font…
-// TODO verify on FF & Opera
+// ! not working on FF…
 crisp-font-smoothing()
   -webkit-font-smoothing antialiased
 
