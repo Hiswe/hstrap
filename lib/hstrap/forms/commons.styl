@@ -3,6 +3,7 @@
 
 input:not([type="submit"]),
 select,
+.h-select,
 textarea
   display block
   font-size 1em
@@ -10,7 +11,7 @@ textarea
   border 1px solid $h-input-idle
   box-shadow inset 2px 2px 0 black(.07)
   height $input-height
-  transition .5s
+  transition border-color $h-input-transition, box-shadow $h-input-transition
   color #555
   width 100%
   $$input-height()
@@ -27,6 +28,7 @@ textarea
     border-color $h-input-invalid
     box-shadow inset 2px 2px 0 alpha($h-input-invalid, .3)
 
+.h-select,
 select
   reset-form()
   padding-right 1.75em
