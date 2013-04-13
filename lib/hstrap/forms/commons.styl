@@ -1,5 +1,7 @@
-@import './values'
-@import './mixins'
+@import 'nib'
+@import '../values'
+@import '../mixins'
+@import './forms-mixins'
 
 ::-moz-focus-inner
   border 0
@@ -18,6 +20,7 @@ textarea
   color #555
   width 100%
   $$input-height()
+  placeHolder(lighten(@color, 50%))
   outline 0
 
   &:focus
@@ -31,6 +34,17 @@ textarea
     color $h-input-invalid-color
     border-color $h-input-invalid
     box-shadow inset 2px 2px 0 alpha($h-input-invalid, .3)
+    placeHolder(lighten(@color, 50%))
+
+  &.disabled,
+  &:disabled
+    background #EEE
+    color #999
+    placeHolder(lighten(@color, 50%))
+
+textarea
+  padding-top .35em
+  padding-bottom .35em
 
 .h-select,
 select
@@ -59,11 +73,18 @@ label
   display block
   padding .75em 0 .25em
 
+input[type="search"],
 .h-search
+  reset-form()
   background-repeat no-repeat
   background-position 100% px2em(7)
   // TODO use stylus to embed svg
   background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjI4IiBoZWlnaHQ9IjIwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxwYXRoIGZpbGw9IiNlNWU1ZTUiIGQ9Im0xOS44NDE5OTksMTguMDg1NjNsLTcuMTAyLC03LjA2MDk4NGMwLjc5OSwtMS4xMzg5OTkgMS4yNywtMi41MjUwMDEgMS4yNywtNC4wMjNjLTAuMDAwOTk5LC0zLjg2ODAwMiAtMy4xMzY5OTksLTcuMDA0MDAzIC03LjAwNTk5OSwtNy4wMDQwMDNjLTMuODY4LDAgLTcuMDA0LDMuMTM2MDAyIC03LjAwNCw3LjAwNDAwM2MwLDMuODY5IDMuMTM2LDcuMDA1MDAxIDcuMDA0LDcuMDA1MDAxYzEuMzk1LDAgMi42OTIsLTAuNDA3MDAxIDMuNzg0OTk5LC0xLjExMDAwMWw3LjE0MTAwMSw3LjEwMDk4NGwxLjkxMTk5OSwtMS45MTIwMDF6bS0xNy41MDY5OTksLTExLjA4Mzk4M2MwLC0yLjU3OCAyLjA5MSwtNC42NjkwMDMgNC42NjksLTQuNjY5MDAzYzIuNTc5OTk5LDAgNC42NywyLjA5MDAwMyA0LjY3LDQuNjY5MDAzYzAsMi41OCAtMi4wOSw0LjY3IC00LjY3LDQuNjdjLTIuNTc4LDAgLTQuNjY5LC0yLjA5MSAtNC42NjksLTQuNjd6Ii8+CiA8L2c+Cjwvc3ZnPg==')
+
+// TODO fix Strange indent on webkit
+// TODO fix the reset button on webkit
+// input[type="search"]
+//   padding-left 0
 
 textarea
   height auto
@@ -74,7 +95,7 @@ legend
   font-size px2em(21)
   display block
   width 100%; padding 0
-  margin-top 1em
+  padding-top 1em
   line-height 1.8em
   color #666
   border 0

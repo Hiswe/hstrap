@@ -1,3 +1,4 @@
+@import 'nib'
 @import './values'
 
 // Convert px to em, according to fs reference
@@ -49,22 +50,8 @@ btn-color(light, medium, dark)
   background linear-gradient(alpha(dark, 0), dark)
   background-color medium
 
-  &:hover
+  &:hover:not(.h-disabled):not([disabled])
     background-color light
 
-  &:active
+  &:active:not(.h-disabled):not([disabled])
     background-color dark
-
-// style input place holder
-placeHolder(color)
-  &:-ms-input-placeholder
-    color color
-
-  &::-webkit-input-placeholder
-     color color
-
-  &:-moz-placeholder /* Firefox 18- */
-     color color
-
-  &::-moz-placeholder  /* Firefox 19+ */
-     color color

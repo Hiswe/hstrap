@@ -10,7 +10,10 @@
     "stylus": "~0.32.1",
     "nib": "~0.9.1",
     "jade": "~0.28.2",
-    "connect": "~2.7.4"
+    "connect": "~2.7.4",
+    "grunt": "~0.4.1",
+    "grunt-contrib-stylus": "~0.5.0",
+    "grunt-contrib-watch": "~0.3.1"
   },
   "author": {
     "name": "Hiswe Halya",

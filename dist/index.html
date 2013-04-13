@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>Hstrap test page</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/type.css">
+  <link rel="stylesheet" href="css/links.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/forms/commons.css">
+  <link rel="stylesheet" href="css/forms/ios-check.css">
+  <link rel="stylesheet" href="css/forms/group.css">
+  <link rel="stylesheet" href="css/popover.css">
+  <link rel="stylesheet" href="example.css">
+</head>
+<body>
+  <menu>
+    <a href="#type">Type</a>
+    <a href="#links">Links</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#form">forms</a>
+    <a href="#layout">layout</a>
+  </menu>
+  <div class="container">
+    <section id="type">
+      <h2>Type</h2>
+      <div class="example">
+        <h1>h1. Heading 1</h1>
+        <h2>h2. Heading 2</h2>
+        <h3>h3. Heading 3</h3>
+        <h4>h4. Heading 4</h4>
+        <h5>h5. Heading 5</h5>
+        <h6>h6. Heading 6</h6>
+      </div>
+    </section>
+    <section id="links">
+      <h2>Links</h2>
+      <div class="example">
+        <a href="">a link</a>
+      </div>
+    </section>
+    <section id="buttons">
+      <h2>Buttons</h2>
+      <table class="example">
+        <thead>
+          <tr>
+            <th>Button</th>
+            <th>class=""</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><button class="h-btn">Default</button></td>
+            <td>h-btn</td>
+            <td>Standard button with gradient</td>
+          </tr>
+          <tr>
+            <td><button class="h-btn h-primary">Primary</button></td>
+            <td>h-btn h-primary</td>
+            <td>Standard blue button with gradient</td>
+          </tr>
+          <tr>
+            <td><button class="h-btn h-danger">Danger</button></td>
+            <td>h-btn h-danger</td>
+            <td>Standard red button with gradient</td>
+          </tr>
+          <tr>
+            <td><button class="h-btn" disabled>Disabled</button></td>
+            <td>h-btn</td>
+            <td>Standard disabled</td>
+          </tr>
+          <tr>
+            <td><button class="h-btn h-inset">Inset</button></td>
+            <td>h-btn h-inset</td>
+            <td>Inset button</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Size</h4>
+      <div class="example">
+        <button class="h-btn h-primary h-big">.h-big</button> <button class="h-btn h-big">.h-big</button><br>
+        <button class="h-btn h-primary">regular</button> <button class="h-btn">regular</button><br>
+        <button class="h-btn h-primary h-mini">.h-mini</button> <button class="h-btn h-mini">.h-mini</button>
+      </div>
+    </section>
+    <section id="form">
+      <h2>Forms</h2>
+      <div class="example">
+        <fieldset>
+          <legend>Example of legend</legend>
+          <label for="ex-input">Example of label</label>
+          <input id="ex-input" type="text" placeholder="input text with placeholder">
+          <label for="ex-textarea" >Textarea</label>
+          <textarea id="ex-textarea" type="text">Quisque rhoncus urna eu quam tempor mattis. Mauris in urna et libero pharetra tempor. Cras accumsan quam el diam accumsan gravida ut vel urna.
+          </textarea>
+          <label for="ex-select">Select input <span class="notice">(issues on firefox :( )</span></label>
+          <select id="ex-select" type="text">
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+          <label for="ex-input-search">Example of search input <span class="notice">(experimental: issues on webkit)</span></label>
+          <input id="ex-input-search" type="search" placeholder="search input">
+        </fieldset>
+        <fieldset>
+          <legend >Error form</legend>
+          <label for="ex-input-invalid">Input</label>
+          <input id="ex-input-invalid" type="email" value="invalid e-mail example">
+          <label for="ex-textarea-invalid">Textarea</label>
+          <textarea class="invalid" id="ex-textarea-invalid" type="text" placeholder="error placeholder"></textarea>
+          <label for="ex-select-invalid" >Select input</label>
+          <select class="invalid" id="ex-select-invalid" type="text">
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend >Disabled form</legend>
+          <label for="ex-input-disabled">Input</label>
+          <input id="ex-input-disabled" type="email" value="disabled e-mail example" disabled>
+          <label for="ex-textarea-disabled">Textarea</label>
+          <textarea id="ex-textarea-disabled" type="text" placeholder="disabled placeholder" disabled></textarea>
+          <label for="ex-select-disabled" >Select input</label>
+          <select id="ex-select-disabled" type="text" disabled>
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+        </fieldset>
+      </div>
+    </section>
+    <section id="layout">
+      <h2>layout</h2>
+    </section>
+  </div>
+</body>
+</html>

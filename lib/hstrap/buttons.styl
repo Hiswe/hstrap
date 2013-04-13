@@ -1,3 +1,4 @@
+@import 'nib'
 @import './values'
 @import './mixins'
 
@@ -37,10 +38,7 @@ inset-button()
     line-height .5em
     vertical-align middle
 
-  &:hover
-    background-color $h-light-grey
-
-  &:active
+  &:active:not(.h-disabled):not([disabled])
     transform translate3d(-($active-depth), -($active-depth), 0)
     box-shadow $active-depth $active-depth 0 black(.75)
     outline 0
@@ -62,7 +60,10 @@ inset-button()
     opacity .65
 
   &.h-mini
+  &.h-inset
     inset-button()
+
+  &.h-mini
     padding 0 .5em
     font-size px2em(12)
 
