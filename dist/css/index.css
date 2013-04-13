@@ -92,5 +92,5 @@ legend{font-size:1.3125em;display:block;width:100%;padding:0;padding-top:1em;lin
 .popover.left .arrow{top:50%;right:-11px;margin-top:-11px;border-right-width:0;border-left-color:#999;border-left-color:rgba(0,0,0,0.25);}
 .popover.left .arrow:after{right:1px;border-right-width:0;border-left-color:#fff;bottom:-10px}
 .h-row{display:-webkit-box;display:-moz-box;display:-ms-box;display:-webkit-flex;display:box;display:flex;-webkit-align-content:stretch;align-content:stretch;-webkit-box-orient:horizontal;-moz-box-orient:horizontal;-o-box-orient:horizontal;-ms-box-orient:horizontal;-webkit-flex-direction:row;flex-direction:row;}
-.h-row .h-col{-webkit-box-flex:1;-moz-box-flex:1;-o-box-flex:1;-ms-box-flex:1;box-flex:1;-webkit-flex:1;flex:1;margin-right:1.25em;}
+.h-row .h-col{-webkit-box-flex:1;-moz-box-flex:1;-o-box-flex:1;-ms-box-flex:1;box-flex:1;-webkit-flex:1;flex:1;margin-right:1em;}
 .h-row .h-col:last-child{margin-right:0}
