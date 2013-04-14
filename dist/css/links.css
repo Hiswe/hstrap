@@ -1,3 +1,17 @@
-a,a:visited,.h-link{color:#0078a6;text-decoration:none;}
-a:hover,a:visited:hover,.h-link:hover{color:#00b7e0}
-.h-link{cursor:pointer;display:inline;background:none;border:0}
+a,
+a:visited,
+.h-link {
+  color: #0078a6;
+  text-decoration: none;
+}
+a:hover,
+a:visited:hover,
+.h-link:hover {
+  color: #00b7e0;
+}
+.h-link {
+  cursor: pointer;
+  display: inline;
+  background: none;
+  border: 0;
+}

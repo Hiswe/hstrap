@@ -30,12 +30,13 @@ module.exports = (grunt) ->
       }
       lib: {
         options: {
+          compress: false
           paths : ['dist']
           urlfunc: 'embedurl'
         }
         expand: true,
         cwd: 'lib/hstrap'
-        src: ['**/!(mixins|values).styl'],
+        src: ['**/!(mixins|values|forms-mixins).styl'],
         dest: 'dist/css',
         ext: '.css'
       }
