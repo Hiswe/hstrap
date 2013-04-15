@@ -7,6 +7,7 @@
   border 0
 
 input:not([type="submit"]),
+.h-input,
 select,
 .h-select,
 textarea
@@ -23,6 +24,7 @@ textarea
   placeHolder(lighten(@color, 50%))
   outline 0
 
+  &:hover,
   &:focus
     border-color $h-input-focus
     box-shadow inset 2px 2px 0 alpha($h-input-focus, .3)
@@ -56,8 +58,9 @@ select
   // TODO use stylus to embed svg
   background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIxIiBoZWlnaHQ9IjQ1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxyZWN0IGZpbGw9IiNFNUU1RTUiIGhlaWdodD0iNDUiIHdpZHRoPSIxIi8+CiAgPHBvbHlnb24gZmlsbD0iI0U1RTVFNSIgcG9pbnRzPSI2LDIyIDEwLjk5OSwxNCAxNiwyMiAiLz4KICA8cG9seWdvbiBmaWxsPSIjRTVFNUU1IiBwb2ludHM9IjE2LDI1IDExLjAwMSwzMyA2LDI1ICIvPgogPC9nPgo8L3N2Zz4=')
 
+.h-input,
 .h-select
-  padding-top .35em
+  padding-top .5em
 
 @-moz-document url-prefix() {
   select {

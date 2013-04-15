@@ -1,0 +1,13 @@
+@import 'nib'
+@import '../values'
+@import '../mixins'
+
+.h-box,
+.h-box-inset
+  padding $h-gutter
+  border 1px solid $h-dark-grey
+  box-shadow $h-buttons-depth $h-buttons-depth 0 0 black(.25)
+  background white
+
+.h-box-inset
+  box-shadow inset $h-buttons-depth $h-buttons-depth 0 0 black(.15)

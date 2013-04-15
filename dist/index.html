@@ -12,20 +12,23 @@
   <link rel="stylesheet" href="css/forms/group.css">
   <link rel="stylesheet" href="css/popover.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components/box.css">
   <link rel="stylesheet" href="example.css">
 </head>
 <body>
-  <menu>
+  <menu class="h-box">
     <a href="#type">Type</a>
     <a href="#links">Links</a>
     <a href="#buttons">Buttons</a>
-    <a href="#form">forms</a>
-    <a href="#layout">layout</a>
+    <a href="#form">Forms</a>
+    <a href="#layout">Layout</a>
+    <a href="#box">Box</a>
   </menu>
   <div class="container">
+    <h1> HStrap ✞ death to round corners ✞</h1>
     <section id="type">
       <h2>Type</h2>
-      <div class="example">
+      <div class="h-box-inset">
         <h1>h1. Heading 1</h1>
         <h2>h2. Heading 2</h2>
         <h3>h3. Heading 3</h3>
@@ -36,13 +39,13 @@
     </section>
     <section id="links">
       <h2>Links</h2>
-      <div class="example">
+      <div class="h-box-inset">
         <a href="">a link</a>
       </div>
     </section>
     <section id="buttons">
       <h2>Buttons</h2>
-      <table class="example">
+      <table class="h-box-inset">
         <thead>
           <tr>
             <th>Button</th>
@@ -79,7 +82,7 @@
         </tbody>
       </table>
       <h4>Size</h4>
-      <div class="example">
+      <div class="h-box-inset">
         <button class="h-btn h-primary h-big">.h-big</button> <button class="h-btn h-big">.h-big</button><br>
         <button class="h-btn h-primary">regular</button> <button class="h-btn">regular</button><br>
         <button class="h-btn h-primary h-mini">.h-mini</button> <button class="h-btn h-mini">.h-mini</button>
@@ -87,7 +90,8 @@
     </section>
     <section id="form">
       <h2>Forms</h2>
-      <div class="example">
+      <div class="h-box-inset">
+        <!-- Regular form -->
         <fieldset>
           <legend>Example of legend</legend>
           <label for="ex-input">Example of label</label>
@@ -104,7 +108,12 @@
           </select>
           <label for="ex-input-search">Example of search input <span class="notice">(experimental: issues on webkit)</span></label>
           <input id="ex-input-search" type="search" placeholder="search input">
+          <label>Simili input</label>
+          <div class="h-input" contenteditable>with content editable</div>
+          <label>Simili select</label>
+          <div class="h-select">Same same</div>
         </fieldset>
+        <!-- Error form -->
         <fieldset>
           <legend >Error form</legend>
           <label for="ex-input-invalid">Input</label>
@@ -119,6 +128,7 @@
             <option>option four</option>
           </select>
         </fieldset>
+        <!-- Disabled form -->
         <fieldset>
           <legend >Disabled form</legend>
           <label for="ex-input-disabled">Input</label>
@@ -144,8 +154,8 @@
       </div>
     </section>
     <section id="layout">
-      <h2>fluid layout with flex box <span class="notice">(caution with compatibility)</span></h2>
-      <div class="example">
+      <h2>Fluid layout with flex box <span class="notice">(caution with compatibility)</span></h2>
+      <div class="h-box-inset">
         <ul class="h-row" >
             <li class="h-col">First column</li>
             <li class="h-col">Second column</li>
@@ -158,6 +168,14 @@
             <li class="h-col">Forth column</li>
             <li class="h-col">Fith column</li>
         </ul>
+      </div>
+    </section>
+    <section id="box">
+      <h2>Common boxes design</h2>
+      <div class="h-box-inset">
+        <div class="h-box">.h-box</div>
+        <br>
+        <div class="h-box-inset">.h-box-inset</div>
       </div>
     </section>
   </div>

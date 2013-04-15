@@ -12,11 +12,7 @@ body
 
 menu
   position fixed
-  right 3em; top 0
-  padding 2em 0
-  border-radius 0 0 .5em .5em
-  background white
-  box-shadow $example-shadow
+  right 3em; top -($h-buttons-depth * 2)
   width 9em
   a
     padding .25em 1em
@@ -26,17 +22,23 @@ menu
   width 50em
   margin 0 auto
 
+  > h1
+    margin 1em 0 .5em
+    color $h-pink
+    text-shadow 2px 2px 0 black(.25)
+
+
+
 section > h2
   margin 1em 0 .5em
   color $h-pink
   text-shadow -1px -1px 0 black(.25), 1px 1px 0 white
 
-.example
-  border-radius .5em
-  padding px2em($h-gutter)
-  background white
-  box-shadow $example-shadow
+table
+  width 100%
 
+section
+  margin-bottom 1em
   .h-row + .h-row
     margin-top 1em
 

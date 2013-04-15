@@ -1,19 +1,21 @@
 html{background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ececec)) fixed;background:-webkit-linear-gradient(top, #fff 0%, #ececec 100%) fixed;background:-moz-linear-gradient(top, #fff 0%, #ececec 100%) fixed;background:-o-linear-gradient(top, #fff 0%, #ececec 100%) fixed;background:-ms-linear-gradient(top, #fff 0%, #ececec 100%) fixed;background:linear-gradient(top, #fff 0%, #ececec 100%) fixed;font-family:'Helvetica','arial','sans-serif'}
 body{background:transparent}
-menu{position:fixed;right:3em;top:0;padding:2em 0;-webkit-border-radius:0 0 .5em .5em;border-radius:0 0 .5em .5em;background:white;-webkit-box-shadow:inset 0 0 4px rgba(0,0,0,0.15);box-shadow:inset 0 0 4px rgba(0,0,0,0.15);width:9em;}
+menu{position:fixed;right:3em;top:-4px;width:9em;}
 menu a{padding:.25em 1em;display:block}
-.container{width:50em;margin:0 auto}
+.container{width:50em;margin:0 auto;}
+.container > h1{margin:1em 0 .5em;color:#df006f;text-shadow:2px 2px 0 rgba(0,0,0,0.25)}
 section > h2{margin:1em 0 .5em;color:#df006f;text-shadow:-1px -1px 0 rgba(0,0,0,0.25),1px 1px 0 white}
-.example{-webkit-border-radius:.5em;border-radius:.5em;padding:1em;background:white;-webkit-box-shadow:inset 0 0 4px rgba(0,0,0,0.15);box-shadow:inset 0 0 4px rgba(0,0,0,0.15);}
-.example .h-row + .h-row{margin-top:1em}
-.example .h-col{padding:1em;text-align:center}
-.example .h-col:nth-child(1){background:rgba(0,0,0,0.6)}
-.example .h-col:nth-child(2){background:rgba(0,0,0,0.5)}
-.example .h-col:nth-child(3){background:rgba(0,0,0,0.4)}
-.example .h-col:nth-child(4){background:rgba(0,0,0,0.3)}
-.example .h-col:nth-child(5){background:rgba(0,0,0,0.2)}
-.example + h4{margin:1em 0 .25em}
-table.example{width:100%;border-spacing:.1em;}
-table.example th,table.example td{padding:.5em}
-table.example th{font-weight:bold}
+table{width:100%}
+section{margin-bottom:1em;}
+section .h-row + .h-row{margin-top:1em}
+section .h-col{padding:1em;text-align:center}
+section .h-col:nth-child(1){background:rgba(0,0,0,0.6)}
+section .h-col:nth-child(2){background:rgba(0,0,0,0.5)}
+section .h-col:nth-child(3){background:rgba(0,0,0,0.4)}
+section .h-col:nth-child(4){background:rgba(0,0,0,0.3)}
+section .h-col:nth-child(5){background:rgba(0,0,0,0.2)}
+section + h4{margin:1em 0 .25em}
+tablesection{width:100%;border-spacing:.1em;}
+tablesection th,tablesection td{padding:.5em}
+tablesection th{font-weight:bold}
 .notice{font-style:italic;font-size:16px;color:#aaa;text-shadow:none}
