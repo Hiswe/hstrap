@@ -13,17 +13,18 @@ a.selected{color:#00b7e0}
 .hs-small-menu h1{font-size:2em}
 .hs-small-menu h4{display:none}
 .hs-small-menu li{padding-top:0}
-.hs-title{font-family:'hiso_dark',Helvetica,sans-serif;font-weight:normal;font-size:1.75em}
+.hs-title{font-family:'hiso_dark',Helvetica,sans-serif;font-weight:normal;font-size:2.5em}
 .hs-submenu{width:9em;margin:0 0 0 16px;padding:0;position:fixed;z-index:2;top:0;left:100%;margin-left:-10em;}
 .hs-submenu .h-box{padding-top:6em;border-top:none}
 .hs-submenu ul,.hs-submenu li{list-style:none;margin:0}
 .hs-submenu a{padding:.25em 1em;display:block}
-.container{width:50em;margin:2em auto 0;}
+.container{width:50em;margin:0 auto;}
 .hs-menu .container{margin:0 auto}
 .container > h1{margin:1em 0 .5em;color:#df006f;text-shadow:2px 2px 0 rgba(0,0,0,0.25)}
 section > h2{margin:1em 0 .5em;color:#df006f;font-family:'hiso_dark',Helvetica,sans-serif;font-weight:normal;font-size:2.5em;-webkit-font-smoothing:antialiased;text-shadow:-1px -1px 0 rgba(0,0,0,0.25),1px 1px 0 white;position:relative;}
 section > h2 small{position:absolute;right:100%;top:20%;margin-right:.5em;font-family:Helvetica,arial,sans-serif;font-size:.5em;color:#ececec;text-shadow:none;font-weight:normal;background:rgba(0,0,0,0.2);padding:.25em .5em;-webkit-transform-origin:top right;-moz-transform-origin:top right;-o-transform-origin:top right;-ms-transform-origin:top right;transform-origin:top right;-webkit-transform:skewY(-27deg);-moz-transform:skewY(-27deg);-o-transform:skewY(-27deg);-ms-transform:skewY(-27deg);transform:skewY(-27deg)}
 table{width:100%}
+th{text-align:left}
 ul.h-row{padding:0;margin:0}
 li.h-col{list-style:none}
 section{margin-bottom:1em;}

@@ -1,50 +1,16 @@
 @import 'nib'
-@import './values'
+@import '../values'
 @import './mixins'
 
-inset-button()
-  box-shadow none
-  transform none
-  margin 0
-
-  &:active
-    transform none
-    border-color  black() white() white(.75) black(.25)
-    box-shadow inset $h-buttons-active-depth $h-buttons-active-depth 0 black(.25)
-
 .h-btn
-  font-size 1em; text-align center; text-shadow 1px 1px 0 white()
-  display inline-block;
-  box-sizing border-box
-  padding .75em 1.5em
-  margin $h-buttons-depth 0 -($h-buttons-depth) $h-buttons-depth $h-buttons-depth
-  vertical-align middle
-  cursor pointer
-  box-shadow $h-buttons-depth $h-buttons-depth 0 black()
-  border 1px solid
-  border-color white(.75) black(.25) black() white()
-
-  btn-color($h-light-grey, $h-grey, $h-dark-grey)
-  bg-cover()
-  transform translate3d(-($h-buttons-depth), -($h-buttons-depth), 0)
-  transform-origin bottom right
-  transition background-color .25s, transform .15s, box-shadow .15s
-
-  .iconic
-    font-size 1.5em
-    line-height .5em
-    vertical-align middle
-
-  &:active:not(.h-disabled):not([disabled])
-    transform translate3d(-($h-buttons-active-depth), -($h-buttons-active-depth), 0)
-    box-shadow $h-buttons-active-depth $h-buttons-active-depth 0 black(.75)
-    outline 0
+  h-btn()
+  h-btn-color($h-light-grey, $h-grey, $h-dark-grey)
 
   &.h-primary
-    btn-color($h-light-blue, $h-blue, $h-dark-blue)
+    h-btn-color($h-light-blue, $h-blue, $h-dark-blue)
 
   &.h-danger
-    btn-color($h-light-pink, $h-pink, $h-dark-pink)
+    h-btn-color($h-light-pink, $h-pink, $h-dark-pink)
 
   &.h-primary,
   &.h-danger
@@ -58,7 +24,7 @@ inset-button()
 
   &.h-mini
   &.h-inset
-    inset-button()
+    h-inset-button()
 
   &.h-mini
     padding 0 .5em

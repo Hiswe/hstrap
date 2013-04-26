@@ -2,21 +2,19 @@
 <html>
 <head>
   <meta charset=utf-8>
-  <title>Hstrap test page</title>
+  <title>Hstrap mixins</title>
   <link rel="stylesheet" href="font/hiso-font.css">
   <link rel="stylesheet" href="css/type.css">
   <link rel="stylesheet" href="css/links.css">
   <link rel="stylesheet" href="css/buttons.css">
-  <link rel="stylesheet" href="css/forms/commons.css">
-  <link rel="stylesheet" href="css/forms/ios-check.css">
-  <link rel="stylesheet" href="css/forms/group.css">
+  <link rel="stylesheet" href="css/forms.css">
   <link rel="stylesheet" href="css/popover.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components/box.css">
   <link rel="stylesheet" href="example.css">
 </head>
 <body>
-  <menu class="hs-menu">
+  <menu class="hs-menu hs-small-menu">
     <div class="container h-row">
       <div class="hs-master-head h-col">
         <h1>HStrap</h1>
@@ -29,167 +27,20 @@
       </ul>
     </div>
   </menu>
-  <menu class="h-box">
-    <a href="#type">Type</a>
-    <a href="#links">Links</a>
-    <a href="#buttons">Buttons</a>
-    <a href="#form">Forms</a>
-    <a href="#layout">Layout</a>
-    <a href="#box">Box</a>
+
+  <menu class="hs-submenu">
+    <ul class="h-box">
+      <li><a href="#type">Type</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#layout">Layout</a></li>
+      <li><a href="#box">Box</a></li>
+    </ul>
   </menu>
   <div class="container">
-    <h1> HStrap ✝ death to round corners ✝</h1>
     <section id="type">
-      <h2>Type</h2>
-      <div class="h-box-inset">
-        <h1>h1. Heading 1</h1>
-        <h2>h2. Heading 2</h2>
-        <h3>h3. Heading 3</h3>
-        <h4>h4. Heading 4</h4>
-        <h5>h5. Heading 5</h5>
-        <h6>h6. Heading 6</h6>
-      </div>
-    </section>
-    <section id="links">
-      <h2>Links</h2>
-      <div class="h-box-inset">
-        <a href="">a link</a>
-      </div>
-    </section>
-    <section id="buttons">
-      <h2>Buttons</h2>
-      <table class="h-box-inset">
-        <thead>
-          <tr>
-            <th>Button</th>
-            <th>class=""</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><button class="h-btn">Default</button></td>
-            <td>h-btn</td>
-            <td>Standard button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-primary">Primary</button></td>
-            <td>h-btn h-primary</td>
-            <td>Standard blue button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-danger">Danger</button></td>
-            <td>h-btn h-danger</td>
-            <td>Standard red button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn" disabled>Disabled</button></td>
-            <td>h-btn</td>
-            <td>Standard disabled</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-inset">Inset</button></td>
-            <td>h-btn h-inset</td>
-            <td>Inset button</td>
-          </tr>
-        </tbody>
-      </table>
-      <h4>Size</h4>
-      <div class="h-box-inset">
-        <button class="h-btn h-primary h-big">.h-big</button> <button class="h-btn h-big">.h-big</button><br>
-        <button class="h-btn h-primary">regular</button> <button class="h-btn">regular</button><br>
-        <button class="h-btn h-primary h-mini">.h-mini</button> <button class="h-btn h-mini">.h-mini</button>
-      </div>
-    </section>
-    <section id="form">
-      <h2>Forms</h2>
-      <div class="h-box-inset">
-        <!-- Regular form -->
-        <fieldset>
-          <legend>Example of legend</legend>
-          <label for="ex-input">Example of label</label>
-          <input id="ex-input" type="text" placeholder="input text with placeholder">
-          <label for="ex-textarea" >Textarea</label>
-          <textarea id="ex-textarea" type="text">Quisque rhoncus urna eu quam tempor mattis. Mauris in urna et libero pharetra tempor. Cras accumsan quam el diam accumsan gravida ut vel urna.
-          </textarea>
-          <label for="ex-select">Select input <span class="notice">(issues on firefox :( )</span></label>
-          <select id="ex-select" type="text">
-            <option>option one</option>
-            <option>option two</option>
-            <option>option three</option>
-            <option>option four</option>
-          </select>
-          <label for="ex-input-search">Example of search input <span class="notice">(experimental: issues on webkit)</span></label>
-          <input id="ex-input-search" type="search" placeholder="search input">
-          <label>Simili input</label>
-          <div class="h-input" contenteditable>with content editable</div>
-          <label>Simili select</label>
-          <div class="h-select">Same same</div>
-        </fieldset>
-        <!-- Error form -->
-        <fieldset>
-          <legend >Error form</legend>
-          <label for="ex-input-invalid">Input</label>
-          <input id="ex-input-invalid" type="email" value="invalid e-mail example">
-          <label for="ex-textarea-invalid">Textarea</label>
-          <textarea class="invalid" id="ex-textarea-invalid" type="text" placeholder="error placeholder"></textarea>
-          <label for="ex-select-invalid" >Select input</label>
-          <select class="invalid" id="ex-select-invalid" type="text">
-            <option>option one</option>
-            <option>option two</option>
-            <option>option three</option>
-            <option>option four</option>
-          </select>
-        </fieldset>
-        <!-- Disabled form -->
-        <fieldset>
-          <legend >Disabled form</legend>
-          <label for="ex-input-disabled">Input</label>
-          <input id="ex-input-disabled" type="email" value="disabled e-mail example" disabled>
-          <label for="ex-textarea-disabled">Textarea</label>
-          <textarea id="ex-textarea-disabled" type="text" placeholder="disabled placeholder" disabled></textarea>
-          <label for="ex-select-disabled" >Select input</label>
-          <select id="ex-select-disabled" type="text" disabled>
-            <option>option one</option>
-            <option>option two</option>
-            <option>option three</option>
-            <option>option four</option>
-          </select>
-        </fieldset>
-        <fieldset>
-          <legend >Special inputs</legend>
-          <label>ios checkbox</label>
-          <div class="h-ios" style="width: 5em">
-            <input type="checkbox" id="ex-input-ioscheck">
-            <label for="ex-input-ioscheck" />
-          </div>
-        </fieldset>
-      </div>
-    </section>
-    <section id="layout">
-      <h2>Fluid layout with flex box <span class="notice">(caution with compatibility)</span></h2>
-      <div class="h-box-inset">
-        <ul class="h-row" >
-            <li class="h-col">First column</li>
-            <li class="h-col">Second column</li>
-            <li class="h-col">Third column</li>
-        </ul>
-        <ul class="h-row" >
-            <li class="h-col">First column</li>
-            <li class="h-col">Second column</li>
-            <li class="h-col">Third column</li>
-            <li class="h-col">Forth column</li>
-            <li class="h-col">Fith column</li>
-        </ul>
-      </div>
-    </section>
-    <section id="box">
-      <h2>Common boxes design</h2>
-      <div class="h-box-inset">
-        <div class="h-box">.h-box</div>
-        <br>
-        <div class="h-box-inset">.h-box-inset</div>
-      </div>
+
     </section>
   </div>
 </body>
