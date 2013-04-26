@@ -3,30 +3,91 @@
 @import '../lib/hstrap/values'
 
 $example-shadow = inset 0 0 4px black(.15)
+$menu-height    = px2em(32)
+$width          = 50em
+
+html, body
+  padding 0; margin 0
 
 html
   background linear-gradient(top, #fff, #ececec) fixed
   font-family 'Helvetica', 'arial', 'sans-serif'
 body
   background transparent
+  border-top px2em(4) solid $h-pink
 
-menu
-  position fixed
-  right 3em; top -($h-buttons-depth * 2)
+a.selected
+  color $h-blue
+
+// Top menu
+.hs-menu
+  background black(.85)
+  margin 0
+  padding 2em 0
+  border-bottom 1px solid white
+
+  h1
+    color $h-pink
+    font-family 'hiso_dark', Helvetica, sans-serif
+    font-weight normal
+    margin .25em 0
+    text-shadow 2px 2px 0 black(.25)
+    font-size 4em
+    text-align left
+    margin-bottom .25em
+
+  h4
+    color $h-dark-grey
+    text-shadow 1px 1px 0 black(.25)
+    letter-spacing .25em
+    text-indent .75em
+
+  ul
+    text-align right
+
+  li, a
+    display inline-block
+
+  li
+    padding-top 2em
+
+  a
+    padding .5em 1em
+
+.hs-title
+  font-family 'hiso_dark', Helvetica, sans-serif
+  font-weight normal
+  font-size 1.5em
+
+
+// Home main banner
+.hs-submenu
+  order 2
+  flex 0
   width 9em
+  margin 0 0 0 $h-gutter
+  padding 0
+
+  ul, li
+    list-style none
+    margin 0
+
   a
     padding .25em 1em
     display block
 
 .container
-  width 50em
-  margin 0 auto
+  width $width
+  margin $menu-height auto 0
+
+  .hs-menu &
+    margin 0 auto
+
 
   > h1
     margin 1em 0 .5em
     color $h-pink
     text-shadow 2px 2px 0 black(.25)
-
 
 
 section > h2
@@ -36,6 +97,17 @@ section > h2
 
 table
   width 100%
+
+ul.h-row
+  padding 0
+  margin 0
+li.h-col
+  list-style none
+
+h2 small
+  font-size .6em
+  color #888
+  font-weight normal
 
 section
   margin-bottom 1em

@@ -305,11 +305,15 @@ a:visited:hover,
 ::-moz-focus-inner {
   border: 0;
 }
+fieldset {
+  border: none;
+}
 input:not([type="submit"]),
 .h-input,
 select,
 .h-select,
 textarea {
+  background: white;
   display: block;
   font-size: 1em;
   padding: 0 0.35em 0 0.5em;
@@ -720,7 +724,7 @@ legend {
   flex-direction: row;
   width: 100%;
 }
-.h-row .h-col {
+.h-col {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
@@ -730,7 +734,7 @@ legend {
   flex: 1;
   margin-right: 1em;
 }
-.h-row .h-col:last-child {
+.h-col:last-child {
   margin-right: 0;
 }
 .popover {

@@ -1,11 +1,15 @@
 ::-moz-focus-inner {
   border: 0;
 }
+fieldset {
+  border: none;
+}
 input:not([type="submit"]),
 .h-input,
 select,
 .h-select,
 textarea {
+  background: white;
   display: block;
   font-size: 1em;
   padding: 0 0.35em 0 0.5em;

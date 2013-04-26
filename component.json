@@ -1,0 +1,7 @@
+{
+  "name": "hstrap",
+  "version": "0.0.0",
+  "dependencies": {
+    "hiso-font": "latest"
+  }
+}

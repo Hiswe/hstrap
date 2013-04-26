@@ -3,180 +3,48 @@
 <head>
   <meta charset=utf-8>
   <title>Hstrap test page</title>
-  <link rel="stylesheet" href="dist/css/reset.css">
-  <link rel="stylesheet" href="dist/css/type.css">
-  <link rel="stylesheet" href="dist/css/links.css">
-  <link rel="stylesheet" href="dist/css/buttons.css">
-  <link rel="stylesheet" href="dist/css/forms/commons.css">
-  <link rel="stylesheet" href="dist/css/forms/ios-check.css">
-  <link rel="stylesheet" href="dist/css/forms/group.css">
-  <link rel="stylesheet" href="dist/css/popover.css">
+  <link rel="stylesheet" href="dist/font/hiso-font.css">
   <link rel="stylesheet" href="dist/css/layout.css">
-  <link rel="stylesheet" href="dist/css/components/box.css">
+  <link rel="stylesheet" href="dist/css/links.css">
   <link rel="stylesheet" href="dist/example.css">
 </head>
 <body>
-  <menu class="h-box">
-    <a href="#type">Type</a>
-    <a href="#links">Links</a>
-    <a href="#buttons">Buttons</a>
-    <a href="#form">Forms</a>
-    <a href="#layout">Layout</a>
-    <a href="#box">Box</a>
+  <menu class="hs-menu">
+    <div class="container h-row">
+      <div class="hs-master-head h-col">
+        <h1>HStrap</h1>
+        <h4>Mixins &amp; class v0.1.0</h4>
+      </div>
+      <ul class="h-col">
+        <li><a href="./index.html" class="selected">Home</a></li>
+        <li><a href="dist/mixins.html">Mixins</a></li>
+        <li><a href="dist/base-css.html">Base CSS</a></li>
+      </ul>
+    </div>
   </menu>
-  <div class="container">
-    <h1> HStrap ✝ death to round corners ✝</h1>
-    <section id="type">
-      <h2>Type</h2>
-      <div class="h-box-inset">
-        <h1>h1. Heading 1</h1>
-        <h2>h2. Heading 2</h2>
-        <h3>h3. Heading 3</h3>
-        <h4>h4. Heading 4</h4>
-        <h5>h5. Heading 5</h5>
-        <h6>h6. Heading 6</h6>
-      </div>
+
+  <div class="container h-row">
+    <section class="h-col">
+      <h3 class="hs-title">Overview</h3>
+      <p>
+        Hstrap is a little lib proposing mixins &amp; classes build on top of <a href="http://learnboost.github.io/stylus/">Stylus</a> &amp; <a href="http://visionmedia.github.io/nib/">Nib</a>
+      </p>
+      <p>
+        <strong>It will not be a complete framework</strong> as <a href="http://twitter.github.io/bootstrap/">twitter bootstrap</a>, <a href="http://fluiditycss.com/">fluidity</a> or <a href="http://roots.cx/css/">roots</a>.
+      </p>
+      <p>The purpose is more to give some uncommon mixins and provide some particular design classes for buttons and forms.</p>
+      <p><strong>The less is provided, the better you can design without extra markup or classes.</strong></p>
     </section>
-    <section id="links">
-      <h2>Links</h2>
-      <div class="h-box-inset">
-        <a href="">a link</a>
-      </div>
-    </section>
-    <section id="buttons">
-      <h2>Buttons</h2>
-      <table class="h-box-inset">
-        <thead>
-          <tr>
-            <th>Button</th>
-            <th>class=""</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><button class="h-btn">Default</button></td>
-            <td>h-btn</td>
-            <td>Standard button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-primary">Primary</button></td>
-            <td>h-btn h-primary</td>
-            <td>Standard blue button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-danger">Danger</button></td>
-            <td>h-btn h-danger</td>
-            <td>Standard red button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn" disabled>Disabled</button></td>
-            <td>h-btn</td>
-            <td>Standard disabled</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-inset">Inset</button></td>
-            <td>h-btn h-inset</td>
-            <td>Inset button</td>
-          </tr>
-        </tbody>
-      </table>
-      <h4>Size</h4>
-      <div class="h-box-inset">
-        <button class="h-btn h-primary h-big">.h-big</button> <button class="h-btn h-big">.h-big</button><br>
-        <button class="h-btn h-primary">regular</button> <button class="h-btn">regular</button><br>
-        <button class="h-btn h-primary h-mini">.h-mini</button> <button class="h-btn h-mini">.h-mini</button>
-      </div>
-    </section>
-    <section id="form">
-      <h2>Forms</h2>
-      <div class="h-box-inset">
-        <!-- Regular form -->
-        <fieldset>
-          <legend>Example of legend</legend>
-          <label for="ex-input">Example of label</label>
-          <input id="ex-input" type="text" placeholder="input text with placeholder">
-          <label for="ex-textarea" >Textarea</label>
-          <textarea id="ex-textarea" type="text">Quisque rhoncus urna eu quam tempor mattis. Mauris in urna et libero pharetra tempor. Cras accumsan quam el diam accumsan gravida ut vel urna.
-          </textarea>
-          <label for="ex-select">Select input <span class="notice">(issues on firefox :( )</span></label>
-          <select id="ex-select" type="text">
-            <option>option one</option>
-            <option>option two</option>
-            <option>option three</option>
-            <option>option four</option>
-          </select>
-          <label for="ex-input-search">Example of search input <span class="notice">(experimental: issues on webkit)</span></label>
-          <input id="ex-input-search" type="search" placeholder="search input">
-          <label>Simili input</label>
-          <div class="h-input" contenteditable>with content editable</div>
-          <label>Simili select</label>
-          <div class="h-select">Same same</div>
-        </fieldset>
-        <!-- Error form -->
-        <fieldset>
-          <legend >Error form</legend>
-          <label for="ex-input-invalid">Input</label>
-          <input id="ex-input-invalid" type="email" value="invalid e-mail example">
-          <label for="ex-textarea-invalid">Textarea</label>
-          <textarea class="invalid" id="ex-textarea-invalid" type="text" placeholder="error placeholder"></textarea>
-          <label for="ex-select-invalid" >Select input</label>
-          <select class="invalid" id="ex-select-invalid" type="text">
-            <option>option one</option>
-            <option>option two</option>
-            <option>option three</option>
-            <option>option four</option>
-          </select>
-        </fieldset>
-        <!-- Disabled form -->
-        <fieldset>
-          <legend >Disabled form</legend>
-          <label for="ex-input-disabled">Input</label>
-          <input id="ex-input-disabled" type="email" value="disabled e-mail example" disabled>
-          <label for="ex-textarea-disabled">Textarea</label>
-          <textarea id="ex-textarea-disabled" type="text" placeholder="disabled placeholder" disabled></textarea>
-          <label for="ex-select-disabled" >Select input</label>
-          <select id="ex-select-disabled" type="text" disabled>
-            <option>option one</option>
-            <option>option two</option>
-            <option>option three</option>
-            <option>option four</option>
-          </select>
-        </fieldset>
-        <fieldset>
-          <legend >Special inputs</legend>
-          <label>ios checkbox</label>
-          <div class="h-ios" style="width: 5em">
-            <input type="checkbox" id="ex-input-ioscheck">
-            <label for="ex-input-ioscheck" />
-          </div>
-        </fieldset>
-      </div>
-    </section>
-    <section id="layout">
-      <h2>Fluid layout with flex box <span class="notice">(caution with compatibility)</span></h2>
-      <div class="h-box-inset">
-        <ul class="h-row" >
-            <li class="h-col">First column</li>
-            <li class="h-col">Second column</li>
-            <li class="h-col">Third column</li>
-        </ul>
-        <ul class="h-row" >
-            <li class="h-col">First column</li>
-            <li class="h-col">Second column</li>
-            <li class="h-col">Third column</li>
-            <li class="h-col">Forth column</li>
-            <li class="h-col">Fith column</li>
-        </ul>
-      </div>
-    </section>
-    <section id="box">
-      <h2>Common boxes design</h2>
-      <div class="h-box-inset">
-        <div class="h-box">.h-box</div>
-        <br>
-        <div class="h-box-inset">.h-box-inset</div>
-      </div>
+    <section class="h-col">
+      <h3 class="hs-title">What is provided</h3>
+      <p>All in seperate files: include what you want</p>
+      <ul>
+        <li>Buttons</li>
+        <li>Forms</li>
+        <li>Flexbox Grid</li>
+        <li>Nib reset</li>
+        <li>Very minimal typography (only headings)</li>
+      </ul>
     </section>
   </div>
 </body>
