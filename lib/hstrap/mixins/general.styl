@@ -1,5 +1,5 @@
 @import 'nib'
-@import './values'
+@import '../values'
 
 // Convert px to em, according to fs reference
 px2em(px, ref = $h-fs)
@@ -39,19 +39,3 @@ flex-row()
   display flex
   align-content stretch
   flex-direction row
-
-reset-form()
-  appearance none
-  -moz-appearance none
-  -webkit-appearance none
-
-//
-btn-color(light, medium, dark)
-  background linear-gradient(alpha(dark, 0), dark)
-  background-color medium
-
-  &:hover:not(.h-disabled):not([disabled])
-    background-color light
-
-  &:active:not(.h-disabled):not([disabled])
-    background-color dark

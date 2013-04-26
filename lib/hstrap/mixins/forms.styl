@@ -1,0 +1,111 @@
+@import 'nib'
+@import './general'
+@import '../values'
+
+$$input-height()
+  box-sizing border-box
+  height px2em(32)
+
+
+// try to remove default style
+// not workin totally with select on Firefox & IE
+reset-form()
+  appearance none
+  -moz-appearance none
+  -webkit-appearance none
+
+// style input place holder
+placeHolder(color)
+  &:-ms-input-placeholder
+    color color
+  &::-webkit-input-placeholder
+     color color
+  &:-moz-placeholder /* Firefox 18- */
+     color color
+  &::-moz-placeholder  /* Firefox 19+ */
+     color color
+
+// Input
+h-input()
+  background-color white
+  display block
+  font-size 1em
+  padding 0 .35em 0 .5em; margin 0
+  border 1px solid $h-input-idle
+  box-shadow inset 2px 2px 0 black(.07)
+  height $input-height
+  transition border-color $h-input-transition, box-shadow $h-input-transition
+  color #555
+  width 100%
+  $$input-height()
+  placeHolder(lighten(@color, 50%))
+  outline 0
+
+  &:hover,
+  &:focus
+    border-color $h-input-focus
+    box-shadow inset 2px 2px 0 alpha($h-input-focus, .3)
+    outline 0
+
+  &.ng-invalid,
+  &.invalid,
+  &:invalid
+    color $h-input-invalid-color
+    border-color $h-input-invalid
+    box-shadow inset 2px 2px 0 alpha($h-input-invalid, .3)
+    placeHolder(lighten(@color, 50%))
+
+  &.disabled,
+  &:disabled
+    background #EEE
+    color #999
+    placeHolder(lighten(@color, 50%))
+
+  &:not(input):not(select)
+    padding-top .5em
+
+h-search()
+  reset-form()
+  background-repeat no-repeat
+  background-position 100% px2em(7)
+  // TODO use stylus to embed svg
+  background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjI4IiBoZWlnaHQ9IjIwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxwYXRoIGZpbGw9IiNlNWU1ZTUiIGQ9Im0xOS44NDE5OTksMTguMDg1NjNsLTcuMTAyLC03LjA2MDk4NGMwLjc5OSwtMS4xMzg5OTkgMS4yNywtMi41MjUwMDEgMS4yNywtNC4wMjNjLTAuMDAwOTk5LC0zLjg2ODAwMiAtMy4xMzY5OTksLTcuMDA0MDAzIC03LjAwNTk5OSwtNy4wMDQwMDNjLTMuODY4LDAgLTcuMDA0LDMuMTM2MDAyIC03LjAwNCw3LjAwNDAwM2MwLDMuODY5IDMuMTM2LDcuMDA1MDAxIDcuMDA0LDcuMDA1MDAxYzEuMzk1LDAgMi42OTIsLTAuNDA3MDAxIDMuNzg0OTk5LC0xLjExMDAwMWw3LjE0MTAwMSw3LjEwMDk4NGwxLjkxMTk5OSwtMS45MTIwMDF6bS0xNy41MDY5OTksLTExLjA4Mzk4M2MwLC0yLjU3OCAyLjA5MSwtNC42NjkwMDMgNC42NjksLTQuNjY5MDAzYzIuNTc5OTk5LDAgNC42NywyLjA5MDAwMyA0LjY3LDQuNjY5MDAzYzAsMi41OCAtMi4wOSw0LjY3IC00LjY3LDQuNjdjLTIuNTc4LDAgLTQuNjY5LC0yLjA5MSAtNC42NjksLTQuNjd6Ii8+CiA8L2c+Cjwvc3ZnPg==')
+
+  &::-webkit-search-cancel-button
+    display none
+
+// Select box
+h-select()
+  reset-form()
+  padding-right 1.75em
+  border-radius 0
+  background-repeat no-repeat
+  background-position center right
+  // TODO use stylus to embed svg
+  background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIxIiBoZWlnaHQ9IjQ1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxyZWN0IGZpbGw9IiNFNUU1RTUiIGhlaWdodD0iNDUiIHdpZHRoPSIxIi8+CiAgPHBvbHlnb24gZmlsbD0iI0U1RTVFNSIgcG9pbnRzPSI2LDIyIDEwLjk5OSwxNCAxNiwyMiAiLz4KICA8cG9seWdvbiBmaWxsPSIjRTVFNUU1IiBwb2ludHM9IjE2LDI1IDExLjAwMSwzMyA2LDI1ICIvPgogPC9nPgo8L3N2Zz4=')
+
+// Textarea
+h-textarea()
+  padding-top .35em
+  padding-bottom .35em
+  height auto
+  min-height 5em
+  resize vertical
+
+// Presentation
+h-fieldset()
+  border none
+
+h-label()
+  display block
+  padding .75em 0 .25em
+
+h-legend()
+  font-size px2em(21)
+  display block
+  width 100%; padding 0
+  padding-top 1em
+  line-height 1.8em
+  color #666
+  border 0
+  border-bottom 1px solid #e5e5e5

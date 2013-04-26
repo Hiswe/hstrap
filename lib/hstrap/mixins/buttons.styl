@@ -1,0 +1,11 @@
+@import './general'
+//
+btn-color(light, medium, dark)
+  background linear-gradient(alpha(dark, 0), dark)
+  background-color medium
+
+  &:hover:not(.h-disabled):not([disabled])
+    background-color light
+
+  &:active:not(.h-disabled):not([disabled])
+    background-color dark

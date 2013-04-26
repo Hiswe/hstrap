@@ -31,14 +31,31 @@ module.exports = (grunt) ->
       lib: {
         options: {
           compress: false
-          paths : ['dist']
+          paths : ['lib/hstrap']
           urlfunc: 'embedurl'
         }
-        expand: true,
-        cwd: 'lib/hstrap'
-        src: ['**/!(mixins|values|forms-mixins).styl'],
-        dest: 'dist/css',
-        ext: '.css'
+        files: {
+          'dist/css/hstrap.css': 'lib/hstrap/index.styl'
+          'dist/css/buttons.css': 'lib/hstrap/buttons.styl'
+          'dist/css/forms.css': 'lib/hstrap/forms/index.styl'
+          'dist/css/default-forms.css': 'lib/hstrap/forms/default.styl'
+          'dist/css/layout.css': 'lib/hstrap/layout.styl'
+          'dist/css/links.css': 'lib/hstrap/links.styl'
+          'dist/css/reset.css': 'lib/hstrap/reset.styl'
+          'dist/css/type.css': 'lib/hstrap/type.styl'
+          'dist/css/components/box.css': 'lib/hstrap/components/box.styl'
+          'dist/css/components/popover.css': 'lib/hstrap/components/popover.styl'
+        }
+      }
+      pouic: {
+        options: {
+          compress: false
+          paths : ['lib/hstrap']
+          urlfunc: 'embedurl'
+        }
+        files: {
+          'dist/reset.css': 'lib/hstrap/reset.styl'
+        }
       }
     }
     copy: {
@@ -68,4 +85,5 @@ module.exports = (grunt) ->
     grunt.file.delete('dist/font') if grunt.file.exists('dist/font')
 
   grunt.registerTask 'build', ['clean', 'stylus:lib', 'stylus:example', 'copy:font']
+  grunt.registerTask 'lib', ['clean', 'stylus:lib']
   grunt.registerTask 'default', ['help']

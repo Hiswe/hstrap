@@ -1,20 +1,27 @@
 @import 'nib'
 @import '../values'
 @import '../mixins'
+@import './ios-check'
+@import './group'
 
-.h-fieldset
+fieldset
   h-fieldset()
 
-.h-label
+label
   h-label()
 
-.h-legend
+legend
   h-legend()
 
-.h-textarea
+input:not([type="submit"]),
+select,
+textarea
+  h-input()
+
+textarea
   h-textarea()
 
-.h-select
+select
   h-select()
 
 @-moz-document url-prefix() {
@@ -27,15 +34,5 @@
   }
 }
 
-// TODO fix Strange indent on webkit
-// TODO fix the reset button on webkit
-// input[type="search"]
-//   padding-left 0
-.h-search
+input[type="search"]
   h-search()
-
-.h-input:not([type="submit"]),
-.h-select,
-.h-search,
-.h-textarea
-  h-input()

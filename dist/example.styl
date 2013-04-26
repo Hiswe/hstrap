@@ -14,17 +14,17 @@ html
   font-family 'Helvetica', 'arial', 'sans-serif'
 body
   background transparent
-  border-top px2em(4) solid $h-pink
 
 a.selected
   color $h-blue
 
 // Top menu
 .hs-menu
-  background black(.85)
+  background #262626
   margin 0
   padding 2em 0
   border-bottom 1px solid white
+  border-top px2em(4) solid $h-pink
 
   h1
     color $h-pink
@@ -54,19 +54,37 @@ a.selected
   a
     padding .5em 1em
 
+.hs-small-menu
+  position relative
+  z-index 3
+  padding .25em 0 0
+
+  h1
+    font-size 2em
+  h4
+    display none
+  li
+    padding-top 0
+
 .hs-title
   font-family 'hiso_dark', Helvetica, sans-serif
   font-weight normal
-  font-size 1.5em
-
+  font-size 1.75em
 
 // Home main banner
 .hs-submenu
-  order 2
-  flex 0
   width 9em
   margin 0 0 0 $h-gutter
   padding 0
+  position fixed
+  z-index 2
+  top 0
+  left 100%
+  margin-left -(@width + 1em)
+
+  .h-box
+    padding-top 6em
+    border-top none
 
   ul, li
     list-style none
@@ -93,7 +111,26 @@ a.selected
 section > h2
   margin 1em 0 .5em
   color $h-pink
+  font-family 'hiso_dark', Helvetica, sans-serif
+  font-weight normal
+  font-size 2.5em
+  crisp-font-smoothing()
   text-shadow -1px -1px 0 black(.25), 1px 1px 0 white
+  position relative
+
+  small
+    position absolute
+    right 100%; top 20%
+    margin-right .5em
+    font-family Helvetica, arial, sans-serif
+    font-size .5em
+    color #ececec; text-shadow none
+    font-weight normal
+    background black(.2)
+    padding .25em .5em
+    transform-origin top right
+    transform skewY(-27deg)
+
 
 table
   width 100%
@@ -103,11 +140,6 @@ ul.h-row
   margin 0
 li.h-col
   list-style none
-
-h2 small
-  font-size .6em
-  color #888
-  font-weight normal
 
 section
   margin-bottom 1em
@@ -142,6 +174,7 @@ section
       font-weight bold
 
 .notice
+  font-family Helvetica, arial, sans-serif
   font-style italic
   font-size $h-fs
   color #AAA
