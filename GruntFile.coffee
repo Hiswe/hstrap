@@ -48,16 +48,6 @@ module.exports = (grunt) ->
           'dist/css/components/scrollbox.css': 'lib/hstrap/components/scrollbox.styl'
         }
       }
-      pouic: {
-        options: {
-          compress: false
-          paths : ['lib/hstrap']
-          urlfunc: 'embedurl'
-        }
-        files: {
-          'dist/reset.css': 'lib/hstrap/reset.styl'
-        }
-      }
     }
     copy: {
       font: {
