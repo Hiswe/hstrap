@@ -2,12 +2,11 @@
 @import './general'
 @import '../values'
 
-
 h-box()
   padding $h-gutter
-  border 1px solid $h-dark-grey
-  box-shadow $h-buttons-depth $h-buttons-depth 0 0 black(.25)
-  background white
+  border 1px solid $h-components-border
+  box-shadow $h-components-depth $h-components-depth 0 0 black(.25)
+  background $h-components-background
 
 h-box-inset()
-  box-shadow inset $h-buttons-depth $h-buttons-depth 0 0 black(.15)
+  box-shadow inset $h-components-depth $h-components-depth 0 0 black(.15)

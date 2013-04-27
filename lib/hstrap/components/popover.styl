@@ -1,5 +1,4 @@
 // Shamefully paste from twitter bootstrap
-// TODO refactor
 @import 'nib'
 
 $zindexPopover          = 1010
@@ -12,7 +11,11 @@ $popoverTitleBackground = darken($popoverBackground, 3%)
 $popoverArrowOuterWidth = $popoverArrowWidth + 1
 $popoverArrowOuterColor = rgba(0,0,0,.25)
 
-.popover
+
+// Arrows
+// :before is outer, :after is inner
+
+.h-popover
   position absolute
   top 0
   left 0
@@ -39,7 +42,76 @@ $popoverArrowOuterColor = rgba(0,0,0,.25)
   &.left
     margin-left -10px
 
-.popover-title
+  &:before,
+  &:after
+    position absolute
+    display block
+    width 0; height 0
+    content ""
+    border-color transparent
+    border-style solid
+
+  &:before
+    border-width $popoverArrowOuterWidth
+
+  &:after
+    z-index 2
+    border-width $popoverArrowWidth
+
+
+  &.top
+    &:before,
+    &:after
+      left 50%
+      margin-left -($popoverArrowOuterWidth)
+      border-bottom-width 0
+      border-top-color $popoverArrowOuterColor
+      bottom -($popoverArrowOuterWidth)
+    &:after
+      bottom 1 - $popoverArrowOuterWidth
+      margin-left -($popoverArrowWidth)
+      border-top-color $popoverArrowColor
+
+  &.right
+    &:before,
+    &:after
+      top 50%
+      left -($popoverArrowOuterWidth)
+      margin-top -($popoverArrowOuterWidth)
+      border-left-width 0
+      border-right-color $popoverArrowOuterColor
+    &:after
+      left 1 - $popoverArrowOuterWidth
+      margin-top 1 - $popoverArrowOuterWidth
+      border-right-color $popoverArrowColor
+
+  &.bottom
+    &:before,
+    &:after
+      left 50%
+      margin-left -($popoverArrowOuterWidth)
+      border-top-width 0
+      border-bottom-color $popoverArrowOuterColor
+      top -($popoverArrowOuterWidth)
+    &:after
+      top 1 - $popoverArrowOuterWidth
+      margin-left -($popoverArrowWidth)
+      border-bottom-color $popoverArrowColor
+
+  &.left
+    &:before,
+    &:after
+      top 50%
+      right -($popoverArrowOuterWidth)
+      margin-top -($popoverArrowOuterWidth)
+      border-right-width 0
+      border-left-color $popoverArrowOuterColor
+    &:after
+      right 1 - $popoverArrowOuterWidth
+      margin-top 1 - $popoverArrowOuterWidth
+      border-left-color $popoverArrowColor
+
+.h-popover-title
   margin 0 // reset heading margin
   padding 8px 14px
   font-size 14px
@@ -51,79 +123,5 @@ $popoverArrowOuterColor = rgba(0,0,0,.25)
   &:empty
     display none
 
-.popover-content
+.h-popover-content
   padding 9px 14px
-
-// Arrows
-//
-// .arrow is outer, .arrow:after is inner
-
-.popover .arrow,
-.popover .arrow:after
-  position absolute
-  display block
-  width 0
-  height 0
-  border-color transparent
-  border-style solid
-
-.popover .arrow
-  border-width $popoverArrowOuterWidth
-
-.popover .arrow:after
-  border-width $popoverArrowWidth
-  content ""
-
-
-.popover
-  &.top .arrow
-    left 50%
-    margin-left -($popoverArrowOuterWidth)
-    border-bottom-width 0
-    border-top-color #999 // IE8 fallback
-    border-top-color $popoverArrowOuterColor
-    bottom -($popoverArrowOuterWidth)
-    &:after
-      bottom 1px
-      margin-left -$popoverArrowWidth
-      border-bottom-width 0
-      border-top-color $popoverArrowColor
-
-  &.right .arrow
-    top 50%
-    left -($popoverArrowOuterWidth)
-    margin-top -($popoverArrowOuterWidth)
-    border-left-width 0
-    border-right-color #999 // IE8 fallback
-    border-right-color $popoverArrowOuterColor
-    &:after
-      left 1px
-      bottom -($popoverArrowWidth)
-      border-left-width 0
-      border-right-color $popoverArrowColor
-
-  &.bottom .arrow
-    left 50%
-    margin-left -($popoverArrowOuterWidth)
-    border-top-width 0
-    border-bottom-color #999 // IE8 fallback
-    border-bottom-color $popoverArrowOuterColor
-    top -($popoverArrowOuterWidth)
-    &:after
-      top 1px
-      margin-left -($popoverArrowWidth)
-      border-top-width 0
-      border-bottom-color $popoverArrowColor
-
-  &.left .arrow
-    top 50%
-    right -($popoverArrowOuterWidth)
-    margin-top -($popoverArrowOuterWidth)
-    border-right-width 0
-    border-left-color #999 // IE8 fallback
-    border-left-color $popoverArrowOuterColor
-    &:after
-      right 1px
-      border-right-width 0
-      border-left-color $popoverArrowColor
-      bottom -($popoverArrowWidth)
