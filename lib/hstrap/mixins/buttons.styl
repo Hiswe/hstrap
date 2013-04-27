@@ -3,18 +3,25 @@
 @import '../values'
 
 // Change colors
-h-btn-color(light, medium, dark)
-  background linear-gradient(rgba(dark, 0), dark)
-  background-color medium
+h-btn-color(lightColor, mediumColor, darkColor)
+  if light(darkColor)
+    color black
+    text-shadow 1px 1px 0 white()
+  else
+    color white
+    text-shadow -1px -1px 0 black()
+
+  background linear-gradient(rgba(darkColor, 0), darkColor)
+  background-color mediumColor
 
   &:hover:not(.h-disabled):not([disabled])
-    background-color light
+    background-color lightColor
 
   &:active:not(.h-disabled):not([disabled])
-    background-color dark
+    background-color darkColor
 
 h-btn()
-  font-size 1em; text-align center; text-shadow 1px 1px 0 white()
+  font-size 1em; text-align center
   display inline-block;
   box-sizing border-box
   padding .75em 1.5em
