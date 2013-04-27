@@ -45,6 +45,7 @@ module.exports = (grunt) ->
           'dist/css/type.css': 'lib/hstrap/type.styl'
           'dist/css/components/box.css': 'lib/hstrap/components/box.styl'
           'dist/css/components/popover.css': 'lib/hstrap/components/popover.styl'
+          'dist/css/components/scrollbox.css': 'lib/hstrap/components/scrollbox.styl'
         }
       }
       pouic: {

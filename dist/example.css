@@ -5,10 +5,10 @@ a.selected{color:#00b7e0}
 .hs-menu{background:#262626;margin:0;padding:2em 0;border-bottom:1px solid white;border-top:.25em solid #df006f;}
 .hs-menu h1{color:#df006f;font-family:'hiso_dark',Helvetica,sans-serif;font-weight:normal;margin:.25em 0;text-shadow:2px 2px 0 rgba(0,0,0,0.25);font-size:4em;text-align:left;margin-bottom:.25em}
 .hs-menu h4{color:#c2c2c2;text-shadow:1px 1px 0 rgba(0,0,0,0.25);letter-spacing:.25em;text-indent:.75em}
-.hs-menu ul{text-align:right}
+.hs-menu ul{text-align:right;padding:0}
 .hs-menu li,.hs-menu a{display:inline-block}
 .hs-menu li{padding-top:2em}
-.hs-menu a{padding:.5em 1em}
+.hs-menu a{padding:.25em .5em}
 .hs-small-menu{position:relative;z-index:3;padding:.25em 0 0;}
 .hs-small-menu h1{font-size:2em}
 .hs-small-menu h4{display:none}
@@ -46,3 +46,4 @@ dt{background:rgba(255,75,149,0.25)}
 dd{width:64%;padding-left:1em;margin-left:-4px}
 .danger{color:#df006f;display:block;}
 .danger:before{content:'! '}
+aside.popover{position:relative}
