@@ -1,50 +1,38 @@
 @import 'nib'
 @import './general'
 @import '../values'
+
 // http://lea.verou.me/2012/04/background-attachment-local/
-// nib doesn't support radial gradient :o
 // work if no list need the gradient to be upon
-$$bg-color = #FFF
-$$shadow-color = #000
+
+$$bg                  = rgba($h-components-background, 1)
+$$bg-transparent      = rgba($h-components-background, 0)
+$$shadow              = rgba($h-components-shadow, 0.4)
+$$shadow-transparent  = rgba($h-components-shadow, 0)
 
 scrollbox()
-  @css{
-  background:
-    /* Shadow covers */
-    linear-gradient(white 30%, rgba(255,255,255,0)),
-    linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-    /* Shadows */
-    radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
-    radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+  // nib doesn't support radial AND multiples gradient…
+  // vendor gradients
+  for prefix in vendors
+    unless prefix == official
+      gr1 = "-%s-linear-gradient(%s 30%, %s)" % (prefix $$bg $$bg-transparent)
+      gr2 = "-%s-linear-gradient(%s, %s 70%) 0 100%" % (prefix $$bg-transparent $$bg)
+      gr3 = "-%s-radial-gradient(50% 0, farthest-side, %s, %s)" % (prefix $$shadow $$shadow-transparent)
+      gr4 = "-%s-radial-gradient(50% 100%,farthest-side, %s, %s) 0 100%" % (prefix $$shadow $$shadow-transparent)
+      add-property('background', s(join(', ', gr1 gr2 gr3 gr4) + ';'))
 
-  background:
-    -webkit-linear-gradient(white 30%, rgba(255,255,255,0)),
-    -webkit-linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-    -webkit-radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
-    -webkit-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+  // w3c gradients
+  gr1 = "linear-gradient(%s 30%, %s)" % (#FFF rgba(255,255,255,0))
+  gr2 = "linear-gradient(%s, %s 70%) 0 100%" % (rgba(255,255,255,0) #FFF)
+  gr3 = "radial-gradient(50% 0, farthest-side, %s, %s)" % (rgba(0,0,0,.2) rgba(0,0,0,0))
+  gr4 = "radial-gradient(50% 100%,farthest-side, %s, %s) 0 100%" % (rgba(0,0,0,.2) rgba(0,0,0,0))
+  add-property('background', s(join(', ', gr1 gr2 gr3 gr4) + ';'))
 
-  background:
-    -moz-linear-gradient(white 30%, rgba(255,255,255,0)),
-    -moz-linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-    -moz-radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
-    -moz-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
-
-  background:
-    -ms-linear-gradient(white 30%, rgba(255,255,255,0)),
-    -ms-linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-    -ms-radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
-    -ms-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
-
-  background:
-    -o-linear-gradient(white 30%, rgba(255,255,255,0)),
-    -o-linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-    -o-radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
-    -o-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
-  }
+  // other properties
   background-size 100% 40px, 100% 40px, 100% 14px, 100% 14px
   // Opera doesn't support this in the shorthand
   background-attachment local, local, scroll, scroll
   background-repeat no-repeat
-  background-color white
+  background-color $$bg
   height 20em
   overflow auto

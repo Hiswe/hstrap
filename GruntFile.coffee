@@ -28,6 +28,16 @@ module.exports = (grunt) ->
           'dist/example.css': 'dist/example.styl'
         }
       }
+      scrollbox: {
+        options: {
+          compress: false
+          paths : ['lib/hstrap']
+          urlfunc: 'embedurl'
+        }
+        files: {
+          'dist/css/components/scrollbox.css': 'lib/hstrap/components/scrollbox.styl'
+        }
+      }
       lib: {
         options: {
           compress: false
