@@ -3,6 +3,11 @@ a:visited,
 .h-link {
   color: #0078a6;
   text-decoration: none;
+  -webkit-transition: color 0.25s;
+  -moz-transition: color 0.25s;
+  -o-transition: color 0.25s;
+  -ms-transition: color 0.25s;
+  transition: color 0.25s;
 }
 a:hover,
 a:visited:hover,

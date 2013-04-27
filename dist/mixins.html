@@ -14,17 +14,20 @@
   <link rel="stylesheet" href="example.css">
 </head>
 <body>
+
   <menu class="hs-menu hs-small-menu">
-    <div class="container h-row">
-      <div class="hs-master-head h-col">
-        <h1>HStrap</h1>
-        <h4>Mixins &amp; class v0.1.0</h4>
+    <div class="container">
+      <div class="h-row">
+        <div class="hs-master-head h-col">
+          <h1>HStrap</h1>
+          <h4>Mixins &amp; class v0.1.0</h4>
+        </div>
+        <ul class="h-col">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./mixins.html" class="selected">Mixins</a></li>
+          <li><a href="./base-css.html">Base CSS</a></li>
+        </ul>
       </div>
-      <ul class="h-col">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="./mixins.html" class="selected">Mixins</a></li>
-        <li><a href="./base-css.html">Base CSS</a></li>
-      </ul>
     </div>
   </menu>
 
@@ -38,9 +41,85 @@
       <li><a href="#box">Box</a></li>
     </ul>
   </menu>
+
   <div class="container">
     <section id="type">
+      <h2>General <small>mixins/general</small></h2>
+      <div class="h-box-inset">
+        <dl>
+          <dt>px2em(px, [ref = 16px])</dt>
+          <dd>
+            Convert a pixel size into em according to the reference.
+           </dd>
+          <dt>crisp-font-smoothing()</dt>
+          <dd>
+            Non-standard property which change the way the browser render the font.<br>
+            Could be usefull on some typography (Like the one I use for titles) where letters should be rendered thinner.<br><br>
+            <span class="danger">Only work on Webkit: <a href="https://developer.mozilla.org/en-US/docs/CSS/font-smooth">Mozilla article on font-smooth</a></span>
+            <br>
+            Maybe generating font with <a href="http://cufon.shoqolate.com/generate/">Cufon</a> could fix the "bold rendering". <br>
+            If so, this mixin will be removed
+          </dd>
+          <dt>css-filter(properties)</dt>
+          <dd>
+            Fix conflict with the <a href="http://learnboost.github.io/stylus/docs/bifs.html">build-in stylus saturate() function</a>
+            <span class="danger">This mixin use the stylus unquote function, so properties has to be a string</span>
+          </dd>
+          <dt>white([opacity = 0.5])</dt>
+          <dd>Shortcut for rgba(white, .5)</dd>
+          <dt>black([opacity = 0.5])</dt>
+          <dd>Shortcut for rgba(black, .5)</dd>
+          <dt>bg-cover()</dt>
+          <dd>Tile the background to the borders with <i>background-size: cover</i></dd>
+          <dt>flex-row()</dt>
+          <dd>Flex-box row
+            <span class="danger">Compatibility issues: <a href="https://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html">Adobe new flexbox article</a></span>
+          </dd>
+        </dl>
+      </div>
+    </section>
 
+    <section id="buttons">
+      <h2>Buttons <small>mixins/buttons</small></h2>
+      <div class="h-box-inset">
+        <dl>
+          <dt>h-btn-color(light, medium, dark)</dt>
+          <dd>
+            Give 3 colors to have all :active &amp; :hover state background-colors<br>
+            This not include text color and shadows
+          </dd>
+          <dt>h-btn()</dt>
+          <dd>Main mixin to have a h-btn style</dd>
+          <dt>h-inset-button()</dt>
+          <dd>Main mixin to have a h-btn inset style</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="forms">
+      <h2>Forms <small>mixins/forms</small></h2>
+      <div class="h-box-inset">
+        <dl>
+          <dt>reset-form()</dt>
+          <dd>Try to reset the default input style</dd>
+          <dt>placeHolder(color)</dt>
+          <dd>Change the placeholder text color</dd>
+          <dt>h-input()</dt>
+          <dd>Main mixin to have a h-input style</dd>
+          <dt>h-search()</dt>
+          <dd>Additional styles for search inputs</dd>
+          <dt>h-select()</dt>
+          <dd>Additional styles for select inputs</dd>
+          <dt>h-textarea()</dt>
+          <dd>Additional styles for textareas</dd>
+          <dt>h-fieldset()</dt>
+          <dd>Main mixin to have a h-fieldset style</dd>
+          <dt>h-label()</dt>
+          <dd>Main mixin to have a h-label style</dd>
+          <dt>h-legend()</dt>
+          <dd>Main mixin to have a h-legend style</dd>
+        </dl>
+      </div>
     </section>
   </div>
 </body>

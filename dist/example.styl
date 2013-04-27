@@ -181,3 +181,30 @@ section
   font-size $h-fs
   color #AAA
   text-shadow none
+
+dl
+  margin-bottom -.5em
+
+dt, dd
+  display inline-block
+  vertical-align top
+  width 35%
+  box-sizing border-box
+  padding .25em
+  margin-bottom .5em
+
+dt
+  background rgba($h-light-pink, .25)
+
+dd
+  width 64%
+  padding-left 1em
+  margin-left -4px
+
+.danger
+  color $h-pink
+  display block
+
+  &:before
+    content '! '
+

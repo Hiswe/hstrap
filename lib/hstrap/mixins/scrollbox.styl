@@ -1,0 +1,48 @@
+@import 'nib'
+@import './general'
+@import '../values'
+// http://lea.verou.me/2012/04/background-attachment-local/
+// nib doesn't support radial gradient :o
+// work if no list need the gradient to be upon
+$$bg-color = white
+$$shadow-color = black
+
+scrollbox()
+  @css{
+  background:
+    /* Shadow covers */
+    linear-gradient($$bg-color 30%, rgba($$bg-color,0)),
+    linear-gradient(rgba($$bg-color,0), $$bg-color 70%) 0 100%,
+    /* Shadows */
+    radial-gradient(50% 0, farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)),
+    radial-gradient(50% 100%,farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)) 0 100%;
+
+  background:
+    -webkit-linear-gradient($$bg-color 30%, rgba($$bg-color,0)),
+    -webkit-linear-gradient(rgba($$bg-color,0), $$bg-color 70%) 0 100%,
+    -webkit-radial-gradient(50% 0, farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)),
+    -webkit-radial-gradient(50% 100%,farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)) 0 100%;
+
+  background:
+    -moz-linear-gradient($$bg-color 30%, rgba($$bg-color,0)),
+    -moz-linear-gradient(rgba($$bg-color,0), $$bg-color 70%) 0 100%,
+    -moz-radial-gradient(50% 0, farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)),
+    -moz-radial-gradient(50% 100%,farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)) 0 100%;
+
+  background:
+    -ms-linear-gradient($$bg-color 30%, rgba($$bg-color,0)),
+    -ms-linear-gradient(rgba($$bg-color,0), $$bg-color 70%) 0 100%,
+    -ms-radial-gradient(50% 0, farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)),
+    -ms-radial-gradient(50% 100%,farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)) 0 100%;
+
+  background:
+    -o-linear-gradient($$bg-color 30%, rgba($$bg-color,0)),
+    -o-linear-gradient(rgba($$bg-color,0), $$bg-color 70%) 0 100%,
+    -o-radial-gradient(50% 0, farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)),
+    -o-radial-gradient(50% 100%,farthest-side, rgba($$shadow-color,.2), rgba($$shadow-color,0)) 0 100%;
+  }
+  background-size 100% 40px, 100% 40px, 100% 14px, 100% 14px
+  // Opera doesn't support this in the shorthand
+  background-attachment local, local, scroll, scroll
+  background-repeat no-repeat
+  background-color $$bg-color;

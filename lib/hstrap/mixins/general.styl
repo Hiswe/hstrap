@@ -14,19 +14,16 @@ em2em(em, ref = 1)
 crisp-font-smoothing()
   -webkit-font-smoothing antialiased
 
-// TODO handle the unquote here
-css-filter()
-  vendor('filter', arguments, only: webkit moz ms official)
+// Fix conflict with saturate() stylus functions
+css-filter(properties)
+  vendor('filter', unquote(properties), only: webkit moz ms official)
 
 // Add alpha chanel to a color
-alpha(color = black, opacity = 0.5)
-  rgba(red(color), green(color), blue(color), opacity)
-
 white(opacity = 0.5)
-  alpha(#FFF, opacity)
+  rgba(#FFF, opacity)
 
 black(opacity = 0.5)
-  alpha(#000, opacity)
+  rgba(#000, opacity)
 
 // Tile the background from borders
 bg-cover()

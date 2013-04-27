@@ -44,7 +44,7 @@ h-input()
   &:hover,
   &:focus
     border-color $h-input-focus
-    box-shadow inset 2px 2px 0 alpha($h-input-focus, .3)
+    box-shadow inset 2px 2px 0 rgba($h-input-focus, .3)
     outline 0
 
   &.ng-invalid,
@@ -52,7 +52,7 @@ h-input()
   &:invalid
     color $h-input-invalid-color
     border-color $h-input-invalid
-    box-shadow inset 2px 2px 0 alpha($h-input-invalid, .3)
+    box-shadow inset 2px 2px 0 rgba($h-input-invalid, .3)
     placeHolder(lighten(@color, 50%))
 
   &.disabled,
