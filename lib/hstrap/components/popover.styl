@@ -1,47 +1,38 @@
-// Shamefully paste from twitter bootstrap
 @import 'nib'
+@import '../values'
+@import '../mixins'
 
-$zindexPopover          = 1010
-$popoverBackground      = #fff
-$popoverArrowWidth      = 10px
-$popoverArrowColor      = #fff
-$popoverTitleBackground = darken($popoverBackground, 3%)
-
-// Special enhancement for popovers
-$popoverArrowOuterWidth = $popoverArrowWidth + 1
-$popoverArrowOuterColor = rgba(0,0,0,.25)
-
-
-// Arrows
-// :before is outer, :after is inner
+$$h-popover-title-background = darken($h-components-background, 3%)
+$$h-popover-arrow-outer-width = $h-popover-arrow-width + 1
 
 .h-popover
   position absolute
   top 0
   left 0
-  z-index $zindexPopover
+  z-index $h-popover-arrow-zindex
   max-width 276px
   padding 1px
   text-align left // Reset given new insertion method
-  background-color $popoverBackground
+  background-color $h-components-background
   bg-cover()
-  border 1px solid #ccc
-  border 1px solid black(.2)
-  box-shadow 5px 5px 0 black(.2)
+  border 1px solid $h-components-border
+  box-shadow $h-components-depth $h-components-depth 0 black(.2)
 
   // Overrides for proper insertion
   white-space normal
 
   // Offset the popover to account for the popover arrow
   &.top
-    margin-top -10px
+    margin-top -($$h-popover-arrow-outer-width)
   &.right
-    margin-left 10px
+    margin-left $$h-popover-arrow-outer-width
   &.bottom
-    margin-top 10px
+    margin-top $$h-popover-arrow-outer-width
   &.left
-    margin-left -10px
+    margin-left -($$h-popover-arrow-outer-width)
 
+  // Arrows
+  // :before is outer, :after is inner
   &:before,
   &:after
     position absolute
@@ -52,64 +43,63 @@ $popoverArrowOuterColor = rgba(0,0,0,.25)
     border-style solid
 
   &:before
-    border-width $popoverArrowOuterWidth
+    border-width $$h-popover-arrow-outer-width
 
   &:after
     z-index 2
-    border-width $popoverArrowWidth
-
+    border-width $h-popover-arrow-width
 
   &.top
     &:before,
     &:after
       left 50%
-      margin-left -($popoverArrowOuterWidth)
+      margin-left -($$h-popover-arrow-outer-width)
       border-bottom-width 0
-      border-top-color $popoverArrowOuterColor
-      bottom -($popoverArrowOuterWidth)
+      border-top-color $h-components-border
+      bottom -($$h-popover-arrow-outer-width)
     &:after
-      bottom 1 - $popoverArrowOuterWidth
-      margin-left -($popoverArrowWidth)
-      border-top-color $popoverArrowColor
+      bottom 1 - $$h-popover-arrow-outer-width
+      margin-left -($h-popover-arrow-width)
+      border-top-color $h-popover-arrow-color
 
   &.right
     &:before,
     &:after
       top 50%
-      left -($popoverArrowOuterWidth)
-      margin-top -($popoverArrowOuterWidth)
+      left -($$h-popover-arrow-outer-width)
+      margin-top -($$h-popover-arrow-outer-width)
       border-left-width 0
-      border-right-color $popoverArrowOuterColor
+      border-right-color $h-components-border
     &:after
-      left 1 - $popoverArrowOuterWidth
-      margin-top 1 - $popoverArrowOuterWidth
-      border-right-color $popoverArrowColor
+      left 1 - $$h-popover-arrow-outer-width
+      margin-top 1 - $$h-popover-arrow-outer-width
+      border-right-color $h-popover-arrow-color
 
   &.bottom
     &:before,
     &:after
       left 50%
-      margin-left -($popoverArrowOuterWidth)
+      margin-left -($$h-popover-arrow-outer-width)
       border-top-width 0
-      border-bottom-color $popoverArrowOuterColor
-      top -($popoverArrowOuterWidth)
+      border-bottom-color $h-components-border
+      top -($$h-popover-arrow-outer-width)
     &:after
-      top 1 - $popoverArrowOuterWidth
-      margin-left -($popoverArrowWidth)
-      border-bottom-color $popoverArrowColor
+      top 1 - $$h-popover-arrow-outer-width
+      margin-left -($h-popover-arrow-width)
+      border-bottom-color $h-popover-arrow-color
 
   &.left
     &:before,
     &:after
       top 50%
-      right -($popoverArrowOuterWidth)
-      margin-top -($popoverArrowOuterWidth)
+      right -($$h-popover-arrow-outer-width)
+      margin-top -($$h-popover-arrow-outer-width)
       border-right-width 0
-      border-left-color $popoverArrowOuterColor
+      border-left-color $h-components-border
     &:after
-      right 1 - $popoverArrowOuterWidth
-      margin-top 1 - $popoverArrowOuterWidth
-      border-left-color $popoverArrowColor
+      right 1 - $$h-popover-arrow-outer-width
+      margin-top 1 - $$h-popover-arrow-outer-width
+      border-left-color $h-popover-arrow-color
 
 .h-popover-title
   margin 0 // reset heading margin
@@ -117,8 +107,8 @@ $popoverArrowOuterColor = rgba(0,0,0,.25)
   font-size 14px
   font-weight normal
   line-height 18px
-  background-color $popoverTitleBackground
-  border-bottom 1px solid darken($popoverTitleBackground, 5%)
+  background-color $$h-popover-title-background
+  border-bottom 1px solid darken($$h-popover-title-background, 5%)
 
   &:empty
     display none
