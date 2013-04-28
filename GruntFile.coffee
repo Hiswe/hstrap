@@ -19,31 +19,25 @@ module.exports = (grunt) ->
 
     }
     stylus: {
+      options: {
+        compress: false
+        paths : ['lib/hstrap']
+        urlfunc: 'embedurl'
+      }
       example: {
         options: {
           paths : ['dist']
-          urlfunc: 'embedurl'
         }
         files: {
           'dist/example.css': 'dist/example.styl'
         }
       }
       scrollbox: {
-        options: {
-          compress: false
-          paths : ['lib/hstrap']
-          urlfunc: 'embedurl'
-        }
         files: {
           'dist/css/components/scrollbox.css': 'lib/hstrap/components/scrollbox.styl'
         }
       }
       lib: {
-        options: {
-          compress: false
-          paths : ['lib/hstrap']
-          urlfunc: 'embedurl'
-        }
         files: {
           'dist/css/hstrap.css': 'lib/hstrap/index.styl'
           'dist/css/buttons.css': 'lib/hstrap/buttons.styl'
