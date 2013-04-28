@@ -26,7 +26,7 @@ module.exports = (grunt) ->
       }
       example: {
         options: {
-          paths : ['dist']
+          paths : ['lib/hstrap', 'dist']
         }
         files: {
           'dist/example.css': 'dist/example.styl'
@@ -52,11 +52,9 @@ module.exports = (grunt) ->
           'dist/css/default-forms.css': 'lib/hstrap/forms/default.styl'
           'dist/css/layout.css': 'lib/hstrap/layout.styl'
           'dist/css/links.css': 'lib/hstrap/links.styl'
-          'dist/css/reset.css': 'lib/hstrap/reset.styl'
-          'dist/css/type.css': 'lib/hstrap/type.styl'
-          'dist/css/css-components/box.css': 'lib/hstrap/css-components/box.styl'
-          'dist/css/css-components/popover.css': 'lib/hstrap/css-components/popover.styl'
-          'dist/css/css-components/scrollbox.css': 'lib/hstrap/css-components/scrollbox.styl'
+          'dist/css/css-components/box.css': 'lib/hstrap/css-components/h-box.styl'
+          'dist/css/css-components/popover.css': 'lib/hstrap/css-components/h-popover.styl'
+          'dist/css/css-components/scrollbox.css': 'lib/hstrap/css-components/h-scrollbox.styl'
         }
       }
     }
@@ -88,7 +86,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'clean-css', ->
     grunt.file.delete('dist/css') if grunt.file.exists('dist/css')
 
-  grunt.registerTask 'lib', ['clean-css', 'stylus:lib']
+  grunt.registerTask 'lib', ['clean-css', 'stylus:lib', 'stylus:components']
   grunt.registerTask 'font', ['clean-font','copy:font']
   grunt.registerTask 'build', ['lib', 'stylus:example', 'font']
   grunt.registerTask 'default', ['help']

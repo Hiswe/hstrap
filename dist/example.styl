@@ -1,8 +1,8 @@
 @import 'nib'
-@import '../lib/hstrap/mixins'
+@import '../lib/hstrap/mixins/index'
 @import '../lib/hstrap/values'
 
-$example-shadow = inset 0 0 4px black(.15)
+$example-shadow = inset 0 0 4px noir(.15)
 $menu-height    = px2em(32)
 $width          = 50em
 
@@ -31,14 +31,14 @@ a.selected
     font-family 'hiso_dark', Helvetica, sans-serif
     font-weight normal
     margin .25em 0
-    text-shadow 2px 2px 0 black(.25)
+    text-shadow 2px 2px 0 noir(.25)
     font-size 4em
     text-align left
     margin-bottom .25em
 
   h4
     color $h-dark-grey
-    text-shadow 1px 1px 0 black(.25)
+    text-shadow 1px 1px 0 noir(.25)
     letter-spacing .25em
     text-indent .75em
 
@@ -106,7 +106,7 @@ a.selected
   > h1
     margin 1em 0 .5em
     color $h-pink
-    text-shadow 2px 2px 0 black(.25)
+    text-shadow 2px 2px 0 noir(.25)
 
 
 section > h2
@@ -116,7 +116,7 @@ section > h2
   font-weight normal
   font-size 2.5em
   crisp-font-smoothing()
-  text-shadow -1px -1px 0 black(.25), 1px 1px 0 white
+  text-shadow -1px -1px 0 noir(.25), 1px 1px 0 white
   position relative
 
   small
@@ -127,7 +127,7 @@ section > h2
     font-size .5em
     color #ececec; text-shadow none
     font-weight normal
-    background black(.2)
+    background noir(.2)
     padding .25em .5em
     transform-origin top right
     transform skewY(-27deg)
@@ -153,15 +153,15 @@ section
     padding 1em
     text-align center
   .h-col:nth-child(1)
-    background black(.6)
+    background noir(.6)
   .h-col:nth-child(2)
-    background black(.5)
+    background noir(.5)
   .h-col:nth-child(3)
-    background black(.4)
+    background noir(.4)
   .h-col:nth-child(4)
-    background black(.3)
+    background noir(.3)
   .h-col:nth-child(5)
-    background black(.2)
+    background noir(.2)
 
   + h4
     margin 1em 0 .25em

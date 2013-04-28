@@ -1,7 +1,7 @@
 .h-ios {
   width: 100%;
   border: 1px solid #c2c2c2;
-  background: white;
+  background: #fff;
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -118,7 +118,7 @@ legend {
 input:not([type="submit"]),
 select,
 textarea {
-  background-color: white;
+  background-color: #fff;
   display: block;
   font-size: 1em;
   padding: 0 0.35em 0 0.5em;
@@ -150,14 +150,14 @@ select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #aaa;
 }
-input:not([type="submit"]):-moz-placeholder /* Firefox 18- */,
-select:-moz-placeholder /* Firefox 18- */,
-textarea:-moz-placeholder /* Firefox 18- */ {
+input:not([type="submit"]):-moz-placeholder,
+select:-moz-placeholder,
+textarea:-moz-placeholder {
   color: #aaa;
 }
-input:not([type="submit"])::-moz-placeholder /* Firefox 19+ */,
-select::-moz-placeholder /* Firefox 19+ */,
-textarea::-moz-placeholder /* Firefox 19+ */ {
+input:not([type="submit"])::-moz-placeholder,
+select::-moz-placeholder,
+textarea::-moz-placeholder {
   color: #aaa;
 }
 input:not([type="submit"]):hover,
@@ -207,26 +207,26 @@ select:invalid::-webkit-input-placeholder,
 textarea:invalid::-webkit-input-placeholder {
   color: #ff4b7f;
 }
-input:not([type="submit"]).ng-invalid:-moz-placeholder /* Firefox 18- */,
-select.ng-invalid:-moz-placeholder /* Firefox 18- */,
-textarea.ng-invalid:-moz-placeholder /* Firefox 18- */,
-input:not([type="submit"]).invalid:-moz-placeholder /* Firefox 18- */,
-select.invalid:-moz-placeholder /* Firefox 18- */,
-textarea.invalid:-moz-placeholder /* Firefox 18- */,
-input:not([type="submit"]):invalid:-moz-placeholder /* Firefox 18- */,
-select:invalid:-moz-placeholder /* Firefox 18- */,
-textarea:invalid:-moz-placeholder /* Firefox 18- */ {
+input:not([type="submit"]).ng-invalid:-moz-placeholder,
+select.ng-invalid:-moz-placeholder,
+textarea.ng-invalid:-moz-placeholder,
+input:not([type="submit"]).invalid:-moz-placeholder,
+select.invalid:-moz-placeholder,
+textarea.invalid:-moz-placeholder,
+input:not([type="submit"]):invalid:-moz-placeholder,
+select:invalid:-moz-placeholder,
+textarea:invalid:-moz-placeholder {
   color: #ff4b7f;
 }
-input:not([type="submit"]).ng-invalid::-moz-placeholder /* Firefox 19+ */,
-select.ng-invalid::-moz-placeholder /* Firefox 19+ */,
-textarea.ng-invalid::-moz-placeholder /* Firefox 19+ */,
-input:not([type="submit"]).invalid::-moz-placeholder /* Firefox 19+ */,
-select.invalid::-moz-placeholder /* Firefox 19+ */,
-textarea.invalid::-moz-placeholder /* Firefox 19+ */,
-input:not([type="submit"]):invalid::-moz-placeholder /* Firefox 19+ */,
-select:invalid::-moz-placeholder /* Firefox 19+ */,
-textarea:invalid::-moz-placeholder /* Firefox 19+ */ {
+input:not([type="submit"]).ng-invalid::-moz-placeholder,
+select.ng-invalid::-moz-placeholder,
+textarea.ng-invalid::-moz-placeholder,
+input:not([type="submit"]).invalid::-moz-placeholder,
+select.invalid::-moz-placeholder,
+textarea.invalid::-moz-placeholder,
+input:not([type="submit"]):invalid::-moz-placeholder,
+select:invalid::-moz-placeholder,
+textarea:invalid::-moz-placeholder {
   color: #ff4b7f;
 }
 input:not([type="submit"]).disabled,
@@ -254,20 +254,20 @@ select:disabled::-webkit-input-placeholder,
 textarea:disabled::-webkit-input-placeholder {
   color: #ccc;
 }
-input:not([type="submit"]).disabled:-moz-placeholder /* Firefox 18- */,
-select.disabled:-moz-placeholder /* Firefox 18- */,
-textarea.disabled:-moz-placeholder /* Firefox 18- */,
-input:not([type="submit"]):disabled:-moz-placeholder /* Firefox 18- */,
-select:disabled:-moz-placeholder /* Firefox 18- */,
-textarea:disabled:-moz-placeholder /* Firefox 18- */ {
+input:not([type="submit"]).disabled:-moz-placeholder,
+select.disabled:-moz-placeholder,
+textarea.disabled:-moz-placeholder,
+input:not([type="submit"]):disabled:-moz-placeholder,
+select:disabled:-moz-placeholder,
+textarea:disabled:-moz-placeholder {
   color: #ccc;
 }
-input:not([type="submit"]).disabled::-moz-placeholder /* Firefox 19+ */,
-select.disabled::-moz-placeholder /* Firefox 19+ */,
-textarea.disabled::-moz-placeholder /* Firefox 19+ */,
-input:not([type="submit"]):disabled::-moz-placeholder /* Firefox 19+ */,
-select:disabled::-moz-placeholder /* Firefox 19+ */,
-textarea:disabled::-moz-placeholder /* Firefox 19+ */ {
+input:not([type="submit"]).disabled::-moz-placeholder,
+select.disabled::-moz-placeholder,
+textarea.disabled::-moz-placeholder,
+input:not([type="submit"]):disabled::-moz-placeholder,
+select:disabled::-moz-placeholder,
+textarea:disabled::-moz-placeholder {
   color: #ccc;
 }
 input:not([type="submit"]):not(input):not(select),

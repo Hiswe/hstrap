@@ -60,7 +60,7 @@
 .h-select,
 .h-search,
 .h-textarea {
-  background-color: white;
+  background-color: #fff;
   display: block;
   font-size: 1em;
   padding: 0 0.35em 0 0.5em;
@@ -252,7 +252,7 @@
 .h-ios {
   width: 100%;
   border: 1px solid #c2c2c2;
-  background: white;
+  background: #fff;
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

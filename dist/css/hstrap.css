@@ -59,7 +59,7 @@ a:visited:hover,
   -o-transition: background-color 0.25s, -o-transform 0.15s, box-shadow 0.15s;
   -ms-transition: background-color 0.25s, -ms-transform 0.15s, box-shadow 0.15s;
   transition: background-color 0.25s, transform 0.15s, box-shadow 0.15s;
-  color: black;
+  color: #000;
   text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(194,194,194,0)), color-stop(1, #c2c2c2));
   background: -webkit-linear-gradient(top, rgba(194,194,194,0) 0%, #c2c2c2 100%);
@@ -91,7 +91,7 @@ a:visited:hover,
   background-color: #c2c2c2;
 }
 .h-btn.h-primary {
-  color: white;
+  color: #fff;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.5);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,120,166,0)), color-stop(1, #0078a6));
   background: -webkit-linear-gradient(top, rgba(0,120,166,0) 0%, #0078a6 100%);
@@ -108,7 +108,7 @@ a:visited:hover,
   background-color: #0078a6;
 }
 .h-btn.h-danger {
-  color: white;
+  color: #fff;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.5);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(150,0,43,0)), color-stop(1, #96002b));
   background: -webkit-linear-gradient(top, rgba(150,0,43,0) 0%, #96002b 100%);
@@ -253,7 +253,7 @@ a:visited:hover,
 .h-select,
 .h-search,
 .h-textarea {
-  background-color: white;
+  background-color: #fff;
   display: block;
   font-size: 1em;
   padding: 0 0.35em 0 0.5em;
@@ -445,7 +445,7 @@ a:visited:hover,
 .h-ios {
   width: 100%;
   border: 1px solid #c2c2c2;
-  background: white;
+  background: #fff;
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -541,20 +541,17 @@ a:visited:hover,
 .h-input-group {
   position: relative;
 }
-.h-scrollbox {
-  background: -moz-linear-gradient(#fff 30%, rgba(255,255,255,0)), -moz-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -moz-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -moz-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
-  background: -webkit-linear-gradient(#fff 30%, rgba(255,255,255,0)), -webkit-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -webkit-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -webkit-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
-  background: -o-linear-gradient(#fff 30%, rgba(255,255,255,0)), -o-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -o-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -o-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
-  background: -ms-linear-gradient(#fff 30%, rgba(255,255,255,0)), -ms-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -ms-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -ms-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
-  background: linear-gradient(#fff 30%, rgba(255,255,255,0)), linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.2), rgba(0,0,0,0)), radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.2), rgba(0,0,0,0)) 0 100%;;
-  -webkit-background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-  -moz-background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-  background-attachment: local, local, scroll, scroll;
-  background-repeat: no-repeat;
-  background-color: #fff;
-  height: 20em;
-  overflow: auto;
+.h-box,
+.h-box-inset {
+  padding: 16px;
+  border: 1px solid #c2c2c2;
+  -webkit-box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
+  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
+  background: #fff;
+}
+.h-box-inset {
+  -webkit-box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
+  box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
 }
 .h-popover {
   position: absolute;
@@ -674,4 +671,19 @@ a:visited:hover,
 }
 .h-popover-content {
   padding: 9px 14px;
+}
+.h-scrollbox {
+  background: -moz-linear-gradient(#fff 30%, rgba(255,255,255,0)), -moz-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -moz-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -moz-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
+  background: -webkit-linear-gradient(#fff 30%, rgba(255,255,255,0)), -webkit-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -webkit-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -webkit-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
+  background: -o-linear-gradient(#fff 30%, rgba(255,255,255,0)), -o-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -o-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -o-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
+  background: -ms-linear-gradient(#fff 30%, rgba(255,255,255,0)), -ms-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -ms-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -ms-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
+  background: linear-gradient(#fff 30%, rgba(255,255,255,0)), linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.2), rgba(0,0,0,0)), radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.2), rgba(0,0,0,0)) 0 100%;;
+  -webkit-background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  -moz-background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-attachment: local, local, scroll, scroll;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  height: 20em;
+  overflow: auto;
 }

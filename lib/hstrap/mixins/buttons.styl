@@ -6,10 +6,10 @@
 h-btn-color(lightColor, mediumColor, darkColor)
   if light(darkColor)
     color black
-    text-shadow 1px 1px 0 white()
+    text-shadow 1px 1px 0 blanc()
   else
     color white
-    text-shadow -1px -1px 0 black()
+    text-shadow -1px -1px 0 noir()
 
   background linear-gradient(rgba(darkColor, 0), darkColor)
   background-color mediumColor
@@ -28,9 +28,9 @@ h-btn()
   margin $h-buttons-depth 0 -($h-buttons-depth) $h-buttons-depth $h-buttons-depth
   vertical-align middle
   cursor pointer
-  box-shadow $h-buttons-depth $h-buttons-depth 0 black()
+  box-shadow $h-buttons-depth $h-buttons-depth 0 noir()
   border 1px solid
-  border-color white(.75) black(.25) black() white()
+  border-color blanc(.75) noir(.25) noir() blanc()
   bg-cover()
   transform translate3d(-($h-buttons-depth), -($h-buttons-depth), 0)
   transform-origin bottom right
@@ -38,7 +38,7 @@ h-btn()
 
   &:active:not(.h-disabled):not([disabled])
     transform translate3d(-($h-buttons-active-depth), -($h-buttons-active-depth), 0)
-    box-shadow $h-buttons-active-depth $h-buttons-active-depth 0 black(.75)
+    box-shadow $h-buttons-active-depth $h-buttons-active-depth 0 noir(.75)
     outline 0
 
   .iconic
@@ -53,5 +53,5 @@ h-inset-button()
 
   &:active
     transform none
-    border-color  black() white() white(.75) black(.25)
-    box-shadow inset $h-buttons-active-depth $h-buttons-active-depth 0 black(.25)
+    border-color  noir() blanc() blanc(.75) noir(.25)
+    box-shadow inset $h-buttons-active-depth $h-buttons-active-depth 0 noir(.25)

@@ -37,7 +37,7 @@
   -o-transition: background-color 0.25s, -o-transform 0.15s, box-shadow 0.15s;
   -ms-transition: background-color 0.25s, -ms-transform 0.15s, box-shadow 0.15s;
   transition: background-color 0.25s, transform 0.15s, box-shadow 0.15s;
-  color: black;
+  color: #000;
   text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(194,194,194,0)), color-stop(1, #c2c2c2));
   background: -webkit-linear-gradient(top, rgba(194,194,194,0) 0%, #c2c2c2 100%);
@@ -69,7 +69,7 @@
   background-color: #c2c2c2;
 }
 .h-btn.h-primary {
-  color: white;
+  color: #fff;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.5);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,120,166,0)), color-stop(1, #0078a6));
   background: -webkit-linear-gradient(top, rgba(0,120,166,0) 0%, #0078a6 100%);
@@ -86,7 +86,7 @@
   background-color: #0078a6;
 }
 .h-btn.h-danger {
-  color: white;
+  color: #fff;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.5);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(150,0,43,0)), color-stop(1, #96002b));
   background: -webkit-linear-gradient(top, rgba(150,0,43,0) 0%, #96002b 100%);
