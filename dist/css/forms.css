@@ -94,16 +94,16 @@
 .h-textarea::-webkit-input-placeholder {
   color: #aaa;
 }
-.h-input:not([type="submit"]):-moz-placeholder /* Firefox 18- */,
-.h-select:-moz-placeholder /* Firefox 18- */,
-.h-search:-moz-placeholder /* Firefox 18- */,
-.h-textarea:-moz-placeholder /* Firefox 18- */ {
+.h-input:not([type="submit"]):-moz-placeholder,
+.h-select:-moz-placeholder,
+.h-search:-moz-placeholder,
+.h-textarea:-moz-placeholder {
   color: #aaa;
 }
-.h-input:not([type="submit"])::-moz-placeholder /* Firefox 19+ */,
-.h-select::-moz-placeholder /* Firefox 19+ */,
-.h-search::-moz-placeholder /* Firefox 19+ */,
-.h-textarea::-moz-placeholder /* Firefox 19+ */ {
+.h-input:not([type="submit"])::-moz-placeholder,
+.h-select::-moz-placeholder,
+.h-search::-moz-placeholder,
+.h-textarea::-moz-placeholder {
   color: #aaa;
 }
 .h-input:not([type="submit"]):hover,
@@ -164,32 +164,32 @@
 .h-textarea:invalid::-webkit-input-placeholder {
   color: #ff4b7f;
 }
-.h-input:not([type="submit"]).ng-invalid:-moz-placeholder /* Firefox 18- */,
-.h-select.ng-invalid:-moz-placeholder /* Firefox 18- */,
-.h-search.ng-invalid:-moz-placeholder /* Firefox 18- */,
-.h-textarea.ng-invalid:-moz-placeholder /* Firefox 18- */,
-.h-input:not([type="submit"]).invalid:-moz-placeholder /* Firefox 18- */,
-.h-select.invalid:-moz-placeholder /* Firefox 18- */,
-.h-search.invalid:-moz-placeholder /* Firefox 18- */,
-.h-textarea.invalid:-moz-placeholder /* Firefox 18- */,
-.h-input:not([type="submit"]):invalid:-moz-placeholder /* Firefox 18- */,
-.h-select:invalid:-moz-placeholder /* Firefox 18- */,
-.h-search:invalid:-moz-placeholder /* Firefox 18- */,
-.h-textarea:invalid:-moz-placeholder /* Firefox 18- */ {
+.h-input:not([type="submit"]).ng-invalid:-moz-placeholder,
+.h-select.ng-invalid:-moz-placeholder,
+.h-search.ng-invalid:-moz-placeholder,
+.h-textarea.ng-invalid:-moz-placeholder,
+.h-input:not([type="submit"]).invalid:-moz-placeholder,
+.h-select.invalid:-moz-placeholder,
+.h-search.invalid:-moz-placeholder,
+.h-textarea.invalid:-moz-placeholder,
+.h-input:not([type="submit"]):invalid:-moz-placeholder,
+.h-select:invalid:-moz-placeholder,
+.h-search:invalid:-moz-placeholder,
+.h-textarea:invalid:-moz-placeholder {
   color: #ff4b7f;
 }
-.h-input:not([type="submit"]).ng-invalid::-moz-placeholder /* Firefox 19+ */,
-.h-select.ng-invalid::-moz-placeholder /* Firefox 19+ */,
-.h-search.ng-invalid::-moz-placeholder /* Firefox 19+ */,
-.h-textarea.ng-invalid::-moz-placeholder /* Firefox 19+ */,
-.h-input:not([type="submit"]).invalid::-moz-placeholder /* Firefox 19+ */,
-.h-select.invalid::-moz-placeholder /* Firefox 19+ */,
-.h-search.invalid::-moz-placeholder /* Firefox 19+ */,
-.h-textarea.invalid::-moz-placeholder /* Firefox 19+ */,
-.h-input:not([type="submit"]):invalid::-moz-placeholder /* Firefox 19+ */,
-.h-select:invalid::-moz-placeholder /* Firefox 19+ */,
-.h-search:invalid::-moz-placeholder /* Firefox 19+ */,
-.h-textarea:invalid::-moz-placeholder /* Firefox 19+ */ {
+.h-input:not([type="submit"]).ng-invalid::-moz-placeholder,
+.h-select.ng-invalid::-moz-placeholder,
+.h-search.ng-invalid::-moz-placeholder,
+.h-textarea.ng-invalid::-moz-placeholder,
+.h-input:not([type="submit"]).invalid::-moz-placeholder,
+.h-select.invalid::-moz-placeholder,
+.h-search.invalid::-moz-placeholder,
+.h-textarea.invalid::-moz-placeholder,
+.h-input:not([type="submit"]):invalid::-moz-placeholder,
+.h-select:invalid::-moz-placeholder,
+.h-search:invalid::-moz-placeholder,
+.h-textarea:invalid::-moz-placeholder {
   color: #ff4b7f;
 }
 .h-input:not([type="submit"]).disabled,
@@ -223,24 +223,24 @@
 .h-textarea:disabled::-webkit-input-placeholder {
   color: #ccc;
 }
-.h-input:not([type="submit"]).disabled:-moz-placeholder /* Firefox 18- */,
-.h-select.disabled:-moz-placeholder /* Firefox 18- */,
-.h-search.disabled:-moz-placeholder /* Firefox 18- */,
-.h-textarea.disabled:-moz-placeholder /* Firefox 18- */,
-.h-input:not([type="submit"]):disabled:-moz-placeholder /* Firefox 18- */,
-.h-select:disabled:-moz-placeholder /* Firefox 18- */,
-.h-search:disabled:-moz-placeholder /* Firefox 18- */,
-.h-textarea:disabled:-moz-placeholder /* Firefox 18- */ {
+.h-input:not([type="submit"]).disabled:-moz-placeholder,
+.h-select.disabled:-moz-placeholder,
+.h-search.disabled:-moz-placeholder,
+.h-textarea.disabled:-moz-placeholder,
+.h-input:not([type="submit"]):disabled:-moz-placeholder,
+.h-select:disabled:-moz-placeholder,
+.h-search:disabled:-moz-placeholder,
+.h-textarea:disabled:-moz-placeholder {
   color: #ccc;
 }
-.h-input:not([type="submit"]).disabled::-moz-placeholder /* Firefox 19+ */,
-.h-select.disabled::-moz-placeholder /* Firefox 19+ */,
-.h-search.disabled::-moz-placeholder /* Firefox 19+ */,
-.h-textarea.disabled::-moz-placeholder /* Firefox 19+ */,
-.h-input:not([type="submit"]):disabled::-moz-placeholder /* Firefox 19+ */,
-.h-select:disabled::-moz-placeholder /* Firefox 19+ */,
-.h-search:disabled::-moz-placeholder /* Firefox 19+ */,
-.h-textarea:disabled::-moz-placeholder /* Firefox 19+ */ {
+.h-input:not([type="submit"]).disabled::-moz-placeholder,
+.h-select.disabled::-moz-placeholder,
+.h-search.disabled::-moz-placeholder,
+.h-textarea.disabled::-moz-placeholder,
+.h-input:not([type="submit"]):disabled::-moz-placeholder,
+.h-select:disabled::-moz-placeholder,
+.h-search:disabled::-moz-placeholder,
+.h-textarea:disabled::-moz-placeholder {
   color: #ccc;
 }
 .h-input:not([type="submit"]):not(input):not(select),
