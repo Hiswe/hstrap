@@ -16,7 +16,6 @@ module.exports = (grunt) ->
           nospawn: true
         }
       }
-
     }
     stylus: {
       options: {
