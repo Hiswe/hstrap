@@ -25,7 +25,7 @@ module.exports = (grunt) ->
       }
       example: {
         options: {
-          paths : ['lib/hstrap', 'dist']
+          paths : ['dist']
         }
         files: {
           'dist/example.css': 'dist/example.styl'

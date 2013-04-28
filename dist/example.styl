@@ -1,6 +1,6 @@
 @import 'nib'
-@import '../lib/hstrap/mixins/index'
-@import '../lib/hstrap/values'
+@import './local-config'
+@import '../lib/hstrap'
 
 $example-shadow = inset 0 0 4px noir(.15)
 $menu-height    = px2em(32)
@@ -26,6 +26,10 @@ a.selected
   border-bottom 1px solid white
   border-top px2em(4) solid $h-pink
 
+  .hs-master-head
+    width 20.25em
+    flex 0
+
   h1
     color $h-pink
     font-family 'hiso_dark', Helvetica, sans-serif
@@ -35,6 +39,7 @@ a.selected
     font-size 4em
     text-align left
     margin-bottom .25em
+    crisp-font-smoothing()
 
   h4
     color $h-dark-grey
@@ -201,6 +206,11 @@ dd
   width 64%
   padding-left 1em
   margin-left -4px
+
+  ul
+    margin 0
+    padding 0
+    list-style none
 
 .danger
   color $h-pink

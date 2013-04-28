@@ -9,7 +9,7 @@ $$h-popover-arrow-outer-width = $h-popover-arrow-width + 1
   position absolute
   top 0
   left 0
-  z-index $h-popover-arrow-zindex
+  z-index $h-popover-zindex
   max-width 276px
   padding 1px
   text-align left // Reset given new insertion method
@@ -60,7 +60,7 @@ $$h-popover-arrow-outer-width = $h-popover-arrow-width + 1
     &:after
       bottom 1 - $$h-popover-arrow-outer-width
       margin-left -($h-popover-arrow-width)
-      border-top-color $h-popover-arrow-color
+      border-top-color $h-components-background
 
   &.right
     &:before,
@@ -73,7 +73,7 @@ $$h-popover-arrow-outer-width = $h-popover-arrow-width + 1
     &:after
       left 1 - $$h-popover-arrow-outer-width
       margin-top 1 - $$h-popover-arrow-outer-width
-      border-right-color $h-popover-arrow-color
+      border-right-color $h-components-background
 
   &.bottom
     &:before,
@@ -86,7 +86,7 @@ $$h-popover-arrow-outer-width = $h-popover-arrow-width + 1
     &:after
       top 1 - $$h-popover-arrow-outer-width
       margin-left -($h-popover-arrow-width)
-      border-bottom-color $h-popover-arrow-color
+      border-bottom-color $h-components-background
 
   &.left
     &:before,
@@ -99,7 +99,7 @@ $$h-popover-arrow-outer-width = $h-popover-arrow-width + 1
     &:after
       right 1 - $$h-popover-arrow-outer-width
       margin-top 1 - $$h-popover-arrow-outer-width
-      border-left-color $h-popover-arrow-color
+      border-left-color $h-components-background
 
 .h-popover-title
   margin 0 // reset heading margin
