@@ -15,14 +15,16 @@ reset-form()
   -webkit-appearance none
 
 // style input place holder
+// Firefox 18-
+// Firefox 19+
 placeHolder(color)
   &:-ms-input-placeholder
     color color
   &::-webkit-input-placeholder
      color color
-  &:-moz-placeholder /* Firefox 18- */
+  &:-moz-placeholder
      color color
-  &::-moz-placeholder  /* Firefox 19+ */
+  &::-moz-placeholder
      color color
 
 // Input

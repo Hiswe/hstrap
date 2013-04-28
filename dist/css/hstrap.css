@@ -191,6 +191,21 @@ a:visited:hover,
 .h-col:last-child {
   margin-right: 0;
 }
+.h-scrollbox {
+  background: -moz-linear-gradient(#fff 30%, rgba(255,255,255,0)), -moz-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -moz-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -moz-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
+  background: -webkit-linear-gradient(#fff 30%, rgba(255,255,255,0)), -webkit-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -webkit-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -webkit-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
+  background: -o-linear-gradient(#fff 30%, rgba(255,255,255,0)), -o-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -o-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -o-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
+  background: -ms-linear-gradient(#fff 30%, rgba(255,255,255,0)), -ms-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -ms-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -ms-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
+  background: linear-gradient(#fff 30%, rgba(255,255,255,0)), linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.2), rgba(0,0,0,0)), radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.2), rgba(0,0,0,0)) 0 100%;;
+  -webkit-background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  -moz-background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-attachment: local, local, scroll, scroll;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  height: 20em;
+  overflow: auto;
+}
 .h-popover {
   position: absolute;
   top: 0;

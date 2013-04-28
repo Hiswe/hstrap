@@ -38,6 +38,12 @@ module.exports = (grunt) ->
       forms: {files: {
         'dist/css/forms.css': 'lib/hstrap/forms/index.styl'
       }}
+      components: {files: {
+        'dist/css/components.css': 'lib/hstrap/components/index.styl'
+      }}
+      hstrap: {files: {
+        'dist/css/hstrap.css': 'lib/hstrap/index.styl'
+      }}
       lib: {
         files: {
           'dist/css/hstrap.css': 'lib/hstrap/index.styl'
