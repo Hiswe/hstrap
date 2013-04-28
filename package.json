@@ -1,7 +1,7 @@
 {
   "name": "hstrap",
   "description": "Stylus mixins, utilities and styles",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/Hiswe/hstrap.git"
@@ -16,6 +16,7 @@
     "grunt-contrib-watch": "~0.3.1",
     "grunt-contrib-copy": "~0.4.1"
   },
+  "homepage": "hiswe.github.io/hstrap",
   "author": {
     "name": "Hiswe Halya",
     "email": "hiswehalya@gmail.com"
