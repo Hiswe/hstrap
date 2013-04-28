@@ -33,13 +33,13 @@ module.exports = (grunt) ->
         }
       }
       scrollbox: {files: {
-        'dist/css/components/scrollbox.css': 'lib/hstrap/components/scrollbox.styl'
+        'dist/css/css-components/scrollbox.css': 'lib/hstrap/css-components/scrollbox.styl'
       }}
       forms: {files: {
         'dist/css/forms.css': 'lib/hstrap/forms/index.styl'
       }}
       components: {files: {
-        'dist/css/components.css': 'lib/hstrap/components/index.styl'
+        'dist/css/css-components.css': 'lib/hstrap/css-components/index.styl'
       }}
       hstrap: {files: {
         'dist/css/hstrap.css': 'lib/hstrap/index.styl'
@@ -54,9 +54,9 @@ module.exports = (grunt) ->
           'dist/css/links.css': 'lib/hstrap/links.styl'
           'dist/css/reset.css': 'lib/hstrap/reset.styl'
           'dist/css/type.css': 'lib/hstrap/type.styl'
-          'dist/css/components/box.css': 'lib/hstrap/components/box.styl'
-          'dist/css/components/popover.css': 'lib/hstrap/components/popover.styl'
-          'dist/css/components/scrollbox.css': 'lib/hstrap/components/scrollbox.styl'
+          'dist/css/css-components/box.css': 'lib/hstrap/css-components/box.styl'
+          'dist/css/css-components/popover.css': 'lib/hstrap/css-components/popover.styl'
+          'dist/css/css-components/scrollbox.css': 'lib/hstrap/css-components/scrollbox.styl'
         }
       }
     }
