@@ -32,11 +32,12 @@ module.exports = (grunt) ->
           'dist/example.css': 'dist/example.styl'
         }
       }
-      scrollbox: {
-        files: {
-          'dist/css/components/scrollbox.css': 'lib/hstrap/components/scrollbox.styl'
-        }
-      }
+      scrollbox: {files: {
+        'dist/css/components/scrollbox.css': 'lib/hstrap/components/scrollbox.styl'
+      }}
+      forms: {files: {
+        'dist/css/forms.css': 'lib/hstrap/forms/index.styl'
+      }}
       lib: {
         files: {
           'dist/css/hstrap.css': 'lib/hstrap/index.styl'

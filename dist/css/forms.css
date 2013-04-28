@@ -37,7 +37,7 @@
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIxIiBoZWlnaHQ9IjQ1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxyZWN0IGZpbGw9IiNFNUU1RTUiIGhlaWdodD0iNDUiIHdpZHRoPSIxIi8+CiAgPHBvbHlnb24gZmlsbD0iI0U1RTVFNSIgcG9pbnRzPSI2LDIyIDEwLjk5OSwxNCAxNiwyMiAiLz4KICA8cG9seWdvbiBmaWxsPSIjRTVFNUU1IiBwb2ludHM9IjE2LDI1IDExLjAwMSwzMyA2LDI1ICIvPgogPC9nPgo8L3N2Zz4=");
 }
 @-moz-document url-prefix() {
-  select {
+  .h-select {
     padding-top: 0.25em;
     padding-right: 1px;
     background: none;
