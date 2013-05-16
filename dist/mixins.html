@@ -29,6 +29,7 @@
   <menu class="hs-submenu">
     <ul class="h-box">
       <li><a href="#general">General</a></li>
+      <li><a href="#ie">IE8</a></li>
       <li><a href="#buttons">Buttons</a></li>
       <li><a href="#forms">Forms</a></li>
       <li><a href="#box">Box</a></li>
@@ -65,10 +66,27 @@
           <dd>Shortcut for rgba(black, .5)</dd>
           <dt>bg-cover()</dt>
           <dd>Tile the background to the borders with <i>background-size: cover</i></dd>
+          <dt>v-align()</dt>
+          <dd>Vertical align in a fixed height container</dd>
           <dt>flex-row()</dt>
           <dd>Flex-box row
             <span class="danger">Compatibility issues: <a href="https://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html">Adobe new flexbox article</a></span>
           </dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="ie">
+      <h2>IE8 compatible mixins <small>mixins/ie</small></h2>
+      <div class="hs-box">
+        <dl>
+          <dt>bg-full-page(url)</dt>
+          <dd>
+            Fit a background to 100% of the viewport<br>
+            <span class="danger">Shouldn't be used on html or body for ie8. <a href="http://css-tricks.com/perfect-full-page-background-image/">See css-trick article</a>.</span>
+          </dd>
+          <dt>t-matrix(a, c, b, d)</dt>
+          <dd>Matrix transform without translation. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">See matrix transform article on MDN</a></dd>
         </dl>
       </div>
     </section>

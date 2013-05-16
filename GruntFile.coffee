@@ -62,7 +62,7 @@ module.exports = (grunt) ->
         files: [
           {
             expand: true
-            cwd: 'components/hiso-font/font/'
+            cwd: 'components/HisoFont/font/'
             src: '*'
             dest: 'dist/font'
             filter: 'isFile'
@@ -77,7 +77,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-copy'
 
   grunt.registerTask 'help', ->
-    grunt.log.writeln 'grunt build:', 'Build css'
+    grunt.log.writeln 'grunt lib:', 'build css'
+    grunt.log.writeln 'grunt font:', 'copy hiso-font'
+    grunt.log.writeln 'grunt example:', 'build css for documentation'
+    grunt.log.writeln 'grunt build:', 'lib and font'
 
   grunt.registerTask 'clean-font', ->
     grunt.file.delete('dist/font') if grunt.file.exists('dist/font')
@@ -85,7 +88,9 @@ module.exports = (grunt) ->
   grunt.registerTask 'clean-css', ->
     grunt.file.delete('dist/css') if grunt.file.exists('dist/css')
 
+
   grunt.registerTask 'lib', ['clean-css', 'stylus:lib', 'stylus:components']
   grunt.registerTask 'font', ['clean-font','copy:font']
+  grunt.registerTask 'example', ['stylus:example']
   grunt.registerTask 'build', ['lib', 'stylus:example', 'font']
   grunt.registerTask 'default', ['help']

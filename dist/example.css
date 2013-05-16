@@ -726,7 +726,7 @@ a.selected {
 }
 .hs-menu h1 {
   color: #df006f;
-  font-family: 'hiso_dark', Helvetica, sans-serif;
+  font-family: 'hiso-bright', Helvetica, sans-serif;
   font-weight: normal;
   margin: 0.25em 0;
   text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
@@ -770,7 +770,7 @@ a.selected {
   padding-top: 0;
 }
 .hs-title {
-  font-family: 'hiso_dark', Helvetica, sans-serif;
+  font-family: 'hiso-dark', Helvetica, sans-serif;
   font-weight: normal;
   font-size: 2.5em;
 }
@@ -812,7 +812,7 @@ a.selected {
 section > h2 {
   margin: 1em 0 0.5em;
   color: #df006f;
-  font-family: 'hiso_dark', Helvetica, sans-serif;
+  font-family: 'hiso-dark', Helvetica, sans-serif;
   font-weight: normal;
   font-size: 2.5em;
   -webkit-font-smoothing: antialiased;

@@ -18,7 +18,7 @@ crisp-font-smoothing()
 css-filter(properties)
   vendor('filter', unquote(properties), only: webkit moz ms official)
 
-// Add alpha chanel to a color
+// Add alpha chanel to white and black
 blanc(opacity = 0.5)
   rgba(white, opacity)
 
@@ -30,6 +30,18 @@ bg-cover()
   background-size cover
   background-clip border-box
   background-origin border-box
+
+// Vertical align in a fixed height container
+v-align()
+  &:before,
+  > *
+    display inline-block
+    vertical-align middle
+
+  &:before
+    content ' '
+    width 0
+    height 100%
 
 // flex box row
 flex-row()
