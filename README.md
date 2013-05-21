@@ -24,6 +24,7 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
  
 ## Release History
 	
+- **0.3.4** — Fix more flexible box mixin...
 - **0.3.4** — More flexible box mixin
 - **0.3.3** — Clean *@imports* for faster compilation
 - **before** — A lot of stuff
