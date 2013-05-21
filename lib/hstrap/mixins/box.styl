@@ -1,11 +1,15 @@
 @import 'nib/vendor'
 @import '../values'
 
-h-box()
+h-box-base($$border, $$background)
   padding $h-gutter
-  border 1px solid $h-components-border
-  box-shadow $h-components-depth $h-components-depth 0 0 rgba($h-components-shadow, 0.25)
+  border 1px solid $$border
   background $h-components-background
 
-h-box-inset()
-  box-shadow inset $h-components-depth $h-components-depth 0 0 rgba($h-components-shadow, 0.15)
+h-box($$border = $h-components-border, $$background = $h-components-background, $$shadow = $h-components-shadow)
+  h-box-base($$border, $$background)
+  box-shadow $h-components-depth $h-components-depth 0 0 rgba($$shadow, 0.25)
+
+h-box-inset($$border = $h-components-border, $$background = $h-components-background, $$shadow = $h-components-shadow)
+  h-box-base($$border, $$background)
+  box-shadow inset $h-components-depth $h-components-depth 0 0 rgba($$shadow, 0.15)

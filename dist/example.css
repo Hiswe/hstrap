@@ -541,15 +541,17 @@ a:visited:hover,
 .h-input-group {
   position: relative;
 }
-.h-box,
+.h-box {
+  padding: 16px;
+  border: 1px solid #c2c2c2;
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
+  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
+}
 .h-box-inset {
   padding: 16px;
   border: 1px solid #c2c2c2;
-  -webkit-box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
-  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
   background: #fff;
-}
-.h-box-inset {
   -webkit-box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
   box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
 }
@@ -725,7 +727,6 @@ a.selected {
   flex: 0;
 }
 .hs-menu h1 {
-  color: #df006f;
   font-family: 'hiso-bright', Helvetica, sans-serif;
   font-weight: normal;
   margin: 0.25em 0;
@@ -734,6 +735,9 @@ a.selected {
   text-align: left;
   margin-bottom: 0.25em;
   -webkit-font-smoothing: antialiased;
+}
+.hs-menu h1 a {
+  color: #df006f;
 }
 .hs-menu h4 {
   color: #c2c2c2;
@@ -752,7 +756,7 @@ a.selected {
 .hs-menu li {
   padding-top: 2em;
 }
-.hs-menu a {
+.hs-menu li a {
   padding: 0.25em 0.5em;
 }
 .hs-small-menu {
@@ -941,8 +945,11 @@ aside.h-popover {
 .hs-box {
   padding: 16px;
   border: 1px solid #c2c2c2;
+  background: #fff;
   -webkit-box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
   box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
+  padding: 16px;
+  border: 1px solid #c2c2c2;
   background: #fff;
   -webkit-box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
   box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);

@@ -1,12 +1,14 @@
-.h-box,
+.h-box {
+  padding: 16px;
+  border: 1px solid #c2c2c2;
+  background: #fff;
+  -webkit-box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
+  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
+}
 .h-box-inset {
   padding: 16px;
   border: 1px solid #c2c2c2;
-  -webkit-box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
-  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
   background: #fff;
-}
-.h-box-inset {
   -webkit-box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
   box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
 }
