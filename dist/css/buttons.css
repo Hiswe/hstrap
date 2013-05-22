@@ -104,7 +104,7 @@
 }
 .h-btn[disabled],
 .h-btn.h-disabled {
-  cursor: default;
+  cursor: not-allowed;
   opacity: 0.65;
   filter: alpha(opacity=65);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";

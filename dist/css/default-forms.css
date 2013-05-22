@@ -232,42 +232,76 @@ textarea:invalid::-moz-placeholder {
 input:not([type="submit"]).disabled,
 select.disabled,
 textarea.disabled,
+input:not([type="submit"]).disabled:hover,
+select.disabled:hover,
+textarea.disabled:hover,
 input:not([type="submit"]):disabled,
 select:disabled,
-textarea:disabled {
+textarea:disabled,
+input:not([type="submit"]):disabled:hover,
+select:disabled:hover,
+textarea:disabled:hover {
+  cursor: not-allowed;
   background: #eee;
   color: #999;
+  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
+  border: 1px solid #c2c2c2;
 }
 input:not([type="submit"]).disabled:-ms-input-placeholder,
 select.disabled:-ms-input-placeholder,
 textarea.disabled:-ms-input-placeholder,
+input:not([type="submit"]).disabled:hover:-ms-input-placeholder,
+select.disabled:hover:-ms-input-placeholder,
+textarea.disabled:hover:-ms-input-placeholder,
 input:not([type="submit"]):disabled:-ms-input-placeholder,
 select:disabled:-ms-input-placeholder,
-textarea:disabled:-ms-input-placeholder {
+textarea:disabled:-ms-input-placeholder,
+input:not([type="submit"]):disabled:hover:-ms-input-placeholder,
+select:disabled:hover:-ms-input-placeholder,
+textarea:disabled:hover:-ms-input-placeholder {
   color: #ccc;
 }
 input:not([type="submit"]).disabled::-webkit-input-placeholder,
 select.disabled::-webkit-input-placeholder,
 textarea.disabled::-webkit-input-placeholder,
+input:not([type="submit"]).disabled:hover::-webkit-input-placeholder,
+select.disabled:hover::-webkit-input-placeholder,
+textarea.disabled:hover::-webkit-input-placeholder,
 input:not([type="submit"]):disabled::-webkit-input-placeholder,
 select:disabled::-webkit-input-placeholder,
-textarea:disabled::-webkit-input-placeholder {
+textarea:disabled::-webkit-input-placeholder,
+input:not([type="submit"]):disabled:hover::-webkit-input-placeholder,
+select:disabled:hover::-webkit-input-placeholder,
+textarea:disabled:hover::-webkit-input-placeholder {
   color: #ccc;
 }
 input:not([type="submit"]).disabled:-moz-placeholder,
 select.disabled:-moz-placeholder,
 textarea.disabled:-moz-placeholder,
+input:not([type="submit"]).disabled:hover:-moz-placeholder,
+select.disabled:hover:-moz-placeholder,
+textarea.disabled:hover:-moz-placeholder,
 input:not([type="submit"]):disabled:-moz-placeholder,
 select:disabled:-moz-placeholder,
-textarea:disabled:-moz-placeholder {
+textarea:disabled:-moz-placeholder,
+input:not([type="submit"]):disabled:hover:-moz-placeholder,
+select:disabled:hover:-moz-placeholder,
+textarea:disabled:hover:-moz-placeholder {
   color: #ccc;
 }
 input:not([type="submit"]).disabled::-moz-placeholder,
 select.disabled::-moz-placeholder,
 textarea.disabled::-moz-placeholder,
+input:not([type="submit"]).disabled:hover::-moz-placeholder,
+select.disabled:hover::-moz-placeholder,
+textarea.disabled:hover::-moz-placeholder,
 input:not([type="submit"]):disabled::-moz-placeholder,
 select:disabled::-moz-placeholder,
-textarea:disabled::-moz-placeholder {
+textarea:disabled::-moz-placeholder,
+input:not([type="submit"]):disabled:hover::-moz-placeholder,
+select:disabled:hover::-moz-placeholder,
+textarea:disabled:hover::-moz-placeholder {
   color: #ccc;
 }
 input:not([type="submit"]):not(input):not(select),
@@ -281,6 +315,10 @@ textarea {
   height: auto;
   min-height: 5em;
   resize: vertical;
+}
+textarea.disabled,
+textarea:disabled {
+  resize: none;
 }
 select {
   -webkit-appearance: none;

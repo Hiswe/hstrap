@@ -57,11 +57,17 @@ h-input()
     placeHolder(lighten(@color, 50%))
 
   &.disabled,
-  &:disabled
+  &.disabled:hover,
+  &:disabled,
+  &:disabled:hover
+    cursor not-allowed
     background #EEE
     color #999
+    box-shadow inset 2px 2px 0 noir(.07)
+    border 1px solid $h-input-idle
     placeHolder(lighten(@color, 50%))
 
+  // Fake input
   &:not(input):not(select)
     padding-top .5em
 
@@ -92,6 +98,10 @@ h-textarea()
   height auto
   min-height 5em
   resize vertical
+
+  &.disabled,
+  &:disabled
+    resize none
 
 // Presentation
 h-fieldset()

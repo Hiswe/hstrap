@@ -23,6 +23,10 @@
   min-height: 5em;
   resize: vertical;
 }
+.h-textarea.disabled,
+.h-textarea:disabled {
+  resize: none;
+}
 .h-select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -196,51 +200,95 @@
 .h-select.disabled,
 .h-search.disabled,
 .h-textarea.disabled,
+.h-input:not([type="submit"]).disabled:hover,
+.h-select.disabled:hover,
+.h-search.disabled:hover,
+.h-textarea.disabled:hover,
 .h-input:not([type="submit"]):disabled,
 .h-select:disabled,
 .h-search:disabled,
-.h-textarea:disabled {
+.h-textarea:disabled,
+.h-input:not([type="submit"]):disabled:hover,
+.h-select:disabled:hover,
+.h-search:disabled:hover,
+.h-textarea:disabled:hover {
+  cursor: not-allowed;
   background: #eee;
   color: #999;
+  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
+  border: 1px solid #c2c2c2;
 }
 .h-input:not([type="submit"]).disabled:-ms-input-placeholder,
 .h-select.disabled:-ms-input-placeholder,
 .h-search.disabled:-ms-input-placeholder,
 .h-textarea.disabled:-ms-input-placeholder,
+.h-input:not([type="submit"]).disabled:hover:-ms-input-placeholder,
+.h-select.disabled:hover:-ms-input-placeholder,
+.h-search.disabled:hover:-ms-input-placeholder,
+.h-textarea.disabled:hover:-ms-input-placeholder,
 .h-input:not([type="submit"]):disabled:-ms-input-placeholder,
 .h-select:disabled:-ms-input-placeholder,
 .h-search:disabled:-ms-input-placeholder,
-.h-textarea:disabled:-ms-input-placeholder {
+.h-textarea:disabled:-ms-input-placeholder,
+.h-input:not([type="submit"]):disabled:hover:-ms-input-placeholder,
+.h-select:disabled:hover:-ms-input-placeholder,
+.h-search:disabled:hover:-ms-input-placeholder,
+.h-textarea:disabled:hover:-ms-input-placeholder {
   color: #ccc;
 }
 .h-input:not([type="submit"]).disabled::-webkit-input-placeholder,
 .h-select.disabled::-webkit-input-placeholder,
 .h-search.disabled::-webkit-input-placeholder,
 .h-textarea.disabled::-webkit-input-placeholder,
+.h-input:not([type="submit"]).disabled:hover::-webkit-input-placeholder,
+.h-select.disabled:hover::-webkit-input-placeholder,
+.h-search.disabled:hover::-webkit-input-placeholder,
+.h-textarea.disabled:hover::-webkit-input-placeholder,
 .h-input:not([type="submit"]):disabled::-webkit-input-placeholder,
 .h-select:disabled::-webkit-input-placeholder,
 .h-search:disabled::-webkit-input-placeholder,
-.h-textarea:disabled::-webkit-input-placeholder {
+.h-textarea:disabled::-webkit-input-placeholder,
+.h-input:not([type="submit"]):disabled:hover::-webkit-input-placeholder,
+.h-select:disabled:hover::-webkit-input-placeholder,
+.h-search:disabled:hover::-webkit-input-placeholder,
+.h-textarea:disabled:hover::-webkit-input-placeholder {
   color: #ccc;
 }
 .h-input:not([type="submit"]).disabled:-moz-placeholder,
 .h-select.disabled:-moz-placeholder,
 .h-search.disabled:-moz-placeholder,
 .h-textarea.disabled:-moz-placeholder,
+.h-input:not([type="submit"]).disabled:hover:-moz-placeholder,
+.h-select.disabled:hover:-moz-placeholder,
+.h-search.disabled:hover:-moz-placeholder,
+.h-textarea.disabled:hover:-moz-placeholder,
 .h-input:not([type="submit"]):disabled:-moz-placeholder,
 .h-select:disabled:-moz-placeholder,
 .h-search:disabled:-moz-placeholder,
-.h-textarea:disabled:-moz-placeholder {
+.h-textarea:disabled:-moz-placeholder,
+.h-input:not([type="submit"]):disabled:hover:-moz-placeholder,
+.h-select:disabled:hover:-moz-placeholder,
+.h-search:disabled:hover:-moz-placeholder,
+.h-textarea:disabled:hover:-moz-placeholder {
   color: #ccc;
 }
 .h-input:not([type="submit"]).disabled::-moz-placeholder,
 .h-select.disabled::-moz-placeholder,
 .h-search.disabled::-moz-placeholder,
 .h-textarea.disabled::-moz-placeholder,
+.h-input:not([type="submit"]).disabled:hover::-moz-placeholder,
+.h-select.disabled:hover::-moz-placeholder,
+.h-search.disabled:hover::-moz-placeholder,
+.h-textarea.disabled:hover::-moz-placeholder,
 .h-input:not([type="submit"]):disabled::-moz-placeholder,
 .h-select:disabled::-moz-placeholder,
 .h-search:disabled::-moz-placeholder,
-.h-textarea:disabled::-moz-placeholder {
+.h-textarea:disabled::-moz-placeholder,
+.h-input:not([type="submit"]):disabled:hover::-moz-placeholder,
+.h-select:disabled:hover::-moz-placeholder,
+.h-search:disabled:hover::-moz-placeholder,
+.h-textarea:disabled:hover::-moz-placeholder {
   color: #ccc;
 }
 .h-input:not([type="submit"]):not(input):not(select),
