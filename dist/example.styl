@@ -229,3 +229,108 @@ aside.h-popover
   h-box()
   h-box-inset()
   background-image embedurl('media/stripe_a028efdbf39d1d58806f780f3cc1d323.png')
+
+.easing-demo,
+.easing-demo li,
+.easing-demo p
+  reset-box-model()
+  list-style none
+
+.easing-demo li
+  padding .85em 0
+
+  p, .easing-test
+    display inline-block
+
+  p
+    font-weight bold
+    width 20%
+    padding-right 1em
+    cursor pointer
+    text-align right
+
+  .easing-test
+    position relative
+    width 300px
+    margin-top .5em
+    border 1px solid noir(.15)
+    border-width 1px 0
+    perspective 300px
+
+    .easing-cursor
+      width 1.5em; height 1.5em
+      display block
+      margin -(@height/2) 0 0 -(@width/2)
+      absolute top left
+      background $h-blue
+
+  &:hover
+    p
+      color $h-pink
+
+    .easing-cursor
+      transform translate3d(300px, 0 , 0)
+
+.easing-cursor
+  transition-property   transform
+  transition-duration   1.5s
+
+  .linear &
+    transition-timing-function h-ease("linear")
+  .ease &
+    transition-timing-function h-ease("ease")
+  .ease-in &
+    transition-timing-function h-ease("ease-in")
+  .ease-out &
+    transition-timing-function h-ease("ease-out")
+  .ease-in-out &
+    transition-timing-function h-ease("ease-in-out")
+  .easeInQuad &
+    transition-timing-function h-ease("easeInQuad")
+  .easeInCubic &
+    transition-timing-function h-ease("easeInCubic")
+  .easeInQuart &
+    transition-timing-function h-ease("easeInQuart")
+  .easeInQuint &
+    transition-timing-function h-ease("easeInQuint")
+  .easeInSine &
+    transition-timing-function h-ease("easeInSine")
+  .easeInExpo &
+    transition-timing-function h-ease("easeInExpo")
+  .easeInCirc &
+    transition-timing-function h-ease("easeInCirc")
+  .easeInBack &
+    transition-timing-function h-ease("easeInBack")
+  .easeOutQuad &
+    transition-timing-function h-ease("easeOutQuad")
+  .easeOutCubic &
+    transition-timing-function h-ease("easeOutCubic")
+  .easeOutQuart &
+    transition-timing-function h-ease("easeOutQuart")
+  .easeOutQuint &
+    transition-timing-function h-ease("easeOutQuint")
+  .easeOutSine &
+    transition-timing-function h-ease("easeOutSine")
+  .easeOutExpo &
+    transition-timing-function h-ease("easeOutExpo")
+  .easeOutCirc &
+    transition-timing-function h-ease("easeOutCirc")
+  .easeOutBack &
+    transition-timing-function h-ease("easeOutBack")
+  .easeInOutQuad &
+    transition-timing-function h-ease("easeInOutQuad")
+  .easeInOutCubic &
+    transition-timing-function h-ease("easeInOutCubic")
+  .easeInOutQuart &
+    transition-timing-function h-ease("easeInOutQuart")
+  .easeInOutQuint &
+    transition-timing-function h-ease("easeInOutQuint")
+  .easeInOutSine &
+    transition-timing-function h-ease("easeInOutSine")
+  .easeInOutExpo &
+    transition-timing-function h-ease("easeInOutExpo")
+  .easeInOutCirc &
+    transition-timing-function h-ease("easeInOutCirc")
+  .easeInOutBack &
+    transition-timing-function h-ease("easeInOutBack")
+

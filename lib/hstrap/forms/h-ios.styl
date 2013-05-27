@@ -2,6 +2,7 @@
 @import 'nib/gradients'
 @import '../values'
 @import '../mixins/form-elements'
+@import '../mixins/h-ease'
 
 // Shamefully pasted from
 // http://cssdeck.com/labs/css-checkbox-styles
@@ -40,7 +41,7 @@
     width 50%;
     box-sizing border-box
 
-    transition all .4s ease
+    transition all .4s h-ease('ease')
     cursor pointer
     position absolute
     top -1px; bottom -1px; left -1px

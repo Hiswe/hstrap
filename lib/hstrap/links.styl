@@ -1,12 +1,13 @@
 @import 'nib/vendor'
 @import './values'
+@import './mixins/h-ease'
 
 a,
 a:visited
 .h-link
   color $h-dark-blue
   text-decoration none
-  transition color .25s
+  transition color .25s h-ease()
 
   &:hover
     color $h-blue
