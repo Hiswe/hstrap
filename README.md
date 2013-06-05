@@ -25,9 +25,9 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
 
 ## Release History
 
-- **0.3.8** — Add a stem mixins
+- **0.3.8** — Add a stem mixin
 - **0.3.7** — Add easing mixins
-- **0.3.6** — No hover on disabled inputs + not-allowed cursor on disbaled inputs & buttons
+- **0.3.6** — No hover on disabled inputs + not-allowed cursor on disabled inputs & buttons
 - **0.3.5** — Fix more flexible box mixin…
 - **0.3.4** — More flexible box mixin
 - **0.3.3** — Clean *@imports* for faster compilation
