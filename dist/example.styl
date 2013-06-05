@@ -230,6 +230,25 @@ aside.h-popover
   h-box-inset()
   background-image embedurl('media/stripe_a028efdbf39d1d58806f780f3cc1d323.png')
 
+  .hs-box
+    margin-top .5em
+    background-image none
+
+.hs-stem
+  $$stem-size = .75em
+  position relative
+  line-height 3em
+  background lighten($h-components-border, 75%)
+  border 2px solid $h-components-border
+  text-align center
+
+  &::before
+    stem("left", $h-components-border, $$stem-size)
+    position absolute
+    margin-top -($$stem-size)
+    left -($$stem-size)
+    top 50%
+
 .easing-demo,
 .easing-demo li,
 .easing-demo p

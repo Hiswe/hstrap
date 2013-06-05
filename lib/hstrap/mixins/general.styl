@@ -49,3 +49,24 @@ flex-row()
   display flex
   align-content stretch
   flex-direction row
+
+// Generate a stem
+stem($$direction = "top", $$color = $h-components-border, $$width = .5em)
+  display block
+  width 0; height 0
+  content "" // In case of pseudo elements
+  border $$width solid transparent
+
+  if $$direction == "right"
+    border-right-width 0
+    border-left-color $$color
+  else if $$direction == "bottom"
+    border-top-color $$color
+    border-bottom-width 0
+  else if $$direction == "left"
+    border-left-width 0
+    border-right-color $$color
+  else
+    border-top-width 0
+    border-bottom-color $$color
+

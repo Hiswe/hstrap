@@ -80,14 +80,14 @@ module.exports = (grunt) ->
     grunt.log.writeln 'grunt lib:', 'build css'
     grunt.log.writeln 'grunt font:', 'copy hiso-font'
     grunt.log.writeln 'grunt example:', 'build css for documentation'
-    grunt.log.writeln 'grunt build:', 'lib and font'
+    grunt.log.writeln 'grunt build:', 'lib, example and font'
+    grunt.log.writeln 'grunt watch:', 'lib and example on files change'
 
   grunt.registerTask 'clean-font', ->
     grunt.file.delete('dist/font') if grunt.file.exists('dist/font')
 
   grunt.registerTask 'clean-css', ->
     grunt.file.delete('dist/css') if grunt.file.exists('dist/css')
-
 
   grunt.registerTask 'lib', ['clean-css', 'stylus:lib', 'stylus:components']
   grunt.registerTask 'font', ['clean-font','copy:font']
