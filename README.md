@@ -25,6 +25,7 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
 
 ## Release History
 
+- **0.3.9** — Fix issue when included with grunt-contrib-stylus
 - **0.3.8** — Add a stem mixin
 - **0.3.7** — Add easing mixins
 - **0.3.6** — No hover on disabled inputs + not-allowed cursor on disabled inputs & buttons

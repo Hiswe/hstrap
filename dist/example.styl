@@ -18,6 +18,7 @@ body
 a.selected
   color $h-blue
 
+
 // Top menu
 .hs-menu
   background #262626
@@ -27,8 +28,7 @@ a.selected
   border-top px2em(4) solid $h-pink
 
   .hs-master-head
-    width 20.25em
-    flex 0
+    flex 0 0 18em
 
   h1
 
@@ -353,3 +353,26 @@ aside.h-popover
   .easeInOutBack &
     transition-timing-function h-ease("easeInOutBack")
 
+// Github link
+aside
+  absolute top right
+  width 15em; height 11.5em;
+  overflow: hidden
+
+  a
+    display block
+    margin-top 10em; padding .25em 1em; width 100%
+    background #444
+    text-align center; color #222; font-weight bold
+    text-shadow 1px 1px rgba(255,255,255,0.15); text-decoration none
+    transform rotate(45deg)
+    transform-origin top right
+    transition background .25s
+
+    &:hover
+      background: #555
+
+    span
+      display block; padding .25em 0
+      border dashed 1px rgba(0, 0, 0, 0.5); border-width 1px 0
+      color @color
