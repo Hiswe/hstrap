@@ -6,9 +6,11 @@
     "type": "git",
     "url": "git://github.com/Hiswe/hstrap.git"
   },
+  "dependencies": {
+    "stylus": "~0.37.0",
+    "nib": "~1.0.1"
+  },
   "devDependencies": {
-    "stylus": "~0.32.1",
-    "nib": "~0.9.1",
     "jade": "~0.28.2",
     "connect": "~2.7.4",
     "grunt": "~0.4.1",
