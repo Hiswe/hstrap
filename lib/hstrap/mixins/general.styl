@@ -70,3 +70,30 @@ stem($$direction = "top", $$color = $h-components-border, $$width = .5em)
     border-top-width 0
     border-bottom-color $$color
 
+// Absolute centering with variable size
+// See http://css-tricks.com/centering-percentage-widthheight-elements/
+percentCenter()
+  position absolute; left 50%; top @left
+  transform translate(-50%, -50%)
+
+// get x & y with angle + distance
+// cos & sin function take already care of angle unit
+angle2xy($$angle = 0deg, $$distance = 1)
+  x = $$distance * cos($$angle)
+  y = $$distance * sin($$angle)
+  return x y
+
+// get top & left with angle + distance
+// Shift is there to correct object size
+angle2topLeft($$angle = 0deg, $$distance = 1em, $$shiftX = false, $$shiftY = false)
+  $$shiftX = 0 unless $$shiftX
+  $$shiftY = $$shiftX unless $$shiftY
+
+  coords = angle2xy($$angle, $$distance)
+
+  left $$shiftX + coords[0]
+  top  $$shiftY - coords[1]
+
+// Everyone need circles
+circle()
+  border-radius 666em

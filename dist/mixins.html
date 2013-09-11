@@ -43,11 +43,11 @@
       <h2>General <small>mixins/general</small></h2>
       <div class="hs-box">
         <dl>
-          <dt>px2em(px, [ref = 16px])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L6">px2em</a>(px, [ref = 16px])</dt>
           <dd>
             Convert a pixel size into em according to the reference.
            </dd>
-          <dt>crisp-font-smoothing()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L15">crisp-font-smoothing</a>()</dt>
           <dd>
             Non-standard property which change the way the browser render the font.<br>
             Could be usefull on some typography (like the one I use for titles) where letters should be rendered thinner.<br><br>
@@ -56,29 +56,50 @@
             Maybe generating font with <a href="http://cufon.shoqolate.com/generate/">Cufon</a> could fix the "bold rendering". <br>
             If so, this mixin will be removed
           </dd>
-          <dt>css-filter(properties)</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L19">css-filter</a>(properties)</dt>
           <dd>
             Fix conflict with the <a href="http://learnboost.github.io/stylus/docs/bifs.html">build-in stylus saturate() function</a>
             <span class="danger">This mixin use the stylus unquote function, so properties has to be a string</span>
           </dd>
-          <dt>blanc([opacity = 0.5])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L23">blanc</a>([opacity = 0.5])</dt>
           <dd>Shortcut for rgba(white, .5)</dd>
-          <dt>noir([opacity = 0.5])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L26">noir</a>([opacity = 0.5])</dt>
           <dd>Shortcut for rgba(black, .5)</dd>
-          <dt>bg-cover()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L30">bg-cover</a>()</dt>
           <dd>Tile the background to the borders with <i>background-size: cover</i></dd>
-          <dt>v-align()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L36">v-align</a>()</dt>
           <dd>Vertical align in a fixed height container</dd>
-          <dt>flex-row()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L48">flex-row</a>()</dt>
           <dd>Flex-box row
             <span class="danger">Compatibility issues: <a href="https://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html">Adobe new flexbox article</a></span>
           </dd>
-          <dt>stem([direction = "top", color = $h-components-border, width = .5em])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L54">stem</a>([direction = "top", color = $h-components-border, width = .5em])</dt>
           <dd>generate a stem that can be applied on pseudo elements
+              <span class="danger">The stem is not positioned</span>
               <div class="hs-box">
                 <div class="hs-stem">A brilliant stem example</div>
               </div>
           </dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L75">percentCenter</a>()</dt>
+          <dd>absolute center using this <a href="http://css-tricks.com/centering-percentage-widthheight-elements/">css-tricks trick</a></dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L81">angle2xy</a>([angle = 0deg], [distance = 1])</dt>
+          <dd>Retreive x &amp; y with an angle + distance</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L88">angle2topLeft</a>([angle = 0deg], [distance = 1em; $$shiftX = false, $$shiftY = false])</dt>
+          <dd>Retreive top &amp; left with an angle + distance
+            <div class="hs-box angle-demo">
+                <ul>
+                  <li>0</li>
+                  <li>30</li>
+                  <li>-45</li>
+                  <li>90</li>
+                  <li>-90</li>
+                  <li>180</li>
+                  <li>585</li>
+                </ul>
+            </div>
+          </dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L98">circle</a>()</dt>
+          <dd class="circle-demo"><p>Excessive round corner</p></dd>
         </dl>
       </div>
     </section>
@@ -123,12 +144,12 @@
       <h2>IE8 compatible mixins <small>mixins/ie</small></h2>
       <div class="hs-box">
         <dl>
-          <dt>bg-full-page(url)</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/ie.styl#L4">bg-full-page</a>(url)</dt>
           <dd>
             Fit a background to 100% of the viewport<br>
             <span class="danger">Shouldn't be used on html or body for ie8. <a href="http://css-tricks.com/perfect-full-page-background-image/">See css-trick article</a>.</span>
           </dd>
-          <dt>t-matrix(a, c, b, d)</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/ie.styl#L12">t-matrix</a>(a, c, b, d)</dt>
           <dd>Matrix transform without translation. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">See matrix transform article on MDN</a></dd>
         </dl>
       </div>
@@ -138,14 +159,14 @@
       <h2>Buttons <small>mixins/buttons</small></h2>
       <div class="hs-box">
         <dl>
-          <dt>h-btn-color(light, medium, dark)</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L7">h-btn-color</a>(light, medium, dark)</dt>
           <dd>
             Give 3 colors to have all :active &amp; :hover state background-colors<br>
             Text color (white or black) is defined with the darkest color
           </dd>
-          <dt>h-btn()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L24">h-btn</a>()</dt>
           <dd>Main mixin to have a h-btn style</dd>
-          <dt>h-inset-button()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L50">h-inset-button</a>()</dt>
           <dd>Main mixin to have a h-btn inset style</dd>
         </dl>
       </div>
@@ -155,23 +176,23 @@
       <h2>Forms <small>mixins/form-elements</small></h2>
       <div class="hs-box">
         <dl>
-          <dt>reset-form()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L11">reset-form</a>()</dt>
           <dd>Try to reset the default input style</dd>
-          <dt>placeHolder(color)</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L19">placeHolder</a>(color)</dt>
           <dd>Change the placeholder text color</dd>
-          <dt>h-input()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L30">h-input</a>()</dt>
           <dd>Main mixin to have a h-input style</dd>
-          <dt>h-search()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L74">h-search</a>()</dt>
           <dd>Additional styles for search inputs</dd>
-          <dt>h-select()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L85">h-select</a>()</dt>
           <dd>Additional styles for select inputs</dd>
-          <dt>h-textarea()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L95">h-textarea</a>()</dt>
           <dd>Additional styles for textareas</dd>
-          <dt>h-fieldset()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L107">h-fieldset</a>()</dt>
           <dd>Main mixin to have a h-fieldset style</dd>
-          <dt>h-label()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L110">h-label</a>()</dt>
           <dd>Main mixin to have a h-label style</dd>
-          <dt>h-legend()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L114">h-legend</a>()</dt>
           <dd>Main mixin to have a h-legend style</dd>
         </dl>
       </div>
@@ -181,9 +202,9 @@
       <h2>Box <small>mixins/box</small></h2>
       <div class="hs-box">
         <dl>
-          <dt>h-box([border-color], [background-color], [shadow-color])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/box.styl#L13">h-box</a>([border-color], [background-color], [shadow-color])</dt>
           <dd>Main mixin to have a h-box style</dd>
-          <dt>h-box-inset([border-color], [background-color], [shadow-color])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/box.styl#L17">h-box-inset</a>([border-color], [background-color], [shadow-color])</dt>
           <dd>Main mixin for having a inset h-box style</dd>
         </dl>
       </div>
@@ -193,7 +214,7 @@
       <h2>Scrollbox <small>mixins/scrollbox</small></h2>
       <div class="hs-box">
         <dl>
-          <dt>h-scrollbox()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/scrollbox.styl#L10">h-scrollbox</a>()</dt>
           <dd>Main mixin to have a scrollbox style</dd>
         </dl>
       </div>

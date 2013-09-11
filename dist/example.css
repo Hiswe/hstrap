@@ -1047,6 +1047,104 @@ aside.h-popover {
   left: -0.75em;
   top: 50%;
 }
+.hs-box.angle-demo {
+  height: 15em;
+  position: relative;
+  background: -webkit-radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
+  background: -moz-radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
+  background: -o-radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
+  background: -ms-radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
+  background: radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
+  padding: 0;
+}
+.hs-box.angle-demo ul {
+  height: 100%;
+}
+.hs-box.angle-demo ul:after,
+.hs-box.angle-demo ul:before {
+  content: '';
+}
+.hs-box.angle-demo ul:before {
+  border: 2px solid rgba(0,0,0,0.25);
+  width: 0.5em;
+  height: 0.5em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 666em;
+  border-radius: 666em;
+}
+.hs-box.angle-demo ul:after {
+  width: 0;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 -2px;
+  position: absolute;
+  left: 14.5em;
+  top: 7.5em;
+  background: rgba(0,0,0,0.25);
+  -webkit-border-radius: 666em;
+  border-radius: 666em;
+}
+.hs-box.angle-demo li {
+  position: absolute;
+  display: block;
+  width: 2em;
+  height: 2em;
+  margin-top: -1em;
+  margin-left: -1em;
+  color: #fff;
+  text-align: center;
+  line-height: 2em;
+  background: #00b7e0;
+}
+.hs-box.angle-demo li:nth-child(1) {
+  left: 20em;
+  top: 7.5em;
+}
+.hs-box.angle-demo li:nth-child(2) {
+  left: 19.263139722em;
+  top: 4.75em;
+}
+.hs-box.angle-demo li:nth-child(3) {
+  left: 18.3890872955em;
+  top: 11.3890872955em;
+}
+.hs-box.angle-demo li:nth-child(4) {
+  left: 14.5em;
+  top: 2em;
+}
+.hs-box.angle-demo li:nth-child(5) {
+  left: 14.5em;
+  top: 13em;
+}
+.hs-box.angle-demo li:nth-child(6) {
+  left: 9em;
+  top: 7.5em;
+}
+.hs-box.angle-demo li:nth-child(7) {
+  left: 10.6109127045em;
+  top: 11.3890872955em;
+}
+.circle-demo p {
+  width: 6em;
+  height: 6em;
+  padding-top: 1.5em;
+  display: inline-block;
+  background: #00b7e0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 666em;
+  border-radius: 666em;
+  color: #fff;
+  text-align: center;
+}
 .easing-demo,
 .easing-demo li,
 .easing-demo p {

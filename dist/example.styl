@@ -249,6 +249,55 @@ aside.h-popover
     left -($$stem-size)
     top 50%
 
+.hs-box.angle-demo
+  height 15em
+  position relative
+  background radial-gradient(center, circle closest-side,white 74%, #ddd 75%, white 76%)
+  $$shiftX = 14.5em
+  $$shiftY = 7.5em
+  padding 0
+
+  ul
+    height 100%
+
+  ul:after, ul:before
+    content '';
+
+  ul:before
+    border 2px solid noir(.25)
+    width .5em; height @width
+    percentCenter()
+    circle()
+
+  ul:after
+    width 0; width 4px; height @width;
+    margin -(@width/2) 0 0 -(@width/2)
+    position absolute; left $$shiftX; top $$shiftY
+    background noir(.25)
+    circle()
+
+  li
+    position absolute; display block; width 2em; height @width;
+    margin-top -(@width/2)
+    margin-left @margin-top
+    color white; text-align center; line-height @width
+    background $h-blue;
+
+    $$distance = 5.5em
+    $$angles = 0deg 30deg -45deg 90deg -90deg 180deg 585deg
+
+    for num in (0..6)
+      &:nth-child({num+1})
+        angle2topLeft($$angles[num], $$distance, $$shiftX, $$shiftY)
+
+.circle-demo p
+    width 6em; height @width; padding-top 1.5em
+    display inline-block
+    background $h-blue
+    box-sizing border-box
+    circle()
+    color white; text-align center
+
 .easing-demo,
 .easing-demo li,
 .easing-demo p

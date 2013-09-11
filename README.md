@@ -25,11 +25,12 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
 
 ## Release History
 
-- **0.3.9** — Fix issue when included with grunt-contrib-stylus
-- **0.3.8** — Add a stem mixin
-- **0.3.7** — Add easing mixins
-- **0.3.6** — No hover on disabled inputs + not-allowed cursor on disabled inputs & buttons
-- **0.3.5** — Fix more flexible box mixin…
-- **0.3.4** — More flexible box mixin
-- **0.3.3** — Clean *@imports* for faster compilation
+- **0.3.10** — Add angle, centering & cirle mixins
+- **0.3.09** — Fix issue when included with grunt-contrib-stylus
+- **0.3.08** — Add a stem mixin
+- **0.3.07** — Add easing mixins
+- **0.3.06** — No hover on disabled inputs + not-allowed cursor on disabled inputs & buttons
+- **0.3.05** — Fix more flexible box mixin…
+- **0.3.04** — More flexible box mixin
+- **0.3.03** — Clean *@imports* for faster compilation
 - **before** — A lot of stuff
