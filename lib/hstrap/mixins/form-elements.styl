@@ -6,26 +6,6 @@ $$input-height()
   box-sizing border-box
   height px2em(32)
 
-// try to remove default style
-// not workin totally with select on Firefox & IE
-reset-form()
-  appearance none
-  -moz-appearance none
-  -webkit-appearance none
-
-// style input place holder
-// Firefox 18-
-// Firefox 19+
-placeHolder(color)
-  &:-ms-input-placeholder
-    color color
-  &::-webkit-input-placeholder
-     color color
-  &:-moz-placeholder
-     color color
-  &::-moz-placeholder
-     color color
-
 // Input
 h-input()
   background-color white

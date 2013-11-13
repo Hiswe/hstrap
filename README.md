@@ -25,6 +25,7 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
 
 ## Release History
 
+- **0.3.11** — Add rem font-size mixin. Move some mixins from *form* to *general* and fix *crisp-font-smoothing* mixin on firefox
 - **0.3.10** — Add angle, centering & cirle mixins
 - **0.3.09** — Fix issue when included with grunt-contrib-stylus
 - **0.3.08** — Add a stem mixin

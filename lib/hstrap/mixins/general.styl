@@ -10,10 +10,44 @@ px2em(px, ref = $h-fs)
 em2em(em, ref = 1)
   em / ref
 
+// rem font-size
+// base should be 10px (like below)…
+// html
+//   font-size 62.5% // 10 px
+// TODO should be configurable
+// http://snook.ca/archives/html_and_css/font-size-with-rem
+// http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
+rem-fs(size)
+  font-size unit(size, 'px')
+  font-size unit(size/10, 'rem')
+
 // Change the way the browser smooth the font
-// ! not working on FF
+// http://maximilianhoffmann.com/article/better-font-rendering-on-osx/
 crisp-font-smoothing()
   -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+
+// try to remove default style
+// not working totally with select on Firefox & IE
+reset-form()
+  appearance none
+  -moz-appearance none
+  -webkit-appearance none
+
+// style input place holder
+// Firefox 18-
+// Firefox 19+
+placeHolder(color)
+  &:-ms-input-placeholder
+    color color
+  &::-webkit-input-placeholder
+    color color
+  &:-moz-placeholder
+    color color
+  &::-moz-placeholder
+    color color
+
 
 // Fix conflict with saturate() stylus functions
 css-filter(properties)

@@ -39,12 +39,11 @@
   transition: background-color 0.25s, transform 0.15s, box-shadow 0.15s;
   color: #000;
   text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(194,194,194,0)), color-stop(1, #c2c2c2));
-  background: -webkit-linear-gradient(top, rgba(194,194,194,0) 0%, #c2c2c2 100%);
-  background: -moz-linear-gradient(top, rgba(194,194,194,0) 0%, #c2c2c2 100%);
-  background: -o-linear-gradient(top, rgba(194,194,194,0) 0%, #c2c2c2 100%);
-  background: -ms-linear-gradient(top, rgba(194,194,194,0) 0%, #c2c2c2 100%);
-  background: linear-gradient(top, rgba(194,194,194,0) 0%, #c2c2c2 100%);
+  background: -webkit-linear-gradient(rgba(194,194,194,0), #c2c2c2);
+  background: -moz-linear-gradient(rgba(194,194,194,0), #c2c2c2);
+  background: -o-linear-gradient(rgba(194,194,194,0), #c2c2c2);
+  background: -ms-linear-gradient(rgba(194,194,194,0), #c2c2c2);
+  background: linear-gradient(rgba(194,194,194,0), #c2c2c2);
   background-color: #e3e3e3;
 }
 .h-btn:active:not(.h-disabled):not([disabled]) {
@@ -71,12 +70,11 @@
 .h-btn.h-primary {
   color: #fff;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.5);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,120,166,0)), color-stop(1, #0078a6));
-  background: -webkit-linear-gradient(top, rgba(0,120,166,0) 0%, #0078a6 100%);
-  background: -moz-linear-gradient(top, rgba(0,120,166,0) 0%, #0078a6 100%);
-  background: -o-linear-gradient(top, rgba(0,120,166,0) 0%, #0078a6 100%);
-  background: -ms-linear-gradient(top, rgba(0,120,166,0) 0%, #0078a6 100%);
-  background: linear-gradient(top, rgba(0,120,166,0) 0%, #0078a6 100%);
+  background: -webkit-linear-gradient(rgba(0,120,166,0), #0078a6);
+  background: -moz-linear-gradient(rgba(0,120,166,0), #0078a6);
+  background: -o-linear-gradient(rgba(0,120,166,0), #0078a6);
+  background: -ms-linear-gradient(rgba(0,120,166,0), #0078a6);
+  background: linear-gradient(rgba(0,120,166,0), #0078a6);
   background-color: #00b7e0;
 }
 .h-btn.h-primary:hover:not(.h-disabled):not([disabled]) {
@@ -88,12 +86,11 @@
 .h-btn.h-danger {
   color: #fff;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.5);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(150,0,43,0)), color-stop(1, #96002b));
-  background: -webkit-linear-gradient(top, rgba(150,0,43,0) 0%, #96002b 100%);
-  background: -moz-linear-gradient(top, rgba(150,0,43,0) 0%, #96002b 100%);
-  background: -o-linear-gradient(top, rgba(150,0,43,0) 0%, #96002b 100%);
-  background: -ms-linear-gradient(top, rgba(150,0,43,0) 0%, #96002b 100%);
-  background: linear-gradient(top, rgba(150,0,43,0) 0%, #96002b 100%);
+  background: -webkit-linear-gradient(rgba(150,0,43,0), #96002b);
+  background: -moz-linear-gradient(rgba(150,0,43,0), #96002b);
+  background: -o-linear-gradient(rgba(150,0,43,0), #96002b);
+  background: -ms-linear-gradient(rgba(150,0,43,0), #96002b);
+  background: linear-gradient(rgba(150,0,43,0), #96002b);
   background-color: #df006f;
 }
 .h-btn.h-danger:hover:not(.h-disabled):not([disabled]) {
@@ -106,8 +103,8 @@
 .h-btn.h-disabled {
   cursor: not-allowed;
   opacity: 0.65;
-  filter: alpha(opacity=65);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+  filter: alpha(opacity=65);
 }
 .h-btn.h-mini,
 .h-btn.h-inset {

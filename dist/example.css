@@ -801,6 +801,7 @@ a.selected {
   text-align: left;
   margin-bottom: 0.25em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .hs-menu h1 a {
   color: #df006f;
@@ -886,6 +887,7 @@ section > h2 {
   font-weight: normal;
   font-size: 2.5em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.25), 1px 1px 0 #fff;
   position: relative;
 }
@@ -1046,6 +1048,26 @@ aside.h-popover {
   margin-top: -0.75em;
   left: -0.75em;
   top: 50%;
+}
+.hs-box.percent-center-demo {
+  height: 15em;
+  position: relative;
+}
+.hs-box.percent-center-demo p {
+  width: 33%;
+  padding: 1em;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  background: #00b7e0;
 }
 .hs-box.angle-demo {
   height: 15em;

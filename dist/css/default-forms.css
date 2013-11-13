@@ -51,12 +51,11 @@
   background: #fcfff4;
   border: 1px solid;
   border-color: rgba(0,0,0,0.15) rgba(0,0,0,0.15) rgba(0,0,0,0.25);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #e6e6e6));
-  background: -webkit-linear-gradient(top, #fff 0%, #e6e6e6 100%);
-  background: -moz-linear-gradient(top, #fff 0%, #e6e6e6 100%);
-  background: -o-linear-gradient(top, #fff 0%, #e6e6e6 100%);
-  background: -ms-linear-gradient(top, #fff 0%, #e6e6e6 100%);
-  background: linear-gradient(top, #fff 0%, #e6e6e6 100%);
+  background: -webkit-linear-gradient(#fff, #e6e6e6);
+  background: -moz-linear-gradient(#fff, #e6e6e6);
+  background: -o-linear-gradient(#fff, #e6e6e6);
+  background: -ms-linear-gradient(#fff, #e6e6e6);
+  background: linear-gradient(#fff, #e6e6e6);
 }
 .h-ios input[type=checkbox] {
   visibility: hidden;
@@ -68,26 +67,27 @@
 .h-input-append {
   display: -webkit-box;
   display: -moz-box;
-  display: -ms-box;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: box;
   display: flex;
+  -ms-flex-line-pack: stretch;
   -webkit-align-content: stretch;
   align-content: stretch;
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -o-box-orient: horizontal;
-  -ms-box-orient: horizontal;
   -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 .h-input-append input:not([type="submit"]) {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
-  -ms-box-flex: 1;
   box-flex: 1;
   -webkit-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 .h-input-append .h-btn {
