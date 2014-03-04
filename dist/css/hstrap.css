@@ -156,7 +156,7 @@ a:visited:hover,
 }
 .h-btn.h-big {
   font-size: 2em;
-  padding: 0.375em 0.75em;
+  padding: em2em(0.75em, 2em) em2em(1.5em, 2em);
 }
 .h-row {
   display: -webkit-box;
