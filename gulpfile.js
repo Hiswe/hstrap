@@ -6,14 +6,17 @@ var gutil   = require('gulp-util');
 var clean   = require('gulp-clean');
 var stylus  = require('gulp-stylus');
 var notify  = require('gulp-notify');
+var semver  = require('semver');
 var replace = require('gulp-replace');
 var plumber = require('gulp-plumber');
 
 // Conf var
+var version = require('./package.json').version;
+
 var jsonFiles = [
   './package.json',
   './bower.json'
-]
+];
 
 var paths = [
   'lib/hstrap/index.styl',
@@ -34,11 +37,6 @@ var stylusConf = {
   import: ['nib']
 };
 
-var getVersion = function getVersion() {
-  file = fs.readFileSync('package.json');
-  return JSON.parse(file).version
-}
-
 // Plumber error callback
 var onError = function onError(err) {
   gutil.beep();
@@ -46,36 +44,32 @@ var onError = function onError(err) {
 };
 
 // Version number and stuff
-
-
-gulp.task('patch', function() {
-  gulp.src(jsonFiles)
-    .pipe(bump())
-    .pipe(gulp.dest('./'));
+gulp.task('version-patch', function(cb) {
+  version = semver.inc(version, 'patch');
+  cb()
+});
+gulp.task('version-minor', function(cb) {
+  version = semver.inc(version, 'minor');
+  cb()
+});
+gulp.task('version-major', function(cb) {
+  version = semver.inc(version, 'minor');
+  cb()
 });
 
-gulp.task('minor', function() {
-  gulp.src(jsonFiles)
-    .pipe(bump({type:'minor'}))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('major', function() {
-  gulp.src(jsonFiles)
-    .pipe(bump({type:'major'}))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('html-version', function() {
-
-});
-
-gulp.task('bump-patch', ['patch'], function() {
+gulp.task('html', function(){
   gulp.src('./index.html', {base: './'})
-    .pipe(wait(10))
-    .pipe(replace(/v(\d*\.\d*\.\d*)/, 'v'+getVersion()))
+    .pipe(replace(/v(\d*\.\d*\.\d*)/, 'v'+version))
     .pipe(gulp.dest('./'));
 });
+
+gulp.task('bump', function() {
+  gulp.src(jsonFiles).pipe(bump({version: version})).pipe(gulp.dest('./'));
+});
+
+gulp.task('patch', ['version-patch', 'html', 'bump']);
+gulp.task('minor', ['version-minor', 'html', 'bump']);
+gulp.task('major', ['version-major', 'html', 'bump']);
 
 // Build the lib
 gulp.task('clean-css', function() {
