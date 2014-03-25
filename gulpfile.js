@@ -1,5 +1,7 @@
+var fs      = require('fs');
 var gulp    = require('gulp');
 var wait    = require('gulp-wait'); // Wait for not having error when files are deleted
+var bump    = require('gulp-bump');
 var gutil   = require('gulp-util');
 var clean   = require('gulp-clean');
 var stylus  = require('gulp-stylus');
@@ -8,7 +10,10 @@ var replace = require('gulp-replace');
 var plumber = require('gulp-plumber');
 
 // Conf var
-var version = require('./package.json').version
+var jsonFiles = [
+  './package.json',
+  './bower.json'
+]
 
 var paths = [
   'lib/hstrap/index.styl',
@@ -29,16 +34,46 @@ var stylusConf = {
   import: ['nib']
 };
 
+var getVersion = function getVersion() {
+  file = fs.readFileSync('package.json');
+  return JSON.parse(file).version
+}
+
 // Plumber error callback
 var onError = function onError(err) {
   gutil.beep();
   console.log(err);
 };
 
-// Replace version number in html file
+// Version number and stuff
+
+
+gulp.task('patch', function() {
+  gulp.src(jsonFiles)
+    .pipe(bump())
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('minor', function() {
+  gulp.src(jsonFiles)
+    .pipe(bump({type:'minor'}))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('major', function() {
+  gulp.src(jsonFiles)
+    .pipe(bump({type:'major'}))
+    .pipe(gulp.dest('./'));
+});
+
 gulp.task('html-version', function() {
+
+});
+
+gulp.task('bump-patch', ['patch'], function() {
   gulp.src('./index.html', {base: './'})
-    .pipe(replace(/v(\d*\.\d*\.\d*)/, 'v'+version))
+    .pipe(wait(10))
+    .pipe(replace(/v(\d*\.\d*\.\d*)/, 'v'+getVersion()))
     .pipe(gulp.dest('./'));
 });
 
