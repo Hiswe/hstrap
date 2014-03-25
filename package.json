@@ -4,11 +4,11 @@
   "version": "0.3.12",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Hiswe/hstrap.git"
+    "url": "https://github.com/Hiswe/hstrap.git"
   },
   "dependencies": {
     "stylus": "~0.37.0",
-    "nib": "~1.0.1"
+    "nib": "~1.0.2"
   },
   "devDependencies": {
     "jade": "~0.28.2",
@@ -16,12 +16,25 @@
     "grunt": "~0.4.1",
     "grunt-contrib-stylus": "~0.5.0",
     "grunt-contrib-watch": "~0.3.1",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-copy": "~0.4.1",
+    "gulp": "~3.5.6",
+    "gulp-stylus": "~0.1.0",
+    "gulp-notify": "~1.2.4",
+    "gulp-util": "~2.2.14",
+    "gulp-clean": "~0.2.4",
+    "gulp-wait": "0.0.2",
+    "gulp-replace": "~0.2.0",
+    "gulp-plumber": "~0.5.6"
   },
-  "homepage": "hiswe.github.io/hstrap",
+  "homepage": "http://hiswe.github.io/hstrap",
   "author": {
-    "name": "Hiswe Halya",
-    "email": "hiswehalya@gmail.com"
+    "name": "Yannick Aivayan",
+    "email": "yannick.aivayan@hiswe.net",
+    "url": "http://hiswe.net"
+  },
+  "bugs": {
+    "url": "https://github.com/Hiswe/hstrap/issues",
+    "email": "yannick.aivayan@hiswe.net"
   },
   "main": "lib/hstrap.js",
   "engines": {
