@@ -1,6 +1,7 @@
 'use strict';
 
-var lr      = require('tiny-lr')()
+var lr      = require('tiny-lr')();
+var git     = require('gulp-git');
 var gulp    = require('gulp');
 var wait    = require('gulp-wait'); // Wait for not having error when files are deleted
 var bump    = require('gulp-bump');
@@ -74,6 +75,21 @@ gulp.task('bump', function() {
 gulp.task('patch', ['version-patch', 'html-version', 'bump']);
 gulp.task('minor', ['version-minor', 'html-version', 'bump']);
 gulp.task('major', ['version-major', 'html-version', 'bump']);
+
+// Tag
+gulp.task('tag', function () {
+  var v = 'v' + version;
+  var message = 'Release ' + v;
+
+  console.log(gutil.colors.red('TODO'));
+  console.log('git push origin master --tags');
+  console.log('npm publish');
+
+  return gulp.src('./')
+    .pipe(git.commit(message))
+    .pipe(git.tag(v, message))
+    .pipe(gulp.dest('./'));
+})
 
 // Build the lib
 gulp.task('clean-css', function() {
@@ -151,5 +167,6 @@ gulp.task('default', function() {
   console.log(gutil.colors.red('major'), '       ', 'tag as major version');
   console.log(gutil.colors.red('minor'), '       ', 'tag as minor version');
   console.log(gutil.colors.red('patch'), '       ', 'tag as patch version');
+  console.log(gutil.colors.red('tag'), '         ', 'commit and tag in git');
   console.log(gutil.colors.red('server'), '      ', 'launch server and watch file');
 });
