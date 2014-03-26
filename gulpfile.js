@@ -1,4 +1,6 @@
-var fs      = require('fs');
+'use strict';
+
+var lr      = require('tiny-lr')()
 var gulp    = require('gulp');
 var wait    = require('gulp-wait'); // Wait for not having error when files are deleted
 var bump    = require('gulp-bump');
@@ -9,6 +11,7 @@ var notify  = require('gulp-notify');
 var semver  = require('semver');
 var replace = require('gulp-replace');
 var plumber = require('gulp-plumber');
+var express = require('express');
 
 // Conf var
 var version = require('./package.json').version;
@@ -87,6 +90,7 @@ gulp.task('lib', ['clean-css'], function() {
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
     .pipe(gulp.dest('dist/css'))
+    .pipe(require('gulp-livereload')(lr))
     .pipe(notify({title: 'HSTRAP', message: 'build CSS', onLast: true}));
 });
 
@@ -96,6 +100,7 @@ gulp.task('example', ['clean-ghpage-css'], function() {
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
     .pipe(gulp.dest('dist'))
+    .pipe(require('gulp-livereload')(lr))
     .pipe(notify({title: 'HSTRAP', message: 'build Gh-page CSS', onLast: true}));
 });
 
@@ -120,6 +125,22 @@ gulp.task('watch', function() {
 // Whole build
 gulp.task('build',['font', 'example', 'lib', 'html-version']);
 
+// Server
+var startExpress = function startExpress() {
+  var app = express();
+  app.use(require('connect-livereload')());
+  app.use(express.static(__dirname));
+  app.listen(4000);
+};
+
+gulp.task('express', function(cb){
+  startExpress();
+  lr.listen(35729);
+  cb();
+});
+
+gulp.task('server', ['express', 'watch']);
+
 // Light doc
 gulp.task('default', function() {
   console.log(gutil.colors.red('html-version'), '', 'update version number in html');
@@ -130,4 +151,5 @@ gulp.task('default', function() {
   console.log(gutil.colors.red('major'), '       ', 'tag as major version');
   console.log(gutil.colors.red('minor'), '       ', 'tag as minor version');
   console.log(gutil.colors.red('patch'), '       ', 'tag as patch version');
+  console.log(gutil.colors.red('server'), '      ', 'launch server and watch file');
 });
