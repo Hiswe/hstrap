@@ -25,6 +25,7 @@ var paths = [
   'lib/hstrap/forms/default.styl',
   'lib/hstrap/layout.styl',
   'lib/hstrap/links.styl',
+  'lib/hstrap/components/index.styl',
   'lib/hstrap/components/h-box.styl',
   'lib/hstrap/components/h-popover.styl',
   'lib/hstrap/components/h-scrollbox.styl'
@@ -57,7 +58,7 @@ gulp.task('version-major', function(cb) {
   cb()
 });
 
-gulp.task('html', function(){
+gulp.task('html-version', function(){
   gulp.src('./index.html', {base: './'})
     .pipe(replace(/v(\d*\.\d*\.\d*)/, 'v'+version))
     .pipe(gulp.dest('./'));
@@ -67,9 +68,9 @@ gulp.task('bump', function() {
   gulp.src(jsonFiles).pipe(bump({version: version})).pipe(gulp.dest('./'));
 });
 
-gulp.task('patch', ['version-patch', 'html', 'bump']);
-gulp.task('minor', ['version-minor', 'html', 'bump']);
-gulp.task('major', ['version-major', 'html', 'bump']);
+gulp.task('patch', ['version-patch', 'html-version', 'bump']);
+gulp.task('minor', ['version-minor', 'html-version', 'bump']);
+gulp.task('major', ['version-major', 'html-version', 'bump']);
 
 // Build the lib
 gulp.task('clean-css', function() {
@@ -126,4 +127,7 @@ gulp.task('default', function() {
   console.log(gutil.colors.red('lib'), '         ', 'Compile the lib');
   console.log(gutil.colors.red('example'), '     ', 'Build example css');
   console.log(gutil.colors.red('watch'), '       ', 'Watch stylus');
+  console.log(gutil.colors.red('major'), '       ', 'tag as major version');
+  console.log(gutil.colors.red('minor'), '       ', 'tag as minor version');
+  console.log(gutil.colors.red('patch'), '       ', 'tag as patch version');
 });

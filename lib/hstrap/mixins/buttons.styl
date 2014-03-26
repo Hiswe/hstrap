@@ -37,6 +37,12 @@ h-btn()
   transform-origin bottom right
   transition background-color .25s, transform .15s, box-shadow .15s
 
+  &:focus
+    outline none
+
+  &::-moz-focus-inner
+    outline none
+
   &:active:not(.h-disabled):not([disabled])
     transform translate3d(-($h-buttons-active-depth), -($h-buttons-active-depth), 0)
     box-shadow $h-buttons-active-depth $h-buttons-active-depth 0 noir(.75)

@@ -46,6 +46,12 @@
   background: linear-gradient(rgba(194,194,194,0), #c2c2c2);
   background-color: #e3e3e3;
 }
+.h-btn:focus {
+  outline: none;
+}
+.h-btn::-moz-focus-inner {
+  outline: none;
+}
 .h-btn:active:not(.h-disabled):not([disabled]) {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);

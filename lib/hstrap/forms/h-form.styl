@@ -1,13 +1,19 @@
 @import '../mixins/form-elements'
 
-.h-fieldset
-  h-fieldset()
-
 .h-label
   h-label()
 
 .h-legend
   h-legend()
+
+.h-input:not([type="submit"]),
+.h-select,
+.h-search,
+.h-textarea
+  h-input()
+
+.h-fieldset
+  h-fieldset()
 
 .h-textarea
   h-textarea()
@@ -15,25 +21,9 @@
 .h-select
   h-select()
 
-@-moz-document url-prefix() {
-  .h-select {
-    // Firefox don't apply appearance:none
-    // https://developer.mozilla.org/en-US/docs/CSS/-moz-appearance
-    padding-top .25em
-    padding-right 1px
-    background none
-  }
-}
-
 // TODO fix Strange indent on webkit
 // TODO fix the reset button on webkit
 // input[type="search"]
 //   padding-left 0
 .h-search
   h-search()
-
-.h-input:not([type="submit"]),
-.h-select,
-.h-search,
-.h-textarea
-  h-input()

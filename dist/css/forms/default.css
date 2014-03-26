@@ -3,10 +3,7 @@
   border: 1px solid #c2c2c2;
   background: #fff;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 2em;
+  padding: 0.5em;
   -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.1);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.1);
 }
@@ -121,12 +118,11 @@ textarea {
   background-color: #fff;
   display: block;
   font-size: 1em;
-  padding: 0 0.35em 0 0.5em;
+  padding: 0.5em;
   margin: 0;
   border: 1px solid #c2c2c2;
   -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
-  height: $input-height;
   -webkit-transition: border-color 0.5s, box-shadow 0.5s;
   -moz-transition: border-color 0.5s, box-shadow 0.5s;
   -o-transition: border-color 0.5s, box-shadow 0.5s;
@@ -137,7 +133,6 @@ textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  height: 2em;
   outline: 0;
 }
 input:not([type="submit"]):-ms-input-placeholder,
@@ -242,7 +237,7 @@ input:not([type="submit"]):disabled:hover,
 select:disabled:hover,
 textarea:disabled:hover {
   cursor: not-allowed;
-  background: #eee;
+  background-color: #eee;
   color: #999;
   -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
@@ -304,17 +299,11 @@ select:disabled:hover::-moz-placeholder,
 textarea:disabled:hover::-moz-placeholder {
   color: #ccc;
 }
-input:not([type="submit"]):not(input):not(select),
-select:not(input):not(select),
-textarea:not(input):not(select) {
-  padding-top: 0.5em;
-}
 textarea {
-  padding-top: 0.35em;
-  padding-bottom: 0.35em;
-  height: auto;
   min-height: 5em;
   resize: vertical;
+  line-height: 1.25em;
+  font-family: inherit;
 }
 textarea.disabled,
 textarea:disabled {
@@ -332,13 +321,20 @@ select {
   background-repeat: no-repeat;
   background-position: center right;
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIxIiBoZWlnaHQ9IjQ1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxyZWN0IGZpbGw9IiNFNUU1RTUiIGhlaWdodD0iNDUiIHdpZHRoPSIxIi8+CiAgPHBvbHlnb24gZmlsbD0iI0U1RTVFNSIgcG9pbnRzPSI2LDIyIDEwLjk5OSwxNCAxNiwyMiAiLz4KICA8cG9seWdvbiBmaWxsPSIjRTVFNUU1IiBwb2ludHM9IjE2LDI1IDExLjAwMSwzMyA2LDI1ICIvPgogPC9nPgo8L3N2Zz4=");
+  text-indent: 0.01px;
+  -o-text-overflow: '';
+  text-overflow: '';
 }
-@-moz-document url-prefix() {
-  select {
-    padding-top: 0.25em;
-    padding-right: 1px;
-    background: none;
-  }
+select:-moz-focusring {
+  color: #555;
+  color: rgba(0,0,0,0);
+  text-shadow: 0 0 0 #555;
+}
+select:focus {
+  outline: none;
+}
+select::-ms-expand {
+  display: none;
 }
 input[type="search"] {
   -webkit-appearance: none;

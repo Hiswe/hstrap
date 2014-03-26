@@ -2,25 +2,24 @@
 @import './general'
 @import '../values'
 
-$$input-height()
-  box-sizing border-box
-  height px2em(32)
-
 // Input
 h-input()
   background-color white
   display block
   font-size 1em
-  padding 0 .35em 0 .5em; margin 0
+  padding .5em
+  // Don't give a height due to firefox problem centering text on select
+  // height px2em(32)
+  margin 0
   border 1px solid $h-input-idle
   box-shadow inset 2px 2px 0 noir(.07)
-  height $input-height
   transition border-color $h-input-transition, box-shadow $h-input-transition
   color #555
   width 100%
-  $$input-height()
-  placeHolder(lighten(@color, 50%))
+  box-sizing border-box
+
   outline 0
+  placeHolder(lighten(@color, 50%))
 
   &:hover,
   &:focus
@@ -41,22 +40,17 @@ h-input()
   &:disabled,
   &:disabled:hover
     cursor not-allowed
-    background #EEE
+    background-color #EEE
     color #999
     box-shadow inset 2px 2px 0 noir(.07)
     border 1px solid $h-input-idle
     placeHolder(lighten(@color, 50%))
 
-  // Fake input
-  &:not(input):not(select)
-    padding-top .5em
-
 h-search()
   reset-form()
   background-repeat no-repeat
   background-position 100% px2em(7)
-  // TODO use stylus to embed svg
-  background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjI4IiBoZWlnaHQ9IjIwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxwYXRoIGZpbGw9IiNlNWU1ZTUiIGQ9Im0xOS44NDE5OTksMTguMDg1NjNsLTcuMTAyLC03LjA2MDk4NGMwLjc5OSwtMS4xMzg5OTkgMS4yNywtMi41MjUwMDEgMS4yNywtNC4wMjNjLTAuMDAwOTk5LC0zLjg2ODAwMiAtMy4xMzY5OTksLTcuMDA0MDAzIC03LjAwNTk5OSwtNy4wMDQwMDNjLTMuODY4LDAgLTcuMDA0LDMuMTM2MDAyIC03LjAwNCw3LjAwNDAwM2MwLDMuODY5IDMuMTM2LDcuMDA1MDAxIDcuMDA0LDcuMDA1MDAxYzEuMzk1LDAgMi42OTIsLTAuNDA3MDAxIDMuNzg0OTk5LC0xLjExMDAwMWw3LjE0MTAwMSw3LjEwMDk4NGwxLjkxMTk5OSwtMS45MTIwMDF6bS0xNy41MDY5OTksLTExLjA4Mzk4M2MwLC0yLjU3OCAyLjA5MSwtNC42NjkwMDMgNC42NjksLTQuNjY5MDAzYzIuNTc5OTk5LDAgNC42NywyLjA5MDAwMyA0LjY3LDQuNjY5MDAzYzAsMi41OCAtMi4wOSw0LjY3IC00LjY3LDQuNjdjLTIuNTc4LDAgLTQuNjY5LC0yLjA5MSAtNC42NjksLTQuNjd6Ii8+CiA8L2c+Cjwvc3ZnPg==')
+  background-image embedurl('../media/magnifying_glass.svg')
 
   &::-webkit-search-cancel-button
     display none
@@ -68,16 +62,32 @@ h-select()
   border-radius 0
   background-repeat no-repeat
   background-position center right
-  // TODO use stylus to embed svg
-  background-image url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjIxIiBoZWlnaHQ9IjQ1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxyZWN0IGZpbGw9IiNFNUU1RTUiIGhlaWdodD0iNDUiIHdpZHRoPSIxIi8+CiAgPHBvbHlnb24gZmlsbD0iI0U1RTVFNSIgcG9pbnRzPSI2LDIyIDEwLjk5OSwxNCAxNiwyMiAiLz4KICA8cG9seWdvbiBmaWxsPSIjRTVFNUU1IiBwb2ludHM9IjE2LDI1IDExLjAwMSwzMyA2LDI1ICIvPgogPC9nPgo8L3N2Zz4=')
+  background-image embedurl('../media/select_arrows.svg')
+  // This to hide right arrow on firefox
+  // http://jsfiddle.net/joaocunha/RUEbp/1/
+  text-indent 0.01px
+  text-overflow ''
+
+  // remove inner-dotted border on Firefox
+  // http://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
+  &:-moz-focusring
+    color #555
+    color rgba(0,0,0,0)
+    text-shadow 0 0 0 #555
+
+  &:focus
+    outline none
+
+  &::-ms-expand
+    display none
 
 // Textarea
 h-textarea()
-  padding-top .35em
-  padding-bottom .35em
-  height auto
   min-height 5em
   resize vertical
+  line-height 1.25em
+  // Firefox put Courrier without this…
+  font-family inherit
 
   &.disabled,
   &:disabled
