@@ -118,7 +118,7 @@ gulp.task('font', ['clean-font'], function() {
 
 // Watch
 gulp.task('watch', function() {
-  gulp.watch(['./lib/hstrap/*.styl','./lib/hstrap/**/*.styl'], ['lib']);
+  gulp.watch(['./lib/hstrap/**/*.styl', './lib/hstrap/MEDIA/*.svg'], ['lib']);
   gulp.watch(['./dist/example.styl'], ['example']);
 });
 

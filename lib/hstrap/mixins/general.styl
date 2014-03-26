@@ -28,11 +28,31 @@ crisp-font-smoothing()
   -moz-osx-font-smoothing grayscale
 
 // try to remove default style
-// not working totally with select on Firefox & IE
+// not working totally with select on Firefox & IE…
 reset-form()
   appearance none
   -moz-appearance none
   -webkit-appearance none
+
+// So there is a complement mixin here
+reset-select()
+  // This to hide right arrow on firefox
+  // http://jsfiddle.net/joaocunha/RUEbp/1/
+  text-indent 0.01px
+  text-overflow ''
+
+  // remove inner-dotted border on Firefox
+  // http://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
+  &:-moz-focusring
+    color #555
+    color rgba(0,0,0,0)
+    text-shadow 0 0 0 #555
+
+  &:focus
+    outline none
+
+  &::-ms-expand
+    display none
 
 // style input place holder
 // Firefox 18-
