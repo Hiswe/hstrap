@@ -1,7 +1,7 @@
 {
   "name": "hstrap",
   "description": "Stylus mixins, utilities and styles",
-  "version": "0.3.12",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Hiswe/hstrap.git"

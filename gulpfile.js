@@ -81,14 +81,16 @@ gulp.task('tag', function () {
   var v = 'v' + version;
   var message = 'Release ' + v;
 
-  console.log(gutil.colors.red('TODO'));
+  console.log(gutil.colors.red('TODO'), 'for ' + version);
+
+  console.log('git ci -am  "'+message+'"');
+  console.log('git tag -a  '+version);
   console.log('git push origin master --tags');
   console.log('npm publish');
 
-  return gulp.src('./')
-    .pipe(git.commit(message))
-    .pipe(git.tag(v, message))
-    .pipe(gulp.dest('./'));
+  // return gulp.src('./')
+  //   .pipe(git.commit(message, {args: '-a'}))
+  //   .pipe(git.tag(v, message));
 })
 
 // Build the lib
