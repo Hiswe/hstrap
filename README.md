@@ -27,7 +27,8 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
 
 - **0.4.0**
   - Change build system to gulp.
-  - fix [#3](https://github.com/Hiswe/hstrap/issues/3) : selectbox rendering on firefox &amp; ie
+  - fix [#3](https://github.com/Hiswe/hstrap/issues/3) : selectbox rendering on firefox &amp;   ie
+  - fix [#5](https://github.com/Hiswe/hstrap/issues/5) : non-clickable button on border 
 - **0.3.12** — Add rem conversion mixin.
 - **0.3.11** — Add rem font-size mixin. Move some mixins from *form* to *general* and fix *crisp-font-smoothing* mixin on firefox
 - **0.3.10** — Add angle, centering & cirle mixins
