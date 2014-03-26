@@ -51,15 +51,15 @@ var onError = function onError(err) {
 // Version number and stuff
 gulp.task('version-patch', function(cb) {
   version = semver.inc(version, 'patch');
-  cb()
+  cb();
 });
 gulp.task('version-minor', function(cb) {
   version = semver.inc(version, 'minor');
-  cb()
+  cb();
 });
 gulp.task('version-major', function(cb) {
-  version = semver.inc(version, 'minor');
-  cb()
+  version = semver.inc(version, 'major');
+  cb();
 });
 
 gulp.task('html-version', function(){
