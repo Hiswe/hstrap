@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<svg width="21" height="45" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <rect fill="#E5E5E5" height="45" width="1"/>
+  <polygon fill="#E5E5E5" points="6,22 10.999,14 16,22 "/>
+  <polygon fill="#E5E5E5" points="16,25 11.001,33 6,25 "/>
+ </g>
+</svg>
