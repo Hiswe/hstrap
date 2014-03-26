@@ -35,7 +35,7 @@ reset-form()
   -webkit-appearance none
 
 // So there is a complement mixin here
-reset-select()
+reset-select(color = #555)
   // This to hide right arrow on firefox
   // http://jsfiddle.net/joaocunha/RUEbp/1/
   text-indent 0.01px
@@ -44,9 +44,9 @@ reset-select()
   // remove inner-dotted border on Firefox
   // http://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
   &:-moz-focusring
-    color #555
+    color color
     color rgba(0,0,0,0)
-    text-shadow 0 0 0 #555
+    text-shadow 0 0 0 color
 
   &:focus
     outline none

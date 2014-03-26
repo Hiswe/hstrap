@@ -520,9 +520,9 @@ a:visited:hover,
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pg0KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIxMXB4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8Zz4NCiAgICA8cG9seWdvbiBmaWxsPSIjMDA3OEE2IiBwb2ludHM9IjE2LDAgMTAsOCA1LDAgIi8+DQogIDwvZz4NCjwvc3ZnPg0K");
 }
 .h-select-link:-moz-focusring {
-  color: #555;
+  color: #0078a6;
   color: rgba(0,0,0,0);
-  text-shadow: 0 0 0 #555;
+  text-shadow: 0 0 0 #0078a6;
 }
 .h-select-link:focus {
   outline: none;
