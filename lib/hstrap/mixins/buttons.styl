@@ -1,5 +1,6 @@
 @import 'nib/vendor'
 @import 'nib/gradients'
+@import 'nib/positions'
 @import './general'
 @import '../values'
 
@@ -25,17 +26,24 @@ h-btn()
   font-size 1em; text-align center
   display inline-block;
   box-sizing border-box
+  border none
   padding .75em 1.5em
   margin $h-buttons-depth 0 -($h-buttons-depth) $h-buttons-depth $h-buttons-depth
   vertical-align middle
   cursor pointer
   box-shadow $h-buttons-depth $h-buttons-depth 0 noir()
-  border $h-buttons-border solid
-  border-color blanc(.75) noir(.25) noir() blanc()
-  bg-cover()
   transform translate3d(-($h-buttons-depth), -($h-buttons-depth), 0)
   transform-origin bottom right
   transition background-color .25s, transform .15s, box-shadow .15s
+  position relative
+
+  // this is for non-lickable corners
+  // see http://css-tricks.com/video-screencasts/123-if-it-moves-when-you-click-make-something-stick/
+  &::after
+    content ''
+    absolute top left
+    right -($h-buttons-depth); bottom @right
+    transition all .15s
 
   &:focus
     outline none
@@ -48,6 +56,10 @@ h-btn()
     box-shadow $h-buttons-active-depth $h-buttons-active-depth 0 noir(.75)
     outline 0
 
+    &::after
+      absolute bottom right
+      top -($h-buttons-depth); left @top
+
   .iconic
     font-size 1.5em
     line-height .5em
@@ -58,7 +70,12 @@ h-inset-button()
   transform none
   margin 0
 
-  &:active
+  &::after
+    right 0; bottom 0
+
+  &:active:not(.h-disabled):not([disabled])
     transform none
-    border-color  noir() blanc() blanc(.75) noir(.25)
-    box-shadow inset $h-buttons-active-depth $h-buttons-active-depth 0 noir(.25)
+    box-shadow inset $h-buttons-depth $h-buttons-depth 0 noir(.25)
+
+    &::after
+      top 0; left @top

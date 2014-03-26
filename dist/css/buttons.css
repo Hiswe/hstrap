@@ -5,23 +5,13 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  border: none;
   padding: 0.75em 1.5em;
   margin: 2px -2px 2px 2px;
   vertical-align: middle;
   cursor: pointer;
   -webkit-box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
   box-shadow: 2px 2px 0 rgba(0,0,0,0.5);
-  border: 1px solid;
-  border-color: rgba(255,255,255,0.75) rgba(0,0,0,0.25) rgba(0,0,0,0.5) rgba(255,255,255,0.5);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -webkit-background-clip: border;
-  -moz-background-clip: border;
-  background-clip: border-box;
-  -webkit-background-origin: border;
-  -moz-background-origin: border;
-  background-origin: border-box;
   -webkit-transform: translate3d(-2px, -2px, 0);
   -moz-transform: translate3d(-2px, -2px, 0);
   -o-transform: translate3d(-2px, -2px, 0);
@@ -37,6 +27,7 @@
   -o-transition: background-color 0.25s, -o-transform 0.15s, box-shadow 0.15s;
   -ms-transition: background-color 0.25s, -ms-transform 0.15s, box-shadow 0.15s;
   transition: background-color 0.25s, transform 0.15s, box-shadow 0.15s;
+  position: relative;
   color: #000;
   text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
   background: -webkit-linear-gradient(rgba(194,194,194,0), #c2c2c2);
@@ -45,6 +36,19 @@
   background: -ms-linear-gradient(rgba(194,194,194,0), #c2c2c2);
   background: linear-gradient(rgba(194,194,194,0), #c2c2c2);
   background-color: #e3e3e3;
+}
+.h-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -2px;
+  bottom: -2px;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  -ms-transition: all 0.15s;
+  transition: all 0.15s;
 }
 .h-btn:focus {
   outline: none;
@@ -61,6 +65,13 @@
   -webkit-box-shadow: 0 0 0 rgba(0,0,0,0.75);
   box-shadow: 0 0 0 rgba(0,0,0,0.75);
   outline: 0;
+}
+.h-btn:active:not(.h-disabled):not([disabled])::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: -2px;
+  left: -2px;
 }
 .h-btn .iconic {
   font-size: 1.5em;
@@ -123,16 +134,25 @@
   transform: none;
   margin: 0;
 }
-.h-btn.h-mini:active,
-.h-btn.h-inset:active {
+.h-btn.h-mini::after,
+.h-btn.h-inset::after {
+  right: 0;
+  bottom: 0;
+}
+.h-btn.h-mini:active:not(.h-disabled):not([disabled]),
+.h-btn.h-inset:active:not(.h-disabled):not([disabled]) {
   -webkit-transform: none;
   -moz-transform: none;
   -o-transform: none;
   -ms-transform: none;
   transform: none;
-  border-color: rgba(0,0,0,0.5) rgba(255,255,255,0.5) rgba(255,255,255,0.75) rgba(0,0,0,0.25);
-  -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.25);
-  box-shadow: inset 0 0 0 rgba(0,0,0,0.25);
+  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.25);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,0.25);
+}
+.h-btn.h-mini:active:not(.h-disabled):not([disabled])::after,
+.h-btn.h-inset:active:not(.h-disabled):not([disabled])::after {
+  top: 0;
+  left: 0;
 }
 .h-btn.h-mini {
   padding: 0 0.5em;
