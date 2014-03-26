@@ -83,8 +83,8 @@ gulp.task('tag', function () {
 
   console.log(gutil.colors.red('TODO'), 'for ' + version);
 
-  console.log('git ci -am  "'+message+'"');
-  console.log('git tag -a  '+version);
+  console.log('git ci -am "'+message+'"');
+  console.log('git tag -a '+version+' -m "'+message+'"');
   console.log('git push origin master --tags');
   console.log('npm publish');
 
