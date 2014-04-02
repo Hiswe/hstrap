@@ -5,6 +5,7 @@ var git     = require('gulp-git');
 var gulp    = require('gulp');
 var wait    = require('gulp-wait'); // Wait for not having error when files are deleted
 var bump    = require('gulp-bump');
+var open    = require('gulp-open');
 var gutil   = require('gulp-util');
 var clean   = require('gulp-clean');
 var stylus  = require('gulp-stylus');
@@ -93,18 +94,21 @@ gulp.task('tag', function () {
   //   .pipe(git.tag(v, message));
 })
 
+/////////
+// ASSETS
+/////////
+
 // Build the lib
 gulp.task('clean-css', function() {
-  gulp.src('dist/css/', {read: false}).pipe(clean({force: true}));
+  return gulp.src('dist/css/', {read: false}).pipe(clean());
 });
 
 gulp.task('clean-ghpage-css', function() {
-  gulp.src('dist/example.css', {read: false}).pipe(clean({force: true}));
+  return gulp.src('dist/example.css', {read: false}).pipe(clean());
 });
 
 gulp.task('lib', ['clean-css'], function() {
   gulp.src(paths, {base: './lib/hstrap/'})
-    .pipe(wait(10))
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
     .pipe(gulp.dest('dist/css'))
@@ -114,7 +118,6 @@ gulp.task('lib', ['clean-css'], function() {
 
 gulp.task('example', ['clean-ghpage-css'], function() {
   gulp.src('./dist/example.styl')
-    .pipe(wait(10))
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
     .pipe(gulp.dest('dist'))
@@ -124,24 +127,26 @@ gulp.task('example', ['clean-ghpage-css'], function() {
 
 // Copy font
 gulp.task('clean-font', function() {
-  gulp.src('dist/font/', {read: false})
-    .pipe(clean({force: true}));
+  return gulp.src('dist/font/', {read: false}).pipe(clean());
 });
 
 gulp.task('font', ['clean-font'], function() {
   gulp.src('components/HisoFont/font/**', {base: './components/HisoFont/'})
-    .pipe(wait(10))
     .pipe(gulp.dest('dist'));
 });
+
+// Whole build
+gulp.task('build',['font', 'example', 'lib', 'html-version']);
+
+/////////
+// SERVER
+/////////
 
 // Watch
 gulp.task('watch', function() {
   gulp.watch(['./lib/hstrap/**/*.styl', './lib/hstrap/MEDIA/*.svg'], ['lib']);
   gulp.watch(['./dist/example.styl'], ['example']);
 });
-
-// Whole build
-gulp.task('build',['font', 'example', 'lib', 'html-version']);
 
 // Server
 var startExpress = function startExpress() {
@@ -159,7 +164,14 @@ gulp.task('express', function(cb){
 
 gulp.task('server', ['express', 'watch']);
 
-// Light doc
+gulp.task("start", ['server'], function(){
+  gulp.src('./README.md').pipe(wait(1000)).pipe(open('', {url: "http://localhost:4000"}));
+});
+
+/////////
+// DOC
+/////////
+
 gulp.task('default', function() {
   console.log(gutil.colors.red('html-version'), '', 'update version number in html');
   console.log(gutil.colors.red('font'), '        ', 'Copy fonts to the right folder');
@@ -170,5 +182,5 @@ gulp.task('default', function() {
   console.log(gutil.colors.red('minor'), '       ', 'tag as minor version');
   console.log(gutil.colors.red('patch'), '       ', 'tag as patch version');
   console.log(gutil.colors.red('tag'), '         ', 'commit and tag in git');
-  console.log(gutil.colors.red('server'), '      ', 'launch server and watch file');
+  console.log(gutil.colors.red('start'), '       ', 'launch server and watch file');
 });

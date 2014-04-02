@@ -29,7 +29,7 @@ h-input()
 
   &.ng-invalid,
   &.invalid,
-  &:invalid
+  &:focus:invalid // see for focus http://alistapart.com/article/forward-thinking-form-validation
     color $h-input-invalid-color
     border-color $h-input-invalid
     box-shadow inset 2px 2px 0 rgba($h-input-invalid, .3)
@@ -80,7 +80,7 @@ h-select-link()
 
   &.ng-invalid,
   &.invalid,
-  &:invalid,
+  &:focus:invalid, // see for focus http://alistapart.com/article/forward-thinking-form-validation
   &.disabled,
   &.disabled:hover,
   &:disabled,
@@ -89,7 +89,7 @@ h-select-link()
 
   &.ng-invalid,
   &.invalid,
-  &:invalid
+  &:focus:invalid // see for focus http://alistapart.com/article/forward-thinking-form-validation
     border-bottom-color $h-input-invalid
     color $h-input-invalid-color
 

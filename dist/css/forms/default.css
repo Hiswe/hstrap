@@ -172,9 +172,9 @@ textarea.ng-invalid,
 input:not([type="submit"]).invalid,
 select.invalid,
 textarea.invalid,
-input:not([type="submit"]):invalid,
-select:invalid,
-textarea:invalid {
+input:not([type="submit"]):focus:invalid,
+select:focus:invalid,
+textarea:focus:invalid {
   color: #96002b;
   border-color: #df006f;
   -webkit-box-shadow: inset 2px 2px 0 rgba(223,0,111,0.3);
@@ -186,9 +186,9 @@ textarea.ng-invalid:-ms-input-placeholder,
 input:not([type="submit"]).invalid:-ms-input-placeholder,
 select.invalid:-ms-input-placeholder,
 textarea.invalid:-ms-input-placeholder,
-input:not([type="submit"]):invalid:-ms-input-placeholder,
-select:invalid:-ms-input-placeholder,
-textarea:invalid:-ms-input-placeholder {
+input:not([type="submit"]):focus:invalid:-ms-input-placeholder,
+select:focus:invalid:-ms-input-placeholder,
+textarea:focus:invalid:-ms-input-placeholder {
   color: #ff4b7f;
 }
 input:not([type="submit"]).ng-invalid::-webkit-input-placeholder,
@@ -197,9 +197,9 @@ textarea.ng-invalid::-webkit-input-placeholder,
 input:not([type="submit"]).invalid::-webkit-input-placeholder,
 select.invalid::-webkit-input-placeholder,
 textarea.invalid::-webkit-input-placeholder,
-input:not([type="submit"]):invalid::-webkit-input-placeholder,
-select:invalid::-webkit-input-placeholder,
-textarea:invalid::-webkit-input-placeholder {
+input:not([type="submit"]):focus:invalid::-webkit-input-placeholder,
+select:focus:invalid::-webkit-input-placeholder,
+textarea:focus:invalid::-webkit-input-placeholder {
   color: #ff4b7f;
 }
 input:not([type="submit"]).ng-invalid:-moz-placeholder,
@@ -208,9 +208,9 @@ textarea.ng-invalid:-moz-placeholder,
 input:not([type="submit"]).invalid:-moz-placeholder,
 select.invalid:-moz-placeholder,
 textarea.invalid:-moz-placeholder,
-input:not([type="submit"]):invalid:-moz-placeholder,
-select:invalid:-moz-placeholder,
-textarea:invalid:-moz-placeholder {
+input:not([type="submit"]):focus:invalid:-moz-placeholder,
+select:focus:invalid:-moz-placeholder,
+textarea:focus:invalid:-moz-placeholder {
   color: #ff4b7f;
 }
 input:not([type="submit"]).ng-invalid::-moz-placeholder,
@@ -219,9 +219,9 @@ textarea.ng-invalid::-moz-placeholder,
 input:not([type="submit"]).invalid::-moz-placeholder,
 select.invalid::-moz-placeholder,
 textarea.invalid::-moz-placeholder,
-input:not([type="submit"]):invalid::-moz-placeholder,
-select:invalid::-moz-placeholder,
-textarea:invalid::-moz-placeholder {
+input:not([type="submit"]):focus:invalid::-moz-placeholder,
+select:focus:invalid::-moz-placeholder,
+textarea:focus:invalid::-moz-placeholder {
   color: #ff4b7f;
 }
 input:not([type="submit"]).disabled,

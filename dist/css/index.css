@@ -299,10 +299,10 @@ a:visited:hover,
 .h-select.invalid,
 .h-search.invalid,
 .h-textarea.invalid,
-.h-input:not([type="submit"]):invalid,
-.h-select:invalid,
-.h-search:invalid,
-.h-textarea:invalid {
+.h-input:not([type="submit"]):focus:invalid,
+.h-select:focus:invalid,
+.h-search:focus:invalid,
+.h-textarea:focus:invalid {
   color: #96002b;
   border-color: #df006f;
   -webkit-box-shadow: inset 2px 2px 0 rgba(223,0,111,0.3);
@@ -316,10 +316,10 @@ a:visited:hover,
 .h-select.invalid:-ms-input-placeholder,
 .h-search.invalid:-ms-input-placeholder,
 .h-textarea.invalid:-ms-input-placeholder,
-.h-input:not([type="submit"]):invalid:-ms-input-placeholder,
-.h-select:invalid:-ms-input-placeholder,
-.h-search:invalid:-ms-input-placeholder,
-.h-textarea:invalid:-ms-input-placeholder {
+.h-input:not([type="submit"]):focus:invalid:-ms-input-placeholder,
+.h-select:focus:invalid:-ms-input-placeholder,
+.h-search:focus:invalid:-ms-input-placeholder,
+.h-textarea:focus:invalid:-ms-input-placeholder {
   color: #ff4b7f;
 }
 .h-input:not([type="submit"]).ng-invalid::-webkit-input-placeholder,
@@ -330,10 +330,10 @@ a:visited:hover,
 .h-select.invalid::-webkit-input-placeholder,
 .h-search.invalid::-webkit-input-placeholder,
 .h-textarea.invalid::-webkit-input-placeholder,
-.h-input:not([type="submit"]):invalid::-webkit-input-placeholder,
-.h-select:invalid::-webkit-input-placeholder,
-.h-search:invalid::-webkit-input-placeholder,
-.h-textarea:invalid::-webkit-input-placeholder {
+.h-input:not([type="submit"]):focus:invalid::-webkit-input-placeholder,
+.h-select:focus:invalid::-webkit-input-placeholder,
+.h-search:focus:invalid::-webkit-input-placeholder,
+.h-textarea:focus:invalid::-webkit-input-placeholder {
   color: #ff4b7f;
 }
 .h-input:not([type="submit"]).ng-invalid:-moz-placeholder,
@@ -344,10 +344,10 @@ a:visited:hover,
 .h-select.invalid:-moz-placeholder,
 .h-search.invalid:-moz-placeholder,
 .h-textarea.invalid:-moz-placeholder,
-.h-input:not([type="submit"]):invalid:-moz-placeholder,
-.h-select:invalid:-moz-placeholder,
-.h-search:invalid:-moz-placeholder,
-.h-textarea:invalid:-moz-placeholder {
+.h-input:not([type="submit"]):focus:invalid:-moz-placeholder,
+.h-select:focus:invalid:-moz-placeholder,
+.h-search:focus:invalid:-moz-placeholder,
+.h-textarea:focus:invalid:-moz-placeholder {
   color: #ff4b7f;
 }
 .h-input:not([type="submit"]).ng-invalid::-moz-placeholder,
@@ -358,10 +358,10 @@ a:visited:hover,
 .h-select.invalid::-moz-placeholder,
 .h-search.invalid::-moz-placeholder,
 .h-textarea.invalid::-moz-placeholder,
-.h-input:not([type="submit"]):invalid::-moz-placeholder,
-.h-select:invalid::-moz-placeholder,
-.h-search:invalid::-moz-placeholder,
-.h-textarea:invalid::-moz-placeholder {
+.h-input:not([type="submit"]):focus:invalid::-moz-placeholder,
+.h-select:focus:invalid::-moz-placeholder,
+.h-search:focus:invalid::-moz-placeholder,
+.h-textarea:focus:invalid::-moz-placeholder {
   color: #ff4b7f;
 }
 .h-input:not([type="submit"]).disabled,
@@ -532,7 +532,7 @@ a:visited:hover,
 }
 .h-select-link.ng-invalid,
 .h-select-link.invalid,
-.h-select-link:invalid,
+.h-select-link:focus:invalid,
 .h-select-link.disabled,
 .h-select-link.disabled:hover,
 .h-select-link:disabled,
@@ -541,7 +541,7 @@ a:visited:hover,
 }
 .h-select-link.ng-invalid,
 .h-select-link.invalid,
-.h-select-link:invalid {
+.h-select-link:focus:invalid {
   border-bottom-color: #df006f;
   color: #96002b;
 }
