@@ -105,8 +105,10 @@ gulp.task('tag', function () {
   var message = 'Release ' + v;
 
   console.log(gutil.colors.red('TODO'), 'for ' + version);
+  console.log(gutil.colors.red("DON'T FORGET TO UPDATE README.md"));
 
   console.log('git ci -am "'+message+'"');
+
   console.log('git tag -a '+version+' -m "'+message+'"');
   console.log('git push origin master --tags');
   console.log('npm publish');

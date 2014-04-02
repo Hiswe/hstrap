@@ -25,6 +25,9 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
 
 ## Release History
 
+- **1.0.2**
+  - add header to CSS files
+  - fix :invalid state on form
 - **1.0.0**
   - Change build system to gulp
   - Add link-styled selectbox
