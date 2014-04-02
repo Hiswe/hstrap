@@ -28,7 +28,8 @@
     "tiny-lr": "0.0.5",
     "gulp-livereload": "~1.2.0",
     "connect-livereload": "~0.3.2",
-    "gulp-open": "~0.2.8"
+    "gulp-open": "~0.2.8",
+    "gulp-header": "~1.0.2"
   },
   "homepage": "http://hiswe.github.io/hstrap",
   "author": {

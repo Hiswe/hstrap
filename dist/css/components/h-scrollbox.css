@@ -1,3 +1,8 @@
+/**
+ * hstrap - Stylus mixins, utilities and styles
+ * @version v1.0.0
+ * @link http://hiswe.github.io/hstrap
+ */
 .h-scrollbox {
   background: -moz--webkit-linear-gradient(#fff 30%, rgba(255,255,255,0)), -moz--webkit-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -moz--webkit-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -moz--webkit-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;
   background: -moz--moz-linear-gradient(#fff 30%, rgba(255,255,255,0)), -moz--moz-linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%, -moz--moz-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -moz--moz-radial-gradient(50% 100%,farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;;

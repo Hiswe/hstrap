@@ -11,12 +11,16 @@ var clean   = require('gulp-clean');
 var stylus  = require('gulp-stylus');
 var notify  = require('gulp-notify');
 var semver  = require('semver');
+var header  = require('gulp-header');
 var replace = require('gulp-replace');
 var plumber = require('gulp-plumber');
 var express = require('express');
 
-// Conf var
-var version = require('./package.json').version;
+/////////
+// CONF
+/////////
+var pkg     = require('./package.json')
+var version = pkg.version;
 
 var jsonFiles = [
   './package.json',
@@ -36,6 +40,14 @@ var paths = [
   'lib/hstrap/components/h-scrollbox.styl'
 ];
 
+var banner = ['/**',
+  ' * <%= pkg.name %> - <%= pkg.description %>',
+  ' * @version v<%= pkg.version %>',
+  ' * @link <%= pkg.homepage %>',
+  // ' * @license <%= pkg.license %>',
+  ' */',
+  ''].join('\n');
+
 var stylusConf = {
   paths: ['lib/hstrap'],
   urlFunc: ['embedurl'],
@@ -48,6 +60,10 @@ var onError = function onError(err) {
   gutil.beep();
   console.log(err);
 };
+
+/////////
+// BUMP
+/////////
 
 // Version number and stuff
 gulp.task('version-patch', function(cb) {
@@ -69,13 +85,20 @@ gulp.task('html-version', function(){
     .pipe(gulp.dest('./'));
 });
 
+gulp.task('header', function() {
+  pkg.version = verion
+  gulp.src('dist/**/*.css')
+    .pipe(header(banner, {pkg: pkg }))
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('bump', function() {
   gulp.src(jsonFiles).pipe(bump({version: version})).pipe(gulp.dest('./'));
 });
 
-gulp.task('patch', ['version-patch', 'html-version', 'bump']);
-gulp.task('minor', ['version-minor', 'html-version', 'bump']);
-gulp.task('major', ['version-major', 'html-version', 'bump']);
+gulp.task('patch', ['version-patch', 'header', 'html-version', 'bump']);
+gulp.task('minor', ['version-minor', 'header', 'html-version', 'bump']);
+gulp.task('major', ['version-major', 'header', 'html-version', 'bump']);
 
 // Tag
 gulp.task('tag', function () {
@@ -111,6 +134,7 @@ gulp.task('lib', ['clean-css'], function() {
   gulp.src(paths, {base: './lib/hstrap/'})
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
+    .pipe(header(banner, {pkg: pkg }))
     .pipe(gulp.dest('dist/css'))
     .pipe(require('gulp-livereload')(lr))
     .pipe(notify({title: 'HSTRAP', message: 'build CSS', onLast: true}));
@@ -120,6 +144,7 @@ gulp.task('example', ['clean-ghpage-css'], function() {
   gulp.src('./dist/example.styl')
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
+    .pipe(header(banner, { pkg : pkg } ))
     .pipe(gulp.dest('dist'))
     .pipe(require('gulp-livereload')(lr))
     .pipe(notify({title: 'HSTRAP', message: 'build Gh-page CSS', onLast: true}));
@@ -146,6 +171,10 @@ gulp.task('build',['font', 'example', 'lib', 'html-version']);
 gulp.task('watch', function() {
   gulp.watch(['./lib/hstrap/**/*.styl', './lib/hstrap/MEDIA/*.svg'], ['lib']);
   gulp.watch(['./dist/example.styl'], ['example']);
+  gulp.watch('./index.html', './dist/*.html').on('change', function(event) {
+    gulp.src('').pipe(notify({title: 'Hstrap', message: 'reload html'}));
+    server.changed({body: {files: event.path}});
+  });
 });
 
 // Server

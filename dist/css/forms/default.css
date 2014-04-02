@@ -1,3 +1,8 @@
+/**
+ * hstrap - Stylus mixins, utilities and styles
+ * @version v1.0.0
+ * @link http://hiswe.github.io/hstrap
+ */
 .h-ios {
   width: 100%;
   border: 1px solid #c2c2c2;
