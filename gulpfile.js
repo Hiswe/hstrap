@@ -86,9 +86,8 @@ gulp.task('html-version', function(){
 });
 
 gulp.task('header', function() {
-  pkg.version = verion
-  gulp.src('dist/**/*.css')
-    .pipe(header(banner, {pkg: pkg }))
+  gulp.src(['dist/index.css','dist/css/**/*.css'], {base: './dist'})
+    .pipe(replace(/v(\d*\.\d*\.\d*)/, 'v'+version))
     .pipe(gulp.dest('dist'));
 });
 
