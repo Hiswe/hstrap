@@ -91,15 +91,17 @@ a.selected
   margin-left -(@width + 1em)
 
   .h-box
-    padding-top 6em
     border-top none
 
   ul, li
     list-style none
     margin 0
 
-  a
-    padding .25em 1em
+  li:first-child
+    padding 1em 0
+
+  a, strong
+    padding .25em 0
     display block
 
 .container
@@ -247,6 +249,13 @@ aside.h-popover
     margin-top -($$stem-size)
     left -($$stem-size)
     top 50%
+
+.underline-demo a
+  transition none
+  underline(height: 16, color: rgba($h-dark-blue, .5))
+
+  &:hover
+    underline(height: 16, color: rgba($h-blue, .5))
 
 .hs-box.percent-center-demo
   height 15em

@@ -1,3 +1,9 @@
+/**
+ * hstrap - Stylus mixins, utilities and styles
+ * @version v1.1.0
+ * @link http://hiswe.github.io/hstrap
+ * @license WTFPL
+ */
 html,
 body {
   padding: 0;
@@ -97,7 +103,6 @@ a.selected {
   margin-left: -10em;
 }
 .hs-submenu .h-box {
-  padding-top: 6em;
   border-top: none;
 }
 .hs-submenu ul,
@@ -105,8 +110,12 @@ a.selected {
   list-style: none;
   margin: 0;
 }
-.hs-submenu a {
-  padding: 0.25em 1em;
+.hs-submenu li:first-child {
+  padding: 1em 0;
+}
+.hs-submenu a,
+.hs-submenu strong {
+  padding: 0.25em 0;
   display: block;
 }
 .container {
@@ -289,6 +298,27 @@ aside.h-popover {
   margin-top: -0.75em;
   left: -0.75em;
   top: 50%;
+}
+.underline-demo a {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+  background: 0 16px/2px 2px repeat-x;
+  background-image: -webkit-linear-gradient(top, #fff 50%, rgba(0,120,166,0.5) 50%);
+  background-image: -moz-linear-gradient(top, #fff 50%, rgba(0,120,166,0.5) 50%);
+  background-image: -o-linear-gradient(top, #fff 50%, rgba(0,120,166,0.5) 50%);
+  background-image: -ms-linear-gradient(top, #fff 50%, rgba(0,120,166,0.5) 50%);
+  background-image: linear-gradient(to bottom, #fff 50%, rgba(0,120,166,0.5) 50%);
+}
+.underline-demo a:hover {
+  background: 0 16px/2px 2px repeat-x;
+  background-image: -webkit-linear-gradient(top, #fff 50%, rgba(0,183,224,0.5) 50%);
+  background-image: -moz-linear-gradient(top, #fff 50%, rgba(0,183,224,0.5) 50%);
+  background-image: -o-linear-gradient(top, #fff 50%, rgba(0,183,224,0.5) 50%);
+  background-image: -ms-linear-gradient(top, #fff 50%, rgba(0,183,224,0.5) 50%);
+  background-image: linear-gradient(to bottom, #fff 50%, rgba(0,183,224,0.5) 50%);
 }
 .hs-box.percent-center-demo {
   height: 15em;

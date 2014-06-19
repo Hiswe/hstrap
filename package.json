@@ -1,10 +1,16 @@
 {
   "name": "hstrap",
   "description": "Stylus mixins, utilities and styles",
-  "version": "1.0.2",
+  "version": "1.1.0",
+  "license": "WTFPL",
   "repository": {
     "type": "git",
     "url": "https://github.com/Hiswe/hstrap.git"
+  },
+  "author": {
+    "name": "Yannick Aivayan",
+    "email": "yannick.aivayan@hiswe.net",
+    "url": "http://hiswe.net"
   },
   "dependencies": {
     "stylus": "~0.37.0",
@@ -13,7 +19,6 @@
   "devDependencies": {
     "jade": "~0.28.2",
     "connect": "~2.7.4",
-    "gulp": "~3.5.6",
     "gulp-stylus": "~0.1.0",
     "gulp-notify": "~1.2.4",
     "gulp-util": "~2.2.14",
@@ -29,14 +34,10 @@
     "gulp-livereload": "~1.2.0",
     "connect-livereload": "~0.3.2",
     "gulp-open": "~0.2.8",
-    "gulp-header": "~1.0.2"
+    "gulp-header": "~1.0.2",
+    "gulp": "^3.8.1"
   },
   "homepage": "http://hiswe.github.io/hstrap",
-  "author": {
-    "name": "Yannick Aivayan",
-    "email": "yannick.aivayan@hiswe.net",
-    "url": "http://hiswe.net"
-  },
   "bugs": {
     "url": "https://github.com/Hiswe/hstrap/issues",
     "email": "yannick.aivayan@hiswe.net"

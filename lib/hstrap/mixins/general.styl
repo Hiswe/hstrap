@@ -6,67 +6,6 @@
 px2em(px, ref = $h-fs)
   1em * px / ref
 
-// Convert px to rem
-px2rem(px, ref = $h-rs)
-  1rem * px / ref
-
-// rem font-size
-// base should be 10px (like below)…
-// html
-//   font-size 62.5% // 10 px
-// TODO should be configurable
-// http://snook.ca/archives/html_and_css/font-size-with-rem
-// http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
-rem-fs(size)
-  font-size unit(size, 'px')
-  font-size unit(size/10, 'rem')
-
-// Change the way the browser smooth the font
-// http://maximilianhoffmann.com/article/better-font-rendering-on-osx/
-crisp-font-smoothing()
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-
-// try to remove default style
-// not working totally with select on Firefox & IE…
-reset-form()
-  appearance none
-  -moz-appearance none
-  -webkit-appearance none
-
-// So there is a complement mixin here
-reset-select(color = #555)
-  // This to hide right arrow on firefox
-  // http://jsfiddle.net/joaocunha/RUEbp/1/
-  text-indent 0.01px
-  text-overflow ''
-
-  // remove inner-dotted border on Firefox
-  // http://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
-  &:-moz-focusring
-    color color
-    color rgba(0,0,0,0)
-    text-shadow 0 0 0 color
-
-  &:focus
-    outline none
-
-  &::-ms-expand
-    display none
-
-// style input place holder
-// Firefox 18-
-// Firefox 19+
-placeHolder(color)
-  &:-ms-input-placeholder
-    color color
-  &::-webkit-input-placeholder
-    color color
-  &:-moz-placeholder
-    color color
-  &::-moz-placeholder
-    color color
-
 // Fix conflict with saturate() stylus functions
 css-filter(properties)
   vendor('filter', unquote(properties), only: webkit moz ms official)
@@ -127,24 +66,6 @@ stem($$direction = "top", $$color = $h-components-border, $$width = .5em)
 percentCenter()
   position absolute; left 50%; top @left
   transform translate(-50%, -50%)
-
-// get x & y with angle + distance
-// cos & sin function take already care of angle unit
-angle2xy($$angle = 0deg, $$distance = 1)
-  x = $$distance * cos($$angle)
-  y = $$distance * sin($$angle)
-  return x y
-
-// get top & left with angle + distance
-// Shift is there to correct object size
-angle2topLeft($$angle = 0deg, $$distance = 1em, $$shiftX = false, $$shiftY = false)
-  $$shiftX = 0 unless $$shiftX
-  $$shiftY = $$shiftX unless $$shiftY
-
-  coords = angle2xy($$angle, $$distance)
-
-  left $$shiftX + coords[0]
-  top  $$shiftY - coords[1]
 
 // Everyone need circles
 circle()

@@ -17,9 +17,9 @@
         </div>
         <ul class="h-col">
           <li><a href="../index.html">Home</a></li>
+          <li><a href="./mixins.html" class="selected">Mixins</a></li>
           <li><a href="./base-css.html">Base CSS</a></li>
           <li><a href="./components.html">Components</a></li>
-          <li><a href="./mixins.html" class="selected">Mixins</a></li>
           <li><a href="./config.html">Config</a></li>
         </ul>
       </div>
@@ -29,11 +29,17 @@
   <menu class="hs-submenu">
     <ul class="h-box">
       <li><a href="#">Top</a></li>
+      <li><strong>Utility mixins</strong></li>
       <li><a href="#general">General</a></li>
+      <li><a href="#text">Text</a></li>
+      <li><a href="#math">Math</a></li>
+      <li><a href="#form">Form</a></li>
+      <li><a href="#mediaQuery">Media Query</a></li>
       <li><a href="#easing">Easing</a></li>
       <li><a href="#ie">IE8</a></li>
+      <li><strong>Class mixins</strong></li>
       <li><a href="#buttons">Buttons</a></li>
-      <li><a href="#forms">Forms</a></li>
+      <li><a href="#formElements">Forms Element</a></li>
       <li><a href="#box">Box</a></li>
       <li><a href="#scrollbox">Scrollbox</a></li>
     </ul>
@@ -48,50 +54,31 @@
           <dd>
             Convert a pixel size into em according to the reference.
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L10">px2rem</a>(px, [ref = 10px])</dt>
-          <dd>
-            Convert a pixel size into rem according to the reference.
-          </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L20">rem-fs</a>(px)</dt>
-          <dd>
-            Convert a pixel size into rem with a px fallback.
-            <span class="danger">The html base font should be 10px (font-size: 62.5%)</span>
-          </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L26">crisp-font-smoothing</a>()</dt>
-          <dd>
-            Non-standard property which change the way the browser render the font.<br>
-            use  when letters should be rendered thinner (icons, dark background, some fonts, …).<br>
-            see <a href="http://maximilianhoffmann.com/article/better-font-rendering-on-osx/">here</a> for more details.
-          </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L33">reset-form</a>()</dt>
-          <dd>Try to reset the default input style</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L41">placeHolder</a>(color)</dt>
-          <dd>Change an input placeholder text color</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L53">css-filter</a>(properties)</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L10">css-filter</a>(properties)</dt>
           <dd>
             Fix conflict with the <a href="http://learnboost.github.io/stylus/docs/bifs.html">build-in stylus saturate() function</a>
             <span class="danger">This mixin use the stylus unquote function, so properties has to be a string</span>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L57">blanc</a>([opacity = 0.5])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L14">blanc</a>([opacity = 0.5])</dt>
           <dd>Shortcut for rgba(white, .5)</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L60">noir</a>([opacity = 0.5])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L17">noir</a>([opacity = 0.5])</dt>
           <dd>Shortcut for rgba(black, .5)</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L64">bg-cover</a>()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L21">bg-cover</a>()</dt>
           <dd>Tile the background to the borders with <i>background-size: cover</i></dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L70">v-align</a>()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L27">v-align</a>()</dt>
           <dd>Vertical align in a fixed height container</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L82">flex-row</a>()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L39">flex-row</a>()</dt>
           <dd>Flex-box row
             <span class="danger">Compatibility issues: <a href="https://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html">Adobe new flexbox article</a></span>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L88">stem</a>([direction = "top", color = $h-components-border, width = .5em])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L45">stem</a>([direction = "top", color = $h-components-border, width = .5em])</dt>
           <dd>generate a stem that can be applied on pseudo elements
               <span class="danger">The stem is not positioned</span>
               <div class="hs-box">
                 <div class="hs-stem">A brilliant stem example</div>
               </div>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L109">percentCenter</a>()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L66">percentCenter</a>()</dt>
           <dd>absolute center using this <a href="http://css-tricks.com/centering-percentage-widthheight-elements/">css-tricks trick</a>
             <div class="hs-box percent-center-demo">
               <p contenteditable="true">
@@ -101,9 +88,45 @@
               </p>
             </div>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L115">angle2xy</a>([angle = 0deg], [distance = 1])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L71">circle</a>()</dt>
+          <dd class="circle-demo"><p>Excessive round corner</p></dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="text">
+      <h2>Text <small>mixins/text</small></h2>
+      <div class="hs-box">
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/text.styl#L8">rem-fs</a>(px)</dt>
+          <dd>
+            Convert a pixel size into rem with a px fallback.
+            <span class="danger">The html base font should be 10px (font-size: 62.5%)</span>
+          </dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/text.styl#L14">crisp-font-smoothing</a>()</dt>
+          <dd>
+            Non-standard property which change the way the browser render the font.<br>
+            use  when letters should be rendered thinner (icons, dark background, some fonts, …).<br>
+            see <a href="http://maximilianhoffmann.com/article/better-font-rendering-on-osx/">here</a> for more details.
+          </dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/text.styl#L20">underline</a>()</dt>
+          <dd>
+            Use gradient to make an underline like in <a href="https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9">medium </a>
+            <div class="hs-box underline-demo">
+              <a href="#text">this is a demo link</a>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="math">
+      <h2>Math <small>mixins/math</small></h2>
+      <div class="hs-box">
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/math.styl#L3">angle2xy</a>([angle = 0deg], [distance = 1])</dt>
           <dd>Retreive x &amp; y with an angle + distance</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L122">angle2topLeft</a>([angle = 0deg], [distance = 1em; $$shiftX = false, $$shiftY = false])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/math.styl#L10">angle2topLeft</a>([angle = 0deg], [distance = 1em; $$shiftX = false, $$shiftY = false])</dt>
           <dd>Retreive top &amp; left with an angle + distance
             <div class="hs-box angle-demo">
                 <ul>
@@ -117,11 +140,49 @@
                 </ul>
             </div>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L132">circle</a>()</dt>
-          <dd class="circle-demo"><p>Excessive round corner</p></dd>
         </dl>
       </div>
     </section>
+
+    <section id="form">
+      <h2>Form <small>mixins/form</small></h2>
+      <div class="hs-box">
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form.styl#L3">reset-form</a>()</dt>
+          <dd>Try to reset the default input style</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form.styl#L9">reset-select</a>()</dt>
+          <dd>Try to reset the default selectbox style</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form.styl#L33">placeHolder</a>(color)</dt>
+          <dd>Change an input placeholder text color</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="mediaQuery">
+      <h2>Media Query <small>mixins/media-query</small></h2>
+      <div class="hs-box">
+        <p>Stylus don't let you have variables in media queries. <br /> Here is a bunch of clumsy mixins to help solve this issue.
+        <span class="danger">Don't forget to close the query by calling <strong>media-query-end()</strong></span>
+        <span class="danger">Don't indent after calling the mixin</span>
+        </p>
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/media-query.styl#L1">media-query-max</a>(width)</dt>
+          <dd><code>@media screen and (max-width: width ) {</code></dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/media-query.styl#L4">media-query-min</a>(width)</dt>
+          <dd><code>@media screen and (min-width: width ) {</code></dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/media-query.styl#L7">media-query-end</a>()</dt>
+          <dd><code>}</code></dd>
+        </dl>
+        <p>example:</p>
+        <pre class="hs-box">
+media-query-max(320)
+main
+  width auto
+media-query-end()
+          </pre>
+      </div>
+    </section>
+
     <section id="easing">
       <h2>Easing functions <small>mixins/h-easing</small></h2>
       <div class="hs-box">
@@ -191,8 +252,8 @@
       </div>
     </section>
 
-    <section id="forms">
-      <h2>Forms <small>mixins/form-elements</small></h2>
+    <section id="formElements">
+      <h2>Form Elements <small>mixins/form-elements</small></h2>
       <div class="hs-box">
         <dl>
           <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L10">h-input</a>()</dt>

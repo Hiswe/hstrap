@@ -3,7 +3,7 @@
 var lr      = require('tiny-lr')();
 var git     = require('gulp-git');
 var gulp    = require('gulp');
-var wait    = require('gulp-wait'); // Wait for not having error when files are deleted
+var wait    = require('gulp-wait');
 var bump    = require('gulp-bump');
 var open    = require('gulp-open');
 var gutil   = require('gulp-util');
@@ -19,7 +19,7 @@ var express = require('express');
 /////////
 // CONF
 /////////
-var pkg     = require('./package.json')
+var pkg     = require('./package.json');
 var version = pkg.version;
 
 var jsonFiles = [
@@ -44,7 +44,7 @@ var banner = ['/**',
   ' * <%= pkg.name %> - <%= pkg.description %>',
   ' * @version v<%= pkg.version %>',
   ' * @link <%= pkg.homepage %>',
-  // ' * @license <%= pkg.license %>',
+  ' * @license <%= pkg.license %>',
   ' */',
   ''].join('\n');
 
@@ -66,32 +66,32 @@ var onError = function onError(err) {
 /////////
 
 // Version number and stuff
-gulp.task('version-patch', function(cb) {
+gulp.task('version-patch', function (cb) {
   version = semver.inc(version, 'patch');
   cb();
 });
-gulp.task('version-minor', function(cb) {
+gulp.task('version-minor', function (cb) {
   version = semver.inc(version, 'minor');
   cb();
 });
-gulp.task('version-major', function(cb) {
+gulp.task('version-major', function (cb) {
   version = semver.inc(version, 'major');
   cb();
 });
 
-gulp.task('html-version', function(){
+gulp.task('html-version', function (){
   gulp.src('./index.html', {base: './'})
     .pipe(replace(/v(\d*\.\d*\.\d*)/, 'v'+version))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('header', function() {
+gulp.task('header', function () {
   gulp.src(['dist/index.css','dist/css/**/*.css'], {base: './dist'})
     .pipe(replace(/v(\d*\.\d*\.\d*)/, 'v'+version))
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('bump', function() {
+gulp.task('bump', function () {
   gulp.src(jsonFiles).pipe(bump({version: version})).pipe(gulp.dest('./'));
 });
 
@@ -116,22 +116,22 @@ gulp.task('tag', function () {
   // return gulp.src('./')
   //   .pipe(git.commit(message, {args: '-a'}))
   //   .pipe(git.tag(v, message));
-})
+});
 
 /////////
 // ASSETS
 /////////
 
 // Build the lib
-gulp.task('clean-css', function() {
+gulp.task('clean-css', function () {
   return gulp.src('dist/css/', {read: false}).pipe(clean());
 });
 
-gulp.task('clean-ghpage-css', function() {
+gulp.task('clean-ghpage-css', function () {
   return gulp.src('dist/example.css', {read: false}).pipe(clean());
 });
 
-gulp.task('lib', ['clean-css'], function() {
+gulp.task('lib', ['clean-css'], function () {
   gulp.src(paths, {base: './lib/hstrap/'})
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
@@ -141,7 +141,7 @@ gulp.task('lib', ['clean-css'], function() {
     .pipe(notify({title: 'HSTRAP', message: 'build CSS', onLast: true}));
 });
 
-gulp.task('example', ['clean-ghpage-css'], function() {
+gulp.task('example', ['clean-ghpage-css'], function () {
   gulp.src('./dist/example.styl')
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
@@ -152,11 +152,11 @@ gulp.task('example', ['clean-ghpage-css'], function() {
 });
 
 // Copy font
-gulp.task('clean-font', function() {
+gulp.task('clean-font', function () {
   return gulp.src('dist/font/', {read: false}).pipe(clean());
 });
 
-gulp.task('font', ['clean-font'], function() {
+gulp.task('font', ['clean-font'], function () {
   gulp.src('components/HisoFont/font/**', {base: './components/HisoFont/'})
     .pipe(gulp.dest('dist'));
 });
@@ -169,13 +169,13 @@ gulp.task('build',['font', 'example', 'lib', 'html-version']);
 /////////
 
 // Watch
-gulp.task('watch', function() {
+gulp.task('watch', function () {
   gulp.watch(['./lib/hstrap/**/*.styl', './lib/hstrap/MEDIA/*.svg'], ['lib']);
   gulp.watch(['./dist/example.styl'], ['example']);
-  gulp.watch('./index.html', './dist/*.html').on('change', function(event) {
-    gulp.src('').pipe(notify({title: 'Hstrap', message: 'reload html'}));
-    server.changed({body: {files: event.path}});
-  });
+  // gulp.watch('./index.html', './dist/*.html').on('change', function (event) {
+  //   gulp.src('README.md').pipe(notify({title: 'Hstrap', message: 'reload html'}));
+  //   lr.changed({body: {files: event.path}});
+  // });
 });
 
 // Server
@@ -186,7 +186,7 @@ var startExpress = function startExpress() {
   app.listen(4000);
 };
 
-gulp.task('express', function(cb){
+gulp.task('express', function (cb) {
   startExpress();
   lr.listen(35729);
   cb();
@@ -194,7 +194,7 @@ gulp.task('express', function(cb){
 
 gulp.task('server', ['express', 'watch']);
 
-gulp.task("start", ['server'], function(){
+gulp.task('start', ['server'], function () {
   gulp.src('./README.md').pipe(wait(1000)).pipe(open('', {url: "http://localhost:4000"}));
 });
 
@@ -202,15 +202,19 @@ gulp.task("start", ['server'], function(){
 // DOC
 /////////
 
-gulp.task('default', function() {
-  console.log(gutil.colors.red('html-version'), '', 'update version number in html');
-  console.log(gutil.colors.red('font'), '        ', 'Copy fonts to the right folder');
-  console.log(gutil.colors.red('lib'), '         ', 'Compile the lib');
-  console.log(gutil.colors.red('example'), '     ', 'Build example css');
-  console.log(gutil.colors.red('watch'), '       ', 'Watch stylus');
-  console.log(gutil.colors.red('major'), '       ', 'tag as major version');
-  console.log(gutil.colors.red('minor'), '       ', 'tag as minor version');
-  console.log(gutil.colors.red('patch'), '       ', 'tag as patch version');
-  console.log(gutil.colors.red('tag'), '         ', 'commit and tag in git');
-  console.log(gutil.colors.red('start'), '       ', 'launch server and watch file');
+gulp.task('default', function (cb) {
+  var m = gutil.colors.magenta;
+  var g = gutil.colors.grey;
+  console.log(m('html-version'), g('..'), 'update version number in html');
+  console.log(m('font'), g('..........'), 'Copy fonts to the right folder');
+  console.log(m('lib'), g('...........'), 'Compile the lib');
+  console.log(m('example'), g('.......'), 'Build example css');
+  console.log(m('watch'), g('.........'), 'Watch stylus');
+  console.log(m('major'), g('.........'), 'tag as major version');
+  console.log(m('minor'), g('.........'), 'tag as minor version');
+  console.log(m('patch'), g('.........'), 'tag as patch version');
+  console.log(m('tag'), g('...........'), 'commit and tag in git');
+  console.log(m('build'), g('.........'), 'build everything');
+  console.log(m('start'), g('.........'), 'launch server and watch file');
+  cb();
 });

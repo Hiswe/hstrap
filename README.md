@@ -1,5 +1,7 @@
 # hstrap
 
+[![NPM version](https://badge.fury.io/js/hstrap.svg)](http://badge.fury.io/js/hstrap)
+
 Little lib build upon [stylus](http://learnboost.github.io/stylus/) & [nib](http://visionmedia.github.io/nib/)
 
 ## Documentation
@@ -25,6 +27,10 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
 
 ## Release History
 
+- **1.1.0**
+	- reorganize mixins files
+	- add [#4](https://github.com/Hiswe/hstrap/issues/4): underline with gradient
+	- add [#13](https://github.com/Hiswe/hstrap/issues/13): media query with variables
 - **1.0.2**
   - add header to CSS files
   - fix :invalid state on form
