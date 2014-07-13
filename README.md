@@ -27,6 +27,7 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
 
 ## Release History
 
+- **1.1.1** — Add `.h-active` class for button
 - **1.1.0**
 	- reorganize mixins files
 	- add [#4](https://github.com/Hiswe/hstrap/issues/4): underline with gradient

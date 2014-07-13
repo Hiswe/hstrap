@@ -51,6 +51,7 @@ h-btn()
   &::-moz-focus-inner
     outline none
 
+  &.h-active:not(.h-disabled):not([disabled]),
   &:active:not(.h-disabled):not([disabled])
     transform translate3d(-($h-buttons-active-depth), -($h-buttons-active-depth), 0)
     box-shadow $h-buttons-active-depth $h-buttons-active-depth 0 noir(.75)

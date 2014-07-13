@@ -1,6 +1,6 @@
 /**
  * hstrap - Stylus mixins, utilities and styles
- * @version v1.1.0
+ * @version v1.1.1
  * @link http://hiswe.github.io/hstrap
  * @license WTFPL
  */
@@ -62,6 +62,7 @@
 .h-btn::-moz-focus-inner {
   outline: none;
 }
+.h-btn.h-active:not(.h-disabled):not([disabled]),
 .h-btn:active:not(.h-disabled):not([disabled]) {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -72,6 +73,7 @@
   box-shadow: 0 0 0 rgba(0,0,0,0.75);
   outline: 0;
 }
+.h-btn.h-active:not(.h-disabled):not([disabled])::after,
 .h-btn:active:not(.h-disabled):not([disabled])::after {
   position: absolute;
   bottom: 0;
