@@ -161,8 +161,8 @@ gulp.task('clean-font', function (cb) {
 });
 
 gulp.task('font', ['clean-font'], function () {
-  gulp.src('components/HisoFont/font/**', {base: './components/HisoFont/'})
-    .pipe(gulp.dest('dist'));
+  gulp.src('bower_components/hiso-font/dst/*')
+    .pipe(gulp.dest('dist/font'));
 });
 
 // Whole build
