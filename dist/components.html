@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hstrap components</title>
   <link rel="stylesheet" href="font/hiso-font.css">
   <link rel="stylesheet" href="css/index.css">
@@ -13,12 +14,15 @@
     <div class="container">
       <div class="h-row">
         <div class="hs-master-head h-col">
-          <h1><a href="../index.html">HStrap</a></h1>
+          <h1>
+            <a href="../index.html">HStrap</a>
+            <a href="#menu" class="toggle-menu">≡</a>
+          </h1>
         </div>
-        <ul class="h-col">
+        <ul class="h-col" id="menu">
+          <li><a href="#">✖︎</a></li>
           <li><a href="../index.html">Home</a></li>
           <li><a href="./mixins.html" >Mixins</a></li>
-          <li><a href="./base-css.html">Base CSS</a></li>
           <li><a href="./components.html" class="selected">Components</a></li>
           <li><a href="./config.html">Config</a></li>
         </ul>
@@ -29,6 +33,10 @@
   <menu class="hs-submenu">
     <ul class="h-box">
       <li><a href="#">Top</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#layout">Layout</a></li>
       <li><a href="#box">Box</a></li>
       <li><a href="#popover">Popover</a></li>
       <li><a href="#scrollbox">Scrollbox</a></li>
@@ -36,6 +44,198 @@
   </menu>
 
   <div class="container">
+    <section id="links">
+      <h2>Links <small>links.css</small></h2>
+      <div class="hs-box">
+        <a href="">a link</a>
+      </div>
+    </section>
+
+    <section id="buttons">
+      <h2>Buttons <small>buttons.css</small></h2>
+      <table class="hs-box">
+        <thead>
+          <tr>
+            <th>Button</th>
+            <th>class=""</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><button class="h-btn">Default</button></td>
+            <td>h-btn</td>
+            <td>Standard button with gradient</td>
+          </tr>
+          <tr>
+            <td><button class="h-btn h-primary">Primary</button></td>
+            <td>h-btn h-primary</td>
+            <td>Standard blue button with gradient</td>
+          </tr>
+          <tr>
+            <td><button class="h-btn h-danger">Danger</button></td>
+            <td>h-btn h-danger</td>
+            <td>Standard red button with gradient</td>
+          </tr>
+          <tr>
+            <td><button class="h-btn" disabled>Disabled</button></td>
+            <td>h-btn</td>
+            <td>Standard disabled</td>
+          </tr>
+          <tr>
+            <td><button class="h-btn h-inset">Inset</button></td>
+            <td>h-btn h-inset</td>
+            <td>Inset button</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Size</h4>
+      <div class="hs-box">
+        <button class="h-btn h-primary h-big">.h-big</button> <button class="h-btn h-big">.h-big</button><br>
+        <button class="h-btn h-primary">regular</button> <button class="h-btn">regular</button><br>
+        <button class="h-btn h-primary h-mini">.h-mini</button> <button class="h-btn h-mini">.h-mini</button>
+      </div>
+      <h4>mixins/buttons</h4>
+      <div class="hs-box">
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L7">h-btn-color</a>(light, medium, dark)</dt>
+          <dd>
+            Give 3 colors to have all :active &amp; :hover state background-colors<br>
+            Text color (white or black) is defined with the darkest color
+          </dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L24">h-btn</a>()</dt>
+          <dd>Main mixin to have a h-btn style</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L50">h-inset-button</a>()</dt>
+          <dd>Main mixin to have a h-btn inset style</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="forms">
+      <h2>Forms <small>forms.css</small></h2>
+      <div class="hs-box">
+        <!-- Regular form -->
+        <fieldset class="h-fieldset">
+          <legend class="h-legend">Example of legend</legend>
+          <label class="h-label" for="ex-input">Example of label</label>
+          <input class="h-input" id="ex-input" type="text" placeholder="input text with placeholder">
+          <label class="h-label" for="ex-textarea" >Textarea</label>
+          <textarea class="h-textarea" id="ex-textarea" type="text">Quisque rhoncus urna eu quam tempor mattis. Mauris in urna et libero pharetra tempor. Cras accumsan quam el diam accumsan gravida ut vel urna.
+          </textarea>
+          <label class="h-label" for="ex-select">Select input</label>
+          <select class="h-select" id="ex-select" type="text">
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+          <label class="h-label" for="ex-select-link">Select input with a link appearance</label>
+          <select class="h-select-link" id="ex-select-link" type="text">
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+          <label class="h-label" for="ex-input-search">Example of search input <span class="notice">(experimental: issues on webkit)</span></label>
+          <input class="h-search" id="ex-input-search" type="search" placeholder="search input">
+          <label class="h-label">Simili input</label>
+          <div class="h-input" contenteditable>with content editable</div>
+          <label class="h-label">Simili select</label>
+          <div class="h-select">Same same</div>
+        </fieldset>
+        <!-- Error form -->
+        <fieldset class="h-fieldset">
+          <legend class="h-legend">Error form</legend>
+          <label class="h-label" for="ex-input-invalid">Input (<i>invalid</i> attribute)</label>
+          <input class="h-input" id="ex-input-invalid" type="email" value="e-mail example" required>
+          <label class="h-label" for="ex-textarea-invalid">Textarea (<i>invalid</i> attribute)</label>
+          <textarea class="h-textarea" id="ex-textarea-invalid" type="text" placeholder="error placeholder" required></textarea>
+          <label class="h-label" for="ex-select-invalid" >Select input (<i>invalid</i> class)</label>
+          <select class="h-select invalid" id="ex-select-invalid" type="text">
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+          <label class="h-label" for="ex-select-link-invalid">Select input with a link appearance (<i>invalid</i> class)</label>
+          <select class="h-select-link invalid" id="ex-select-link-invalid" type="text">
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+        </fieldset>
+        <!-- Disabled form -->
+        <fieldset class="h-fieldset">
+          <legend class="h-legend">Disabled form</legend>
+          <label class="h-label" for="ex-input-disabled">Input</label>
+          <input class="h-input" id="ex-input-disabled" type="email" value="disabled e-mail example" disabled>
+          <label class="h-label" for="ex-textarea-disabled">Textarea</label>
+          <textarea class="h-textarea" id="ex-textarea-disabled" type="text" placeholder="disabled placeholder" disabled></textarea>
+          <label class="h-label" for="ex-select-disabled" >Select input</label>
+          <select class="h-select" id="ex-select-disabled" type="text" disabled>
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+          <label class="h-label" for="ex-select-link-disabled">Select input with a link appearance</label>
+          <select class="h-select-link" id="ex-select-link-disabled" type="text" disabled>
+            <option>option one</option>
+            <option>option two</option>
+            <option>option three</option>
+            <option>option four</option>
+          </select>
+        </fieldset>
+        <fieldset class="h-fieldset">
+          <legend class="h-legend">Special inputs</legend>
+          <label>ios checkbox</label>
+          <div class="h-ios" style="width: 5em">
+            <input type="checkbox" id="ex-input-ioscheck">
+            <label class="h-label" for="ex-input-ioscheck" />
+          </div>
+        </fieldset>
+      </div>
+      <h4>mixins/form-elements</h4>
+      <div class="hs-box">
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L10">h-input</a>()</dt>
+          <dd>Main mixin to have a h-input style</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L54">h-search</a>()</dt>
+          <dd>Additional styles for search inputs</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L65">h-select</a>()</dt>
+          <dd>Additional styles for select inputs</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L75">h-textarea</a>()</dt>
+          <dd>Additional styles for textareas</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L87">h-fieldset</a>()</dt>
+          <dd>Main mixin to have a h-fieldset style</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L90">h-label</a>()</dt>
+          <dd>Main mixin to have a h-label style</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L94">h-legend</a>()</dt>
+          <dd>Main mixin to have a h-legend style</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="layout">
+      <h2>Fluid layout<small>layout.css</small> <span class="notice">(caution with compatibility)</span></h2>
+      <div class="hs-box">
+        <ul class="h-row" >
+            <li class="h-col">First column</li>
+            <li class="h-col">Second column <br><br> With some additional text</li>
+            <li class="h-col">Third column</li>
+        </ul>
+        <ul class="h-row" >
+            <li class="h-col">First column</li>
+            <li class="h-col">Second column</li>
+            <li class="h-col">Third column</li>
+            <li class="h-col">Forth column
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, ipsum cum doloremque quasi excepturi ipsam nulla illum? Minima, at, beatae voluptas expedita amet distinctio dolor aperiam deleniti quia. Consectetur, est!
+              </p>
+            </li>
+        </ul>
+      </div>
+    </section>
 
     <section id="box">
       <h2>Boxes<small>components/box.css</small></h2>
@@ -43,6 +243,15 @@
         <div class="h-box">.h-box</div>
         <br>
         <div class="h-box-inset">.h-box-inset</div>
+      </div>
+      <h4>mixins/box</h4>
+      <div class="hs-box">
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/box.styl#L13">h-box</a>([border-color], [background-color], [shadow-color])</dt>
+          <dd>Main mixin to have a h-box style</dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/box.styl#L17">h-box-inset</a>([border-color], [background-color], [shadow-color])</dt>
+          <dd>Main mixin for having a inset h-box style</dd>
+        </dl>
       </div>
     </section>
 
@@ -85,6 +294,13 @@
             <li>Earum, iusto, ratione pariatur repellat atque quasi dolor tempore et voluptates debitis quisquam suscipit veritatis quos placeat autem incidunt eius odio error ea perspiciatis voluptatum repudiandae vero harum quibusdam asperiores!</li>
           </ul>
         </div>
+      </div>
+      <h4>mixins/scrollbox</h4>
+      <div class="hs-box">
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/scrollbox.styl#L10">h-scrollbox</a>()</dt>
+          <dd>Main mixin to have a scrollbox style</dd>
+        </dl>
       </div>
     </section>
   </div>

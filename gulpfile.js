@@ -1,20 +1,21 @@
 'use strict';
 
-var lr      = require('tiny-lr')();
-var git     = require('gulp-git');
-var gulp    = require('gulp');
-var wait    = require('gulp-wait');
-var bump    = require('gulp-bump');
-var open    = require('gulp-open');
-var gutil   = require('gulp-util');
-var clean   = require('gulp-clean');
-var stylus  = require('gulp-stylus');
-var notify  = require('gulp-notify');
-var semver  = require('semver');
-var header  = require('gulp-header');
-var replace = require('gulp-replace');
-var plumber = require('gulp-plumber');
-var express = require('express');
+var lr      			= require('tiny-lr')();
+var del     			= require('del');
+var git     			= require('gulp-git');
+var gulp    			= require('gulp');
+var wait    			= require('gulp-wait');
+var bump    			= require('gulp-bump');
+var open    			= require('gulp-open');
+var gutil   			= require('gulp-util');
+var stylus  			= require('gulp-stylus');
+var notify  			= require('gulp-notify');
+var semver  			= require('semver');
+var header  			= require('gulp-header');
+var replace 			= require('gulp-replace');
+var plumber 			= require('gulp-plumber');
+var express 			= require('express');
+var autoprefixer 	= require('gulp-autoprefixer');
 
 /////////
 // CONF
@@ -50,9 +51,10 @@ var banner = ['/**',
 
 var stylusConf = {
   paths: ['lib/hstrap'],
-  urlFunc: ['embedurl'],
-  use: ['nib'],
-  import: ['nib']
+  url: {
+    name: 'embedurl',
+    paths: [__dirname + '/dist']
+  }
 };
 
 // Plumber error callback
@@ -123,18 +125,19 @@ gulp.task('tag', function () {
 /////////
 
 // Build the lib
-gulp.task('clean-css', function () {
-  return gulp.src('dist/css/', {read: false}).pipe(clean());
+gulp.task('clean-css', function (cb) {
+	del(['dist/css/'], cb);
 });
 
-gulp.task('clean-ghpage-css', function () {
-  return gulp.src('dist/example.css', {read: false}).pipe(clean());
+gulp.task('clean-ghpage-css', function (cb) {
+	del(['dist/example.css'], cb);
 });
 
 gulp.task('lib', ['clean-css'], function () {
   gulp.src(paths, {base: './lib/hstrap/'})
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
+    .pipe(autoprefixer())
     .pipe(header(banner, {pkg: pkg }))
     .pipe(gulp.dest('dist/css'))
     .pipe(require('gulp-livereload')(lr))
@@ -145,6 +148,7 @@ gulp.task('example', ['clean-ghpage-css'], function () {
   gulp.src('./dist/example.styl')
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
+    .pipe(autoprefixer())
     .pipe(header(banner, { pkg : pkg } ))
     .pipe(gulp.dest('dist'))
     .pipe(require('gulp-livereload')(lr))
@@ -152,8 +156,8 @@ gulp.task('example', ['clean-ghpage-css'], function () {
 });
 
 // Copy font
-gulp.task('clean-font', function () {
-  return gulp.src('dist/font/', {read: false}).pipe(clean());
+gulp.task('clean-font', function (cb) {
+	del(['dist/font/'], cb);
 });
 
 gulp.task('font', ['clean-font'], function () {

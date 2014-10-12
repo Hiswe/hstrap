@@ -1,0 +1,30 @@
+// Vertical align in a fixed height container
+v-align(child-selector = '> *')
+  &:before,
+  {child-selector}
+    display inline-block
+    vertical-align middle
+
+  &::before
+    content ''
+    width 0
+    height 100%
+
+// Absolute centering with variable size
+// See http://css-tricks.com/centering-percentage-widthheight-elements/
+center-transform()
+  position absolute
+  left 50%
+  top @left
+  transform translate(-50%, -50%)
+
+center-flex()
+  display flex
+  align-items center
+  justify-content center
+
+// flex box row
+flex-row()
+  display flex
+  align-content stretch
+  flex-direction row

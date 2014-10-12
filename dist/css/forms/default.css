@@ -10,7 +10,6 @@
   background: #fff;
   position: relative;
   padding: 0.5em;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.1);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.1);
 }
 .h-ios:before,
@@ -37,14 +36,10 @@
 .h-ios label {
   display: block;
   width: 50%;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+       box-sizing: border-box;
   -webkit-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -moz-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -o-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -ms-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+          transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
   cursor: pointer;
   position: absolute;
   top: -1px;
@@ -55,9 +50,6 @@
   border: 1px solid;
   border-color: rgba(0,0,0,0.15) rgba(0,0,0,0.15) rgba(0,0,0,0.25);
   background: -webkit-linear-gradient(#fff, #e6e6e6);
-  background: -moz-linear-gradient(#fff, #e6e6e6);
-  background: -o-linear-gradient(#fff, #e6e6e6);
-  background: -ms-linear-gradient(#fff, #e6e6e6);
   background: linear-gradient(#fff, #e6e6e6);
 }
 .h-ios input[type=checkbox] {
@@ -67,31 +59,11 @@
   left: 50%;
   margin-left: 1px;
 }
-.h-input-append {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -ms-flex-line-pack: stretch;
-  -webkit-align-content: stretch;
-  align-content: stretch;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -o-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
 .h-input-append input:not([type="submit"]) {
   -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
   -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .h-input-append .h-btn {
   padding: 0 1em;
@@ -127,18 +99,13 @@ textarea {
   padding: 0.5em;
   margin: 0;
   border: 1px solid #c2c2c2;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   -webkit-transition: border-color 0.5s, box-shadow 0.5s;
-  -moz-transition: border-color 0.5s, box-shadow 0.5s;
-  -o-transition: border-color 0.5s, box-shadow 0.5s;
-  -ms-transition: border-color 0.5s, box-shadow 0.5s;
-  transition: border-color 0.5s, box-shadow 0.5s;
+          transition: border-color 0.5s, box-shadow 0.5s;
   color: #555;
   width: 100%;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+       box-sizing: border-box;
   outline: 0;
 }
 input:not([type="submit"]):-ms-input-placeholder,
@@ -168,7 +135,6 @@ input:not([type="submit"]):focus,
 select:focus,
 textarea:focus {
   border-color: #00b7e0;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(0,183,224,0.3);
   box-shadow: inset 2px 2px 0 rgba(0,183,224,0.3);
   outline: 0;
 }
@@ -183,7 +149,6 @@ select:focus:invalid,
 textarea:focus:invalid {
   color: #96002b;
   border-color: #df006f;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(223,0,111,0.3);
   box-shadow: inset 2px 2px 0 rgba(223,0,111,0.3);
 }
 input:not([type="submit"]).ng-invalid:-ms-input-placeholder,
@@ -245,7 +210,6 @@ textarea:disabled:hover {
   cursor: not-allowed;
   background-color: #eee;
   color: #999;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   border: 1px solid #c2c2c2;
 }
@@ -316,18 +280,13 @@ textarea:disabled {
   resize: none;
 }
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   text-indent: 0.01px;
-  -o-text-overflow: '';
   text-overflow: '';
-  -webkit-border-radius: 0;
   border-radius: 0;
   padding-right: 1.75em;
-  -webkit-border-radius: 0;
   border-radius: 0;
   background-repeat: no-repeat;
   background-position: center right;
@@ -345,8 +304,6 @@ select::-ms-expand {
   display: none;
 }
 input[type="search"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;

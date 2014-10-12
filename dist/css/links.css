@@ -10,10 +10,7 @@ a:visited,
   color: #0078a6;
   text-decoration: none;
   -webkit-transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -moz-transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -o-transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -ms-transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+          transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
 }
 a:hover,
 a:visited:hover,

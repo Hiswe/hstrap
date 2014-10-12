@@ -1,6 +1,6 @@
 /**
  * hstrap - Stylus mixins, utilities and styles
- * @version v1.1.0
+ * @version v1.1.1
  * @link http://hiswe.github.io/hstrap
  * @license WTFPL
  */
@@ -11,14 +11,31 @@ body {
 }
 html {
   background: -webkit-linear-gradient(top, #fff, #ececec) fixed;
-  background: -moz-linear-gradient(top, #fff, #ececec) fixed;
-  background: -o-linear-gradient(top, #fff, #ececec) fixed;
-  background: -ms-linear-gradient(top, #fff, #ececec) fixed;
   background: linear-gradient(to bottom, #fff, #ececec) fixed;
   font-family: 'Helvetica', 'arial', 'sans-serif';
 }
 body {
   background: transparent;
+}
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+@media screen and (min-width: 48em) {
+  .container {
+    width: 50em;
+    margin: 0 auto;
+  }
+  .hs-menu .container {
+    margin: 0 auto;
+  }
+  .container > h1 {
+    margin: 1em 0 0.5em;
+    color: #df006f;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+  }
 }
 a.selected {
   color: #00b7e0;
@@ -28,16 +45,8 @@ a.selected {
   margin: 0;
   padding: 2em 0;
   border-bottom: 1px solid #fff;
-  border-top: 0.25em solid #df006f;
-}
-.hs-menu .hs-master-head {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 0 0 18em;
-  -ms-flex: 0 0 18em;
-  flex: 0 0 18em;
+  border-top: 4px solid #df006f;
+  position: relative;
 }
 .hs-menu h1 {
   font-family: 'hiso-bright', Helvetica, sans-serif;
@@ -49,29 +58,79 @@ a.selected {
   margin-bottom: 0.25em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 .hs-menu h1 a {
   color: #df006f;
 }
+.hs-menu h1 a.toggle-menu {
+  font-size: 22px;
+  font-size: 2.2rem;
+  color: #00b7e0;
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  line-height: 0.75;
+}
 .hs-menu h4 {
+  text-align: center;
   color: #c2c2c2;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
   letter-spacing: 0.25em;
   text-indent: 0.75em;
 }
-.hs-menu ul {
-  text-align: right;
+#menu {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  border-top: 4px solid #df006f;
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  background: #262626;
+  padding: 0;
+  margin: 0;
+}
+#menu li,
+#menu a {
+  display: block;
+}
+#menu li {
   padding: 0;
 }
-.hs-menu li,
-.hs-menu a {
-  display: inline-block;
+#menu a {
+  padding: 1em;
 }
-.hs-menu li {
-  padding-top: 2em;
+#menu:target {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
-.hs-menu li a {
-  padding: 0.25em 0.5em;
+@media screen and (min-width: 52em) {
+  .hs-menu h1,
+  .hs-menu h4 {
+    text-align: left;
+  }
+  .hs-menu .toggle-menu {
+    display: none;
+  }
+  #menu {
+    position: static;
+    border: 0;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+  }
+  #menu li:first-child {
+    display: none;
+  }
+  #menu li,
+  #menu a {
+    display: inline-block;
+  }
 }
 .hs-small-menu {
   position: relative;
@@ -91,44 +150,39 @@ a.selected {
   font-family: 'hiso-dark', Helvetica, sans-serif;
   font-weight: normal;
   font-size: 2.5em;
+  text-align: center;
 }
 .hs-submenu {
-  width: 9em;
-  margin: 0 0 0 16px;
-  padding: 0;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 100%;
-  margin-left: -10em;
+  display: none;
 }
-.hs-submenu .h-box {
-  border-top: none;
-}
-.hs-submenu ul,
-.hs-submenu li {
-  list-style: none;
-  margin: 0;
-}
-.hs-submenu li:first-child {
-  padding: 1em 0;
-}
-.hs-submenu a,
-.hs-submenu strong {
-  padding: 0.25em 0;
-  display: block;
-}
-.container {
-  width: 50em;
-  margin: 0 auto;
-}
-.hs-menu .container {
-  margin: 0 auto;
-}
-.container > h1 {
-  margin: 1em 0 0.5em;
-  color: #df006f;
-  text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+@media screen and (min-width: 72.5em) {
+  .hs-submenu {
+    display: block;
+    width: 9em;
+    margin: 0 0 0 16px;
+    padding: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 100%;
+    margin-left: -10em;
+  }
+  .hs-submenu .h-box {
+    border-top: none;
+  }
+  .hs-submenu ul,
+  .hs-submenu li {
+    list-style: none;
+    margin: 0;
+  }
+  .hs-submenu li:first-child {
+    padding: 1em 0;
+  }
+  .hs-submenu a,
+  .hs-submenu strong {
+    padding: 0.25em 0;
+    display: block;
+  }
 }
 section > h2 {
   margin: 1em 0 0.5em;
@@ -140,29 +194,47 @@ section > h2 {
   -moz-osx-font-smoothing: grayscale;
   text-shadow: -1px -1px 0 rgba(0,0,0,0.25), 1px 1px 0 #fff;
   position: relative;
+  padding: 0 0 0 0.5em;
+  text-align: center;
 }
 section > h2 small {
-  position: absolute;
-  right: 100%;
-  top: 20%;
-  margin-right: 0.5em;
+  display: block;
   font-family: Helvetica, arial, sans-serif;
   font-size: 0.5em;
-  color: #ececec;
+  color: rgba(0,0,0,0.5);
   text-shadow: none;
   font-weight: normal;
-  background: rgba(0,0,0,0.2);
-  padding: 0.25em 0.5em;
-  -webkit-transform-origin: top right;
-  -moz-transform-origin: top right;
-  -o-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-transform: skewY(-27deg);
-  -moz-transform: skewY(-27deg);
-  -o-transform: skewY(-27deg);
-  -ms-transform: skewY(-27deg);
-  transform: skewY(-27deg);
+}
+section > h2 small::before {
+  content: '(';
+}
+section > h2 small::after {
+  content: ')';
+}
+@media screen and (min-width: 72.5em) {
+  section > h2 {
+    text-align: left;
+    padding: 0;
+  }
+  section > h2 small {
+    position: absolute;
+    right: 100%;
+    top: 20%;
+    margin-right: 0.5em;
+    color: #ececec;
+    background: rgba(0,0,0,0.2);
+    padding: 0.25em 0.5em;
+    -webkit-transform-origin: top right;
+        -ms-transform-origin: top right;
+            transform-origin: top right;
+    -webkit-transform: skewY(-27deg);
+        -ms-transform: skewY(-27deg);
+            transform: skewY(-27deg);
+  }
+  section > h2 small::before,
+  section > h2 small::after {
+    display: none;
+  }
 }
 table {
   width: 100%;
@@ -179,6 +251,9 @@ li.h-col {
 }
 section {
   margin-bottom: 1em;
+}
+section.home-section {
+  padding: 1em 1em 0;
 }
 section .h-row + .h-row {
   margin-top: 1em;
@@ -228,27 +303,36 @@ dl {
 }
 dt,
 dd {
-  display: inline-block;
-  vertical-align: top;
-  width: 35%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0.25em;
+  padding: 0.5em;
   margin-bottom: 0.5em;
 }
 dt {
   background: rgba(255,75,149,0.25);
 }
 dd {
-  width: 64%;
-  padding-left: 1em;
-  margin-left: -4px;
+  margin-left: 0.5em;
 }
-dd ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+@media screen and (min-width: 48em) {
+  dt,
+  dd {
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+  }
+  dt {
+    margin-left: -1em;
+    padding-left: 1em;
+  }
+  dd {
+    width: 64%;
+    padding-left: 1em;
+    margin-left: -4px;
+  }
+  dd ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 }
 .danger {
   color: #df006f;
@@ -261,23 +345,26 @@ aside.h-popover {
   position: relative;
 }
 .hs-box {
-  padding: 16px;
-  border: 1px solid #c2c2c2;
-  background: #fff;
-  color: #000;
-  -webkit-box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
-  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
-  padding: 16px;
-  border: 1px solid #c2c2c2;
-  background: #fff;
-  color: #000;
-  -webkit-box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
-  box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAIAAAACDbGyAAAAJUlEQVQImWN48ODBfyTA+P//fwYYePjwIQNcBqKQAZkD5SMbAQBvRT/ygB2JXwAAAABJRU5ErkJggg==");
 }
 .hs-box .hs-box {
   margin-top: 0.5em;
   background-image: none;
+}
+@media screen and (min-width: 48em) {
+  .hs-box {
+    padding: 16px;
+    border: 1px solid #c2c2c2;
+    background: #fff;
+    color: #000;
+    box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
+    padding: 16px;
+    border: 1px solid #c2c2c2;
+    background: #fff;
+    color: #000;
+    box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAIAAAACDbGyAAAAJUlEQVQImWN48ODBfyTA+P//fwYYePjwIQNcBqKQAZkD5SMbAQBvRT/ygB2JXwAAAABJRU5ErkJggg==");
+  }
 }
 .hs-stem {
   position: relative;
@@ -301,88 +388,99 @@ aside.h-popover {
 }
 .underline-demo a {
   -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  -ms-transition: none;
-  transition: none;
+          transition: none;
   background: 0 16px/2px 2px repeat-x;
   background-image: -webkit-linear-gradient(top, #fff 50%, rgba(0,120,166,0.5) 50%);
-  background-image: -moz-linear-gradient(top, #fff 50%, rgba(0,120,166,0.5) 50%);
-  background-image: -o-linear-gradient(top, #fff 50%, rgba(0,120,166,0.5) 50%);
-  background-image: -ms-linear-gradient(top, #fff 50%, rgba(0,120,166,0.5) 50%);
   background-image: linear-gradient(to bottom, #fff 50%, rgba(0,120,166,0.5) 50%);
 }
 .underline-demo a:hover {
   background: 0 16px/2px 2px repeat-x;
   background-image: -webkit-linear-gradient(top, #fff 50%, rgba(0,183,224,0.5) 50%);
-  background-image: -moz-linear-gradient(top, #fff 50%, rgba(0,183,224,0.5) 50%);
-  background-image: -o-linear-gradient(top, #fff 50%, rgba(0,183,224,0.5) 50%);
-  background-image: -ms-linear-gradient(top, #fff 50%, rgba(0,183,224,0.5) 50%);
   background-image: linear-gradient(to bottom, #fff 50%, rgba(0,183,224,0.5) 50%);
 }
-.hs-box.percent-center-demo {
-  height: 15em;
+.center-demo {
+  min-height: 15em;
   position: relative;
 }
-.hs-box.percent-center-demo p {
-  width: 33%;
+.center-demo p {
+  width: 50%;
   padding: 1em;
   margin: 0;
+  color: #fff;
+  text-align: center;
+  background: #00b7e0;
+}
+.center-demo.v-align {
+  height: 15em;
+  text-align: center;
+}
+.center-demo.v-align:before,
+.center-demo.v-align > p {
+  display: inline-block;
+  vertical-align: middle;
+}
+.center-demo.v-align::before {
+  content: '';
+  width: 0;
+  height: 100%;
+}
+.center-demo.center-transform p {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  background: #00b7e0;
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.center-demo.center-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .hs-box.angle-demo {
   height: 15em;
   position: relative;
   background: -webkit-radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
-  background: -moz-radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
-  background: -o-radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
-  background: -ms-radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
   background: radial-gradient(center, circle closest-side, #fff 74%, #ddd 75%, #fff 76%);
   padding: 0;
+  text-align: center;
 }
 .hs-box.angle-demo ul {
-  height: 100%;
+  display: inline-block;
+  position: relative;
+  height: 15em;
+  width: 15em;
+  padding: 0;
+  margin: 0;
 }
-.hs-box.angle-demo ul:after,
-.hs-box.angle-demo ul:before {
+.hs-box.angle-demo ul::before,
+.hs-box.angle-demo ul::after {
   content: '';
-}
-.hs-box.angle-demo ul:before {
-  border: 2px solid rgba(0,0,0,0.25);
-  width: 0.5em;
-  height: 0.5em;
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-border-radius: 666em;
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 666em;
+  border: 2px solid rgba(0,0,0,0.25);
 }
-.hs-box.angle-demo ul:after {
+.hs-box.angle-demo ul::before {
   width: 0;
-  width: 4px;
-  height: 4px;
-  margin: -2px 0 -2px;
-  position: absolute;
-  left: 14.5em;
-  top: 7.5em;
-  background: rgba(0,0,0,0.25);
-  -webkit-border-radius: 666em;
-  border-radius: 666em;
+  height: 0;
+}
+.hs-box.angle-demo ul::after {
+  width: 0.75em;
+  height: 0.75em;
 }
 .hs-box.angle-demo li {
   position: absolute;
@@ -397,32 +495,35 @@ aside.h-popover {
   background: #00b7e0;
 }
 .hs-box.angle-demo li:nth-child(1) {
-  left: 20em;
+  left: 13em;
   top: 7.5em;
 }
 .hs-box.angle-demo li:nth-child(2) {
-  left: 19.263139722em;
+  left: 12.263139722em;
   top: 4.75em;
 }
 .hs-box.angle-demo li:nth-child(3) {
-  left: 18.3890872955em;
+  left: 11.3890872955em;
   top: 11.3890872955em;
 }
 .hs-box.angle-demo li:nth-child(4) {
-  left: 14.5em;
+  left: 7.5em;
   top: 2em;
 }
 .hs-box.angle-demo li:nth-child(5) {
-  left: 14.5em;
+  left: 7.5em;
   top: 13em;
 }
 .hs-box.angle-demo li:nth-child(6) {
-  left: 9em;
+  left: 2em;
   top: 7.5em;
 }
 .hs-box.angle-demo li:nth-child(7) {
-  left: 10.6109127045em;
+  left: 3.6109127045em;
   top: 11.3890872955em;
+}
+.circle-demo {
+  text-align: center;
 }
 .circle-demo p {
   width: 6em;
@@ -430,47 +531,34 @@ aside.h-popover {
   padding-top: 1.5em;
   display: inline-block;
   background: #00b7e0;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-border-radius: 666em;
+       box-sizing: border-box;
   border-radius: 666em;
   color: #fff;
-  text-align: center;
 }
 .easing-demo,
 .easing-demo li,
 .easing-demo p {
-  margin: 0;
   padding: 0;
-  border: 0;
-  outline: 0;
+  margin: 0;
   list-style: none;
+}
+.easing-demo {
+  padding: 0 1em;
 }
 .easing-demo li {
   padding: 0.85em 0;
 }
-.easing-demo li p,
-.easing-demo li .easing-test {
-  display: inline-block;
-}
 .easing-demo li p {
   font-weight: bold;
-  width: 20%;
+  margin-bottom: 1em;
   padding-right: 1em;
   cursor: pointer;
-  text-align: right;
 }
 .easing-demo li .easing-test {
   position: relative;
-  width: 300px;
-  margin-top: 0.5em;
   border: 1px solid rgba(0,0,0,0.15);
   border-width: 1px 0;
-  -webkit-perspective: 300px;
-  -moz-perspective: 300px;
-  -ms-perspective: 300px;
-  perspective: 300px;
 }
 .easing-demo li .easing-test .easing-cursor {
   width: 1.5em;
@@ -486,269 +574,206 @@ aside.h-popover {
   color: #df006f;
 }
 .easing-demo li:hover .easing-cursor {
-  -webkit-transform: translate3d(300px, 0, 0);
-  -moz-transform: translate3d(300px, 0, 0);
-  -o-transform: translate3d(300px, 0, 0);
-  -ms-transform: translate3d(300px, 0, 0);
-  transform: translate3d(300px, 0, 0);
+  left: 100%;
+  left: calc(100% - 1.5em);
+}
+@media screen and (min-width: 52em) {
+  .easing-demo li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+            align-content: stretch;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .easing-demo li p,
+  .easing-demo li .easing-test {
+    display: inline-block;
+  }
+  .easing-demo li p {
+    margin-bottom: 0;
+    width: 20%;
+    text-align: right;
+  }
+  .easing-demo li .easing-test {
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
 }
 .easing-cursor {
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  -ms-transition-property: -ms-transform;
-  transition-property: transform;
-  -webkit-transition-duration: 1.5s;
-  -moz-transition-duration: 1.5s;
-  -o-transition-duration: 1.5s;
-  -ms-transition-duration: 1.5s;
-  transition-duration: 1.5s;
+  -webkit-transition-property: left;
+          transition-property: left;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 .linear .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
-  -moz-transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
-  -o-transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
-  -ms-transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
-  transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+          transition-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
 }
 .ease .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
+          transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);
 }
 .ease-in .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
-  transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
+          transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
 }
 .ease-out .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
-  transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+          transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 .ease-in-out .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
-  transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
+          transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000);
 }
 .easeInQuad .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  -moz-transition-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  -o-transition-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  -ms-transition-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  transition-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
+          transition-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
 }
 .easeInCubic .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-  -moz-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-  -o-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-  -ms-transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-  transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+          transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
 }
 .easeInQuart .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-  -moz-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-  -o-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-  -ms-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-  transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+          transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
 }
 .easeInQuint .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  -moz-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  -o-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  -ms-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+          transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
 }
 .easeInSine .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-  -moz-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-  -o-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-  -ms-transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-  transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
+          transition-timing-function: cubic-bezier(0.470, 0.000, 0.745, 0.715);
 }
 .easeInExpo .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
-  -moz-transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
-  -o-transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
-  -ms-transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
-  transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+          transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
 }
 .easeInCirc .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335);
-  -moz-transition-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335);
-  -o-transition-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335);
-  -ms-transition-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335);
-  transition-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+          transition-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335);
 }
 .easeInBack .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  -moz-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  -o-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  -ms-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+          transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
 }
 .easeOutQuad .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  -moz-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  -o-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  -ms-transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+          transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
 .easeOutCubic .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+          transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
 .easeOutQuart .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+          transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 .easeOutQuint .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-  transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+          transition-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
 }
 .easeOutSine .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
-  transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
+          transition-timing-function: cubic-bezier(0.390, 0.575, 0.565, 1.000);
 }
 .easeOutExpo .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
-  transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
+          transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 .easeOutCirc .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
-  transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+          transition-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
 .easeOutBack .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 .easeInOutQuad .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955);
-  -moz-transition-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955);
-  -o-transition-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955);
-  -ms-transition-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955);
-  transition-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+          transition-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955);
 }
 .easeInOutCubic .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+          transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 .easeInOutQuart .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
-  transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+          transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
 .easeInOutQuint .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -moz-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -ms-transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+          transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
 .easeInOutSine .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
-  -moz-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
-  -o-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
-  -ms-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
-  transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+          transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
 }
 .easeInOutExpo .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-  -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-  -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-  -ms-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-  transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+          transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 }
 .easeInOutCirc .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-  -moz-transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-  -o-transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-  -ms-transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-  transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+          transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 .easeInOutBack .easing-cursor {
   -webkit-transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
-  -moz-transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
-  -o-transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
-  -ms-transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
-  transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+          transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 aside {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 15em;
-  height: 11.5em;
-  overflow: hidden;
+  display: none;
 }
-aside a {
-  display: block;
-  margin-top: 10em;
-  padding: 0.25em 1em;
-  width: 100%;
-  background: #444;
-  text-align: center;
-  color: #222;
-  font-weight: bold;
-  text-shadow: 1px 1px rgba(255,255,255,0.15);
-  text-decoration: none;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transform-origin: top right;
-  -moz-transform-origin: top right;
-  -o-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-transition: background 0.25s;
-  -moz-transition: background 0.25s;
-  -o-transition: background 0.25s;
-  -ms-transition: background 0.25s;
-  transition: background 0.25s;
-}
-aside a:hover {
-  background: #555;
-}
-aside a span {
-  display: block;
-  padding: 0.25em 0;
-  border: dashed 1px rgba(0,0,0,0.5);
-  border-width: 1px 0;
-  color: #222;
+@media screen and (min-width: 72.5em) {
+  aside {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15em;
+    height: 11.5em;
+    overflow: hidden;
+  }
+  aside a {
+    display: block;
+    margin-top: 10em;
+    padding: 0.25em 1em;
+    width: 120%;
+    background: #444;
+    text-align: center;
+    color: #222;
+    font-weight: bold;
+    text-shadow: 1px 1px rgba(255,255,255,0.15);
+    text-decoration: none;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: top right;
+        -ms-transform-origin: top right;
+            transform-origin: top right;
+    -webkit-transition: background 0.25s;
+            transition: background 0.25s;
+  }
+  aside a:hover {
+    background: #555;
+  }
+  aside a span {
+    display: block;
+    padding: 0.25em 0;
+    border: dashed 1px rgba(0,0,0,0.5);
+    border-width: 1px 0;
+    color: #222;
+  }
 }

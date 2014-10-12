@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hstrap components</title>
   <link rel="stylesheet" href="font/hiso-font.css">
   <link rel="stylesheet" href="css/index.css">
@@ -13,12 +14,15 @@
     <div class="container">
       <div class="h-row">
         <div class="hs-master-head h-col">
-          <h1><a href="../index.html">HStrap</a></h1>
+          <h1>
+            <a href="../index.html">HStrap</a>
+            <a href="#menu" class="toggle-menu">≡</a>
+          </h1>
         </div>
-        <ul class="h-col">
+        <ul class="h-col" id="menu">
+          <li><a href="#">✖︎</a></li>
           <li><a href="../index.html">Home</a></li>
           <li><a href="./mixins.html" >Mixins</a></li>
-          <li><a href="./base-css.html">Base CSS</a></li>
           <li><a href="./components.html">Components</a></li>
           <li><a href="./config.html" class="selected">Config</a></li>
         </ul>

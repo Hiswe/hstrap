@@ -1,4 +1,3 @@
-@import 'nib/vendor'
 @import './general'
 @import '../values'
 
@@ -8,21 +7,10 @@ $$shadow              = rgba($h-components-shadow, 0.4)
 $$shadow-transparent  = rgba($h-components-shadow, 0)
 
 h-scrollbox()
-  // nib doesn't support radial AND multiples gradient
-  for prefix in vendors
-    unless prefix == official
-      gr1 = "-%s-linear-gradient(%s 30%, %s)" % (prefix $$bg $$bg-transparent)
-      gr2 = "-%s-linear-gradient(%s, %s 70%) 0 100%" % (prefix $$bg-transparent $$bg)
-      gr3 = "-%s-radial-gradient(50% 0, farthest-side, %s, %s)" % (prefix $$shadow $$shadow-transparent)
-      gr4 = "-%s-radial-gradient(50% 100%,farthest-side, %s, %s) 0 100%" % (prefix $$shadow $$shadow-transparent)
-      add-property('background', s(join(', ', gr1 gr2 gr3 gr4) + ';'))
-
-  // w3c gradients
-  gr1 = "linear-gradient(%s 30%, %s)" % (#FFF rgba(255,255,255,0))
-  gr2 = "linear-gradient(%s, %s 70%) 0 100%" % (rgba(255,255,255,0) #FFF)
-  gr3 = "radial-gradient(50% 0, farthest-side, %s, %s)" % (rgba(0,0,0,.2) rgba(0,0,0,0))
-  gr4 = "radial-gradient(50% 100%,farthest-side, %s, %s) 0 100%" % (rgba(0,0,0,.2) rgba(0,0,0,0))
-  add-property('background', s(join(', ', gr1 gr2 gr3 gr4) + ';'))
+  background: linear-gradient(to bottom, $$bg 30%, $$bg-transparent),
+    linear-gradient(to bottom, $$bg-transparent, $$bg 70%) 0 100%,
+    radial-gradient(farthest-side at 50% 0, $$shadow, $$shadow-transparent),
+    radial-gradient(farthest-side at 50% 100%, $$shadow, $$shadow-transparent) 0 100%;
 
   // other properties
   background-size 100% 40px, 100% 40px, 100% 14px, 100% 14px

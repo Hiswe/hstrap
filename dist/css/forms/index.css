@@ -29,18 +29,13 @@
   padding: 0.5em;
   margin: 0;
   border: 1px solid #c2c2c2;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   -webkit-transition: border-color 0.5s, box-shadow 0.5s;
-  -moz-transition: border-color 0.5s, box-shadow 0.5s;
-  -o-transition: border-color 0.5s, box-shadow 0.5s;
-  -ms-transition: border-color 0.5s, box-shadow 0.5s;
-  transition: border-color 0.5s, box-shadow 0.5s;
+          transition: border-color 0.5s, box-shadow 0.5s;
   color: #555;
   width: 100%;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+       box-sizing: border-box;
   outline: 0;
 }
 .h-input:not([type="submit"]):-ms-input-placeholder,
@@ -76,7 +71,6 @@
 .h-search:focus,
 .h-textarea:focus {
   border-color: #00b7e0;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(0,183,224,0.3);
   box-shadow: inset 2px 2px 0 rgba(0,183,224,0.3);
   outline: 0;
 }
@@ -94,7 +88,6 @@
 .h-textarea:focus:invalid {
   color: #96002b;
   border-color: #df006f;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(223,0,111,0.3);
   box-shadow: inset 2px 2px 0 rgba(223,0,111,0.3);
 }
 .h-input:not([type="submit"]).ng-invalid:-ms-input-placeholder,
@@ -172,7 +165,6 @@
   cursor: not-allowed;
   background-color: #eee;
   color: #999;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.07);
   border: 1px solid #c2c2c2;
 }
@@ -262,18 +254,13 @@
   resize: none;
 }
 .h-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   text-indent: 0.01px;
-  -o-text-overflow: '';
   text-overflow: '';
-  -webkit-border-radius: 0;
   border-radius: 0;
   padding-right: 1.75em;
-  -webkit-border-radius: 0;
   border-radius: 0;
   background-repeat: no-repeat;
   background-position: center right;
@@ -291,15 +278,11 @@
   display: none;
 }
 .h-select-link {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   text-indent: 0.01px;
-  -o-text-overflow: '';
   text-overflow: '';
-  -webkit-border-radius: 0;
   border-radius: 0;
   font-size: 1em;
   border: none;
@@ -311,7 +294,6 @@
   background-repeat: no-repeat;
   background-position: 100% 0.4375em;
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pg0KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIxMXB4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8Zz4NCiAgICA8cG9seWdvbiBmaWxsPSIjMDA3OEE2IiBwb2ludHM9IjE2LDAgMTAsOCA1LDAgIi8+DQogIDwvZz4NCjwvc3ZnPg0K");
-  -webkit-border-radius: 0;
   border-radius: 0;
 }
 .h-select-link:-moz-focusring {
@@ -348,8 +330,6 @@
   color: #999;
 }
 .h-search {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -366,7 +346,6 @@
   background: #fff;
   position: relative;
   padding: 0.5em;
-  -webkit-box-shadow: inset 2px 2px 0 rgba(0,0,0,0.1);
   box-shadow: inset 2px 2px 0 rgba(0,0,0,0.1);
 }
 .h-ios:before,
@@ -393,14 +372,10 @@
 .h-ios label {
   display: block;
   width: 50%;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+       box-sizing: border-box;
   -webkit-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -moz-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -o-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  -ms-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+          transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
   cursor: pointer;
   position: absolute;
   top: -1px;
@@ -411,9 +386,6 @@
   border: 1px solid;
   border-color: rgba(0,0,0,0.15) rgba(0,0,0,0.15) rgba(0,0,0,0.25);
   background: -webkit-linear-gradient(#fff, #e6e6e6);
-  background: -moz-linear-gradient(#fff, #e6e6e6);
-  background: -o-linear-gradient(#fff, #e6e6e6);
-  background: -ms-linear-gradient(#fff, #e6e6e6);
   background: linear-gradient(#fff, #e6e6e6);
 }
 .h-ios input[type=checkbox] {
@@ -423,31 +395,11 @@
   left: 50%;
   margin-left: 1px;
 }
-.h-input-append {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -ms-flex-line-pack: stretch;
-  -webkit-align-content: stretch;
-  align-content: stretch;
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -o-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
 .h-input-append input:not([type="submit"]) {
   -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
   -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .h-input-append .h-btn {
   padding: 0 1em;

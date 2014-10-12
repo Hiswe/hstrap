@@ -1,5 +1,3 @@
-@import 'nib/vendor'
-@import 'nib/flex'
 @import '../values'
 
 // Convert px to em, according to fs reference
@@ -23,24 +21,6 @@ bg-cover()
   background-clip border-box
   background-origin border-box
 
-// Vertical align in a fixed height container
-v-align()
-  &:before,
-  > *
-    display inline-block
-    vertical-align middle
-
-  &:before
-    content ' '
-    width 0
-    height 100%
-
-// flex box row
-flex-row()
-  display flex
-  align-content stretch
-  flex-direction row
-
 // Generate a stem
 stem($$direction = "top", $$color = $h-components-border, $$width = .5em)
   display block
@@ -60,12 +40,6 @@ stem($$direction = "top", $$color = $h-components-border, $$width = .5em)
   else
     border-top-width 0
     border-bottom-color $$color
-
-// Absolute centering with variable size
-// See http://css-tricks.com/centering-percentage-widthheight-elements/
-percentCenter()
-  position absolute; left 50%; top @left
-  transform translate(-50%, -50%)
 
 // Everyone need circles
 circle()

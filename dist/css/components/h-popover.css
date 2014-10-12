@@ -13,17 +13,10 @@
   padding: 1px;
   text-align: left;
   background-color: #fff;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
-  -webkit-background-clip: border;
-  -moz-background-clip: border;
   background-clip: border-box;
-  -webkit-background-origin: border;
-  -moz-background-origin: border;
   background-origin: border-box;
   border: 1px solid #c2c2c2;
-  -webkit-box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
   box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
   white-space: normal;
 }

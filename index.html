@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hstrap home</title>
   <link rel="stylesheet" href="dist/font/hiso-font.css">
   <link rel="stylesheet" href="dist/css/index.css">
@@ -13,13 +14,16 @@
     <div class="container">
       <div class="h-row">
         <div class="hs-master-head h-col">
-          <h1><a href="#">HStrap</a></h1>
+          <h1>
+            <a href="../index.html">HStrap</a>
+            <a href="#menu" class="toggle-menu">≡</a>
+          </h1>
           <h4>Mixins &amp; class v1.1.1</h4>
         </div>
-        <ul class="h-col">
+        <ul id="menu">
+          <li><a href="#">✖︎</a></li>
           <li><a href="./index.html" class="selected">Home</a></li>
           <li><a href="dist/mixins.html">Mixins</a></li>
-          <li><a href="dist/base-css.html">Base CSS</a></li>
           <li><a href="dist/components.html">Components</a></li>
           <li><a href="dist/config.html">Config</a></li>
         </ul>
@@ -28,74 +32,45 @@
   </menu>
 
   <div class="container">
-    <div class="h-row">
-      <section class="h-col">
-        <h3 class="hs-title">Overview</h3>
-        <p>
-          Hstrap is a little lib proposing
-        </p>
-        <ul>
-          <li>mixins</li>
-          <li>classes</li>
-          <li>CSS components</li>
-        </ul>
-        <p>Those are build on top of <a href="http://learnboost.github.io/stylus/">Stylus</a> &amp; <a href="http://visionmedia.github.io/nib/">Nib</a>.</p>
-        <p>
-          <strong>It will not be a complete framework</strong> as <a href="http://getbootstrap.com/">twitter bootstrap</a>, <a href="http://fluiditycss.com/">fluidity</a> or <a href="http://roots.cx/css/">roots</a>. For reset, typography, grid, tables and so on, look at them.
-        </p>
-        <p>The purpose is more to give some uncommon mixins and provide some particular design classes for buttons, forms &amp; other things.</p>
-        <p><strong>The less is provided, the better you can design without extra markup or classes.</strong></p>
-      </section>
-      <section class="h-col">
-        <h3 class="hs-title">Install</h3>
-        <p>
-          This project can be found on  <a href="https://github.com/Hiswe/hstrap">github</a>
-        <p>
-        <p>
-          <strong>npm install hstrap</strong><br>
-          Use it with Stylus
-        <p>
-          <strong>bower install hstrap</strong><br>
-          Only CSS files
-        </p>
-      </section>
-    </div>
 
-    <div class="h-row">
-      <section class="h-col">
-        <h3 class="hs-title">Provided</h3>
-        <p>All in seperate files: include what you want</p>
-        <ul>
-          <li>Buttons</li>
-          <li>Forms</li>
-          <li>Flexbox Grid</li>
-          <li>Boxes</li>
-          <li>Popover</li>
-          <li>Scrollbox</li>
-        </ul>
-      </section>
-      <section class="h-col">
-        <h3 class="hs-title">Notes</h3>
-        <p>
-          Forms css is an attempt to fully redesign controls without adding any Javascript. <br>
-          Due to some vendor property, this redesign is not consistent accross browsers :( <br>
-          so… <strong>Use with caution</strong>
-        </p>
-      </section>
-    </div>
+    <section class="home-section">
+      <h3 class="hs-title">Overview</h3>
+      <p>
+        Hstrap is a little lib build on top of <a href="http://learnboost.github.io/stylus/">Stylus</a>. <br />
+        The main purpose of hstrap is to give some handy and/or uncommon mixins.
+      </p>
+      <p>
+         It provides also some particular design classes for buttons, forms &amp; other things.
+      </p>
+      <p>
+        <strong>It's not (and never will) be a complete framework</strong> as <a href="http://getbootstrap.com/">twitter bootstrap</a>, <a href="http://fluiditycss.com/">fluidity</a> or <a href="http://roots.cx/css/">roots</a>. <br />For reset, typography, grid, tables and so on, look at them.
+      </p>
+    </section>
 
-    <div class="container h-row">
-      <section class="h-col">
-        <h3 class="hs-title">Credits</h3>
-        <ul>
-          <li><a href="http://lea.verou.me/2012/04/background-attachment-local/">Lea Verrou</a> for the scrollbox</li>
-          <li><a href="http://cssdeck.com/labs/css-checkbox-styles">Kushagra Agarwal</a> for the ios like checkbbox</li>
-          <li><a href="http://twitter.github.io/bootstrap/javascript.html#popovers">Twitter bootsrap</a> for the popover</li>
-          <li><a href="http://css-tricks.com/perfect-full-page-background-image/">CSS-Tricks</a> for some mixins</li>
-          <li><a href="https://github.com/jhardy/compass-ceaser-easing/">Jared Hardy</a> for easing functions</li>
-        </ul>
-      </section>
-    </div>
+    <section class="home-section">
+      <h3 class="hs-title">Install</h3>
+      <p>
+        This project can be found on  <a href="https://github.com/Hiswe/hstrap">github</a>
+      <p>
+      <p>
+        <strong>npm install hstrap</strong><br>
+        Use it with Stylus
+      <p>
+        <strong>bower install hstrap</strong><br>
+        Only CSS files
+      </p>
+    </section>
+
+    <section class="home-section">
+      <h3 class="hs-title">Credits</h3>
+      <ul>
+        <li><a href="http://lea.verou.me/2012/04/background-attachment-local/">Lea Verrou</a> for the scrollbox</li>
+        <li><a href="http://cssdeck.com/labs/css-checkbox-styles">Kushagra Agarwal</a> for the ios like checkbbox</li>
+        <li><a href="http://twitter.github.io/bootstrap/javascript.html#popovers">Twitter bootsrap</a> for the popover</li>
+        <li><a href="http://css-tricks.com/perfect-full-page-background-image/">CSS-Tricks</a> for some mixins</li>
+        <li><a href="https://github.com/jhardy/compass-ceaser-easing/">Jared Hardy</a> for easing functions</li>
+      </ul>
+    </section>
   </div>
   <aside>
     <a href="https://github.com/Hiswe/hstrap"><span>Fork me on github</span></a>

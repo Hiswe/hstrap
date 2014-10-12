@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hstrap mixins</title>
   <link rel="stylesheet" href="font/hiso-font.css">
   <link rel="stylesheet" href="css/index.css">
@@ -9,16 +10,19 @@
 </head>
 <body>
 
-  <menu class="hs-menu hs-small-menu">
+  <menu class="hs-menu hs-small-menu" >
     <div class="container">
       <div class="h-row">
         <div class="hs-master-head h-col">
-          <h1><a href="../index.html">HStrap</a></h1>
+          <h1>
+            <a href="../index.html">HStrap</a>
+            <a href="#menu" class="toggle-menu">≡</a>
+          </h1>
         </div>
-        <ul class="h-col">
+        <ul class="h-col" id="menu">
+          <li><a href="#">✖︎</a></li>
           <li><a href="../index.html">Home</a></li>
           <li><a href="./mixins.html" class="selected">Mixins</a></li>
-          <li><a href="./base-css.html">Base CSS</a></li>
           <li><a href="./components.html">Components</a></li>
           <li><a href="./config.html">Config</a></li>
         </ul>
@@ -29,19 +33,12 @@
   <menu class="hs-submenu">
     <ul class="h-box">
       <li><a href="#">Top</a></li>
-      <li><strong>Utility mixins</strong></li>
       <li><a href="#general">General</a></li>
+      <li><a href="#positions">Positions</a></li>
       <li><a href="#text">Text</a></li>
       <li><a href="#math">Math</a></li>
       <li><a href="#form">Form</a></li>
-      <li><a href="#mediaQuery">Media Query</a></li>
       <li><a href="#easing">Easing</a></li>
-      <li><a href="#ie">IE8</a></li>
-      <li><strong>Class mixins</strong></li>
-      <li><a href="#buttons">Buttons</a></li>
-      <li><a href="#formElements">Forms Element</a></li>
-      <li><a href="#box">Box</a></li>
-      <li><a href="#scrollbox">Scrollbox</a></li>
     </ul>
   </menu>
 
@@ -65,12 +62,6 @@
           <dd>Shortcut for rgba(black, .5)</dd>
           <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L21">bg-cover</a>()</dt>
           <dd>Tile the background to the borders with <i>background-size: cover</i></dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L27">v-align</a>()</dt>
-          <dd>Vertical align in a fixed height container</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L39">flex-row</a>()</dt>
-          <dd>Flex-box row
-            <span class="danger">Compatibility issues: <a href="https://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html">Adobe new flexbox article</a></span>
-          </dd>
           <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L45">stem</a>([direction = "top", color = $h-components-border, width = .5em])</dt>
           <dd>generate a stem that can be applied on pseudo elements
               <span class="danger">The stem is not positioned</span>
@@ -78,9 +69,31 @@
                 <div class="hs-stem">A brilliant stem example</div>
               </div>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L66">percentCenter</a>()</dt>
-          <dd>absolute center using this <a href="http://css-tricks.com/centering-percentage-widthheight-elements/">css-tricks trick</a>
-            <div class="hs-box percent-center-demo">
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L71">circle</a>()</dt>
+          <dd class="circle-demo"><p>Excessive round corner</p></dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="positions">
+      <h2>Positions <small>mixins/positions</small></h2>
+      <div class="hs-box">
+        <dl>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">v-align</a>([child-selector = '&gt; *'])</dt>
+          <dd>vertical centering using inline-block &amp; pseudo-elements
+            <span class="danger">Apply to the container</span>
+            <div class="hs-box center-demo v-align">
+              <p contenteditable="true">
+                I'm centered without having a height defined but my parent has one
+                <br><br>
+                Type here to try !
+              </p>
+            </div>
+          </dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">center-transform</a>()</dt>
+          <dd>absolute center using transform2d (more details on <a href="http://css-tricks.com/centering-percentage-widthheight-elements/">css-tricks</a>)
+            <span class="danger">Apply to the children</span>
+            <div class="hs-box center-demo center-transform">
               <p contenteditable="true">
                 I'm centered without having a height defined
                 <br><br>
@@ -88,9 +101,30 @@
               </p>
             </div>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L71">circle</a>()</dt>
-          <dd class="circle-demo"><p>Excessive round corner</p></dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">center-flex</a>()</dt>
+          <dd>Centering using flexbox (<a href="http://caniuse.com/#feat=flexbox">IE10+</a>)
+            <span class="danger">Apply to the container</span>
+            <div class="hs-box center-demo center-flex">
+              <p contenteditable="true">
+                I'm centered without having a height defined
+                <br><br>
+                Type here to try !
+              </p>
+            </div>
+          </dd>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">flex-row</a>()</dt>
+          <dd>basic row presentation using flexbox (<a href="http://caniuse.com/#feat=flexbox">IE10+</a>, more details at <a href="http://philipwalton.github.io/solved-by-flexbox/demos/grids/">solved by flexbox grids</a>)
+            <div class="hs-box">
+              <ul class="h-row" >
+                <li class="h-col">First column</li>
+                <li class="h-col">Second column <br><br> With some additional text</li>
+                <li class="h-col">Third column</li>
+              </ul>
+            </div>
+          </dd>
         </dl>
+
+
       </div>
     </section>
 
@@ -109,7 +143,7 @@
             use  when letters should be rendered thinner (icons, dark background, some fonts, …).<br>
             see <a href="http://maximilianhoffmann.com/article/better-font-rendering-on-osx/">here</a> for more details.
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/text.styl#L20">underline</a>()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/text.styl#L20">underline</a>([height = 16, color = #666665])</dt>
           <dd>
             Use gradient to make an underline like in <a href="https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9">medium </a>
             <div class="hs-box underline-demo">
@@ -158,31 +192,6 @@
       </div>
     </section>
 
-    <section id="mediaQuery">
-      <h2>Media Query <small>mixins/media-query</small></h2>
-      <div class="hs-box">
-        <p>Stylus don't let you have variables in media queries. <br /> Here is a bunch of clumsy mixins to help solve this issue.
-        <span class="danger">Don't forget to close the query by calling <strong>media-query-end()</strong></span>
-        <span class="danger">Don't indent after calling the mixin</span>
-        </p>
-        <dl>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/media-query.styl#L1">media-query-max</a>(width)</dt>
-          <dd><code>@media screen and (max-width: width ) {</code></dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/media-query.styl#L4">media-query-min</a>(width)</dt>
-          <dd><code>@media screen and (min-width: width ) {</code></dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/media-query.styl#L7">media-query-end</a>()</dt>
-          <dd><code>}</code></dd>
-        </dl>
-        <p>example:</p>
-        <pre class="hs-box">
-media-query-max(320)
-main
-  width auto
-media-query-end()
-          </pre>
-      </div>
-    </section>
-
     <section id="easing">
       <h2>Easing functions <small>mixins/h-easing</small></h2>
       <div class="hs-box">
@@ -217,82 +226,6 @@ media-query-end()
           <li><p>easeInOutCirc  </p><div class="easing-test easeInOutCirc"><i class="easing-cursor"></i></div></li>
           <li><p>easeInOutBack  </p><div class="easing-test easeInOutBack"><i class="easing-cursor"></i></div></li>
         </ul>
-      </div>
-    </section>
-
-    <section id="ie">
-      <h2>IE8 compatible mixins <small>mixins/ie</small></h2>
-      <div class="hs-box">
-        <dl>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/ie.styl#L4">bg-full-page</a>(url)</dt>
-          <dd>
-            Fit a background to 100% of the viewport<br>
-            <span class="danger">Shouldn't be used on html or body for ie8. <a href="http://css-tricks.com/perfect-full-page-background-image/">See css-trick article</a>.</span>
-          </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/ie.styl#L12">t-matrix</a>(a, c, b, d)</dt>
-          <dd>Matrix transform without translation. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">See matrix transform article on MDN</a></dd>
-        </dl>
-      </div>
-    </section>
-
-    <section id="buttons">
-      <h2>Buttons <small>mixins/buttons</small></h2>
-      <div class="hs-box">
-        <dl>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L7">h-btn-color</a>(light, medium, dark)</dt>
-          <dd>
-            Give 3 colors to have all :active &amp; :hover state background-colors<br>
-            Text color (white or black) is defined with the darkest color
-          </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L24">h-btn</a>()</dt>
-          <dd>Main mixin to have a h-btn style</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/buttons.styl#L50">h-inset-button</a>()</dt>
-          <dd>Main mixin to have a h-btn inset style</dd>
-        </dl>
-      </div>
-    </section>
-
-    <section id="formElements">
-      <h2>Form Elements <small>mixins/form-elements</small></h2>
-      <div class="hs-box">
-        <dl>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L10">h-input</a>()</dt>
-          <dd>Main mixin to have a h-input style</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L54">h-search</a>()</dt>
-          <dd>Additional styles for search inputs</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L65">h-select</a>()</dt>
-          <dd>Additional styles for select inputs</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L75">h-textarea</a>()</dt>
-          <dd>Additional styles for textareas</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L87">h-fieldset</a>()</dt>
-          <dd>Main mixin to have a h-fieldset style</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L90">h-label</a>()</dt>
-          <dd>Main mixin to have a h-label style</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form-elements.styl#L94">h-legend</a>()</dt>
-          <dd>Main mixin to have a h-legend style</dd>
-        </dl>
-      </div>
-    </section>
-
-    <section id="box">
-      <h2>Box <small>mixins/box</small></h2>
-      <div class="hs-box">
-        <dl>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/box.styl#L13">h-box</a>([border-color], [background-color], [shadow-color])</dt>
-          <dd>Main mixin to have a h-box style</dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/box.styl#L17">h-box-inset</a>([border-color], [background-color], [shadow-color])</dt>
-          <dd>Main mixin for having a inset h-box style</dd>
-        </dl>
-      </div>
-    </section>
-
-    <section id="scrollbox">
-      <h2>Scrollbox <small>mixins/scrollbox</small></h2>
-      <div class="hs-box">
-        <dl>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/scrollbox.styl#L10">h-scrollbox</a>()</dt>
-          <dd>Main mixin to have a scrollbox style</dd>
-        </dl>
       </div>
     </section>
 

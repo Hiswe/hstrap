@@ -1,4 +1,3 @@
-@import 'nib'
 @import './local-config'
 @import '../lib/hstrap/mixins'
 
@@ -6,15 +5,50 @@ $example-shadow = inset 0 0 4px noir(.15)
 $menu-height    = px2em(32)
 $width          = 50em
 
+
+mq(size)
+  if size == 'small' // 768
+    @media screen and (min-width: 48em)
+      {block}
+  else if size == 'medium' // 832
+    @media screen and (min-width: 52em)
+      {block}
+  else if size == 'large' // 1160
+    @media screen and (min-width: 72.5em)
+      {block}
+  else
+    {block}
+
+
 html, body
   padding 0; margin 0
 
 html
-  background linear-gradient(top, #fff, #ececec) fixed
+  background linear-gradient(to bottom, #fff, #ececec) fixed
   font-family 'Helvetica', 'arial', 'sans-serif'
 
 body
   background transparent
+
+*,
+*::before,
+*::after
+  box-sizing border-box
+
++mq('small')
+  .container
+    width $width
+    margin 0 auto
+
+    .hs-menu &
+      margin 0 auto
+
+
+    > h1
+      margin 1em 0 .5em
+      color $h-pink
+      text-shadow 2px 2px 0 noir(.25)
+
 
 a.selected
   color $h-blue
@@ -25,10 +59,11 @@ a.selected
   margin 0
   padding 2em 0
   border-bottom 1px solid white
-  border-top px2em(4) solid $h-pink
+  border-top 4px solid $h-pink
+  position relative
 
-  .hs-master-head
-    flex 0 0 18em
+  // .hs-master-head
+  //   flex 0 0 18em
 
   h1
     font-family 'hiso-bright', Helvetica, sans-serif
@@ -39,28 +74,71 @@ a.selected
     text-align left
     margin-bottom .25em
     crisp-font-smoothing()
+    text-align center
+
 
     a
       color $h-pink
 
+      &.toggle-menu
+        rem-fs(22)
+        color $h-blue
+        position absolute
+        top .25em
+        left .25em
+        line-height .75
+
   h4
+    text-align center
     color $h-dark-grey
     text-shadow 1px 1px 0 noir(.25)
     letter-spacing .25em
     text-indent .75em
 
-  ul
-    text-align right
-    padding 0
+
+#menu
+  position absolute
+  top   -4px
+  left  0
+  border-top 4px solid $h-pink
+  transform translate(-100%, 0)
+  background #262626
+  padding 0
+  margin  0
 
   li, a
-    display inline-block
+    display block
 
   li
-    padding-top 2em
+    padding 0
 
-    a
-      padding .25em .5em
+  a
+    padding 1em
+
+  &:target
+    transform translate(0, 0)
+
++mq('medium')
+  .hs-menu
+    h1,
+    h4
+      text-align left
+
+    .toggle-menu
+      display none
+
+  #menu
+    position    static
+    border      0
+    transform   none
+    align-self  center
+
+    li:first-child
+      display none
+
+    li, a
+      display inline-block
+
 
 .hs-small-menu
   position relative
@@ -78,44 +156,37 @@ a.selected
   font-family 'hiso-dark', Helvetica, sans-serif
   font-weight normal
   font-size 2.5em
+  text-align center
 
 // Home main banner
 .hs-submenu
-  width 9em
-  margin 0 0 0 $h-gutter
-  padding 0
-  position fixed
-  z-index 2
-  top 0
-  left 100%
-  margin-left -(@width + 1em)
+  display none
 
-  .h-box
-    border-top none
-
-  ul, li
-    list-style none
-    margin 0
-
-  li:first-child
-    padding 1em 0
-
-  a, strong
-    padding .25em 0
++mq('large')
+  .hs-submenu
     display block
+    width 9em
+    margin 0 0 0 $h-gutter
+    padding 0
+    position fixed
+    z-index 2
+    top 0
+    left 100%
+    margin-left -(@width + 1em)
 
-.container
-  width $width
-  margin 0 auto
+    .h-box
+      border-top none
 
-  .hs-menu &
-    margin 0 auto
+    ul, li
+      list-style none
+      margin 0
 
+    li:first-child
+      padding 1em 0
 
-  > h1
-    margin 1em 0 .5em
-    color $h-pink
-    text-shadow 2px 2px 0 noir(.25)
+    a, strong
+      padding .25em 0
+      display block
 
 
 section > h2
@@ -127,19 +198,39 @@ section > h2
   crisp-font-smoothing()
   text-shadow -1px -1px 0 noir(.25), 1px 1px 0 white
   position relative
+  padding 0 0 0 .5em
+  text-align center
 
   small
-    position absolute
-    right 100%; top 20%
-    margin-right .5em
+    display block
     font-family Helvetica, arial, sans-serif
     font-size .5em
-    color #ececec; text-shadow none
+    color noir(.5)
+    text-shadow none
     font-weight normal
-    background noir(.2)
-    padding .25em .5em
-    transform-origin top right
-    transform skewY(-27deg)
+
+    &::before
+      content '('
+    &::after
+      content ')'
+
+  +mq('large')
+    text-align left
+    padding 0
+
+    small
+      position absolute
+      right 100%; top 20%
+      margin-right .5em
+      color #ececec
+      background noir(.2)
+      padding .25em .5em
+      transform-origin top right
+      transform skewY(-27deg)
+
+      &::before,
+      &::after
+        display none
 
 table
   width 100%
@@ -155,6 +246,9 @@ li.h-col
 
 section
   margin-bottom 1em
+  &.home-section
+    padding 1em 1em 0
+
   .h-row + .h-row
     margin-top 1em
 
@@ -192,29 +286,39 @@ section
   color #AAA
   text-shadow none
 
+
 dl
   margin-bottom -.5em
 
 dt, dd
-  display inline-block
-  vertical-align top
-  width 35%
-  box-sizing border-box
-  padding .25em
+  padding .5em
   margin-bottom .5em
 
 dt
   background rgba($h-light-pink, .25)
 
 dd
-  width 64%
-  padding-left 1em
-  margin-left -4px
+  margin-left .5em
 
-  ul
-    margin 0
-    padding 0
-    list-style none
++mq('small')
+  dt, dd
+    display inline-block
+    vertical-align top
+    width 35%
+
+  dt
+    margin-left -1em
+    padding-left 1em
+
+  dd
+    width 64%
+    padding-left 1em
+    margin-left -4px
+
+    ul
+      margin 0
+      padding 0
+      list-style none
 
 .danger
   color $h-pink
@@ -227,13 +331,16 @@ aside.h-popover
   position relative
 
 .hs-box
-  h-box()
-  h-box-inset()
   background-image embedurl('media/stripe_a028efdbf39d1d58806f780f3cc1d323.png')
 
   .hs-box
     margin-top .5em
     background-image none
+
+  +mq('small')
+    h-box()
+    h-box-inset()
+    background-image embedurl('media/stripe_a028efdbf39d1d58806f780f3cc1d323.png')
 
 .hs-stem
   $$stem-size = .75em
@@ -257,42 +364,60 @@ aside.h-popover
   &:hover
     underline(height: 16, color: rgba($h-blue, .5))
 
-.hs-box.percent-center-demo
-  height 15em
+.center-demo
+  min-height 15em
   position relative
 
   p
-    width 33%; padding 1em; margin 0
-    percentCenter()
-    color white; text-align center
+    width 50%;
+    padding 1em;
+    margin 0
+    color white;
+    text-align center
     background $h-blue
+
+  &.v-align
+    height 15em
+    text-align center
+    v-align('> p')
+
+  &.center-transform p
+    center-transform()
+
+  &.center-flex
+    center-flex()
 
 .hs-box.angle-demo
   height 15em
   position relative
   background radial-gradient(center, circle closest-side,white 74%, #ddd 75%, white 76%)
-  $$shiftX = 14.5em
+  $$shiftX = @height/2
   $$shiftY = 7.5em
   padding 0
+  text-align center
 
   ul
-    height 100%
+    display inline-block
+    position relative
+    height  @height
+    width   @height
+    padding 0
+    margin  0
 
-  ul:after, ul:before
-    content '';
+    &::before,
+    &::after
+      content ''
+      center-transform()
+      circle()
+      border 2px solid noir(.25)
 
-  ul:before
-    border 2px solid noir(.25)
-    width .5em; height @width
-    percentCenter()
-    circle()
+    &::before
+      width 0
+      height @width
 
-  ul:after
-    width 0; width 4px; height @width;
-    margin -(@width/2) 0 0 -(@width/2)
-    position absolute; left $$shiftX; top $$shiftY
-    background noir(.25)
-    circle()
+    &::after
+      width .75em
+      height @width
 
   li
     position absolute; display block; width 2em; height @width;
@@ -308,46 +433,51 @@ aside.h-popover
       &:nth-child({num+1})
         angle2topLeft($$angles[num], $$distance, $$shiftX, $$shiftY)
 
-.circle-demo p
-    width 6em; height @width; padding-top 1.5em
+.circle-demo
+  text-align center
+  p
+    width 6em
+    height @width
+    padding-top 1.5em
     display inline-block
     background $h-blue
     box-sizing border-box
     circle()
-    color white; text-align center
+    color white
+
 
 .easing-demo,
 .easing-demo li,
 .easing-demo p
-  reset-box-model()
-  list-style none
+  padding     0
+  margin      0
+  list-style  none
+
+.easing-demo
+  padding 0 1em
 
 .easing-demo li
   padding .85em 0
 
-  p, .easing-test
-    display inline-block
-
   p
     font-weight bold
-    width 20%
+    margin-bottom 1em
     padding-right 1em
     cursor pointer
-    text-align right
 
   .easing-test
     position relative
-    width 300px
-    margin-top .5em
     border 1px solid noir(.15)
     border-width 1px 0
-    perspective 300px
 
     .easing-cursor
-      width 1.5em; height 1.5em
+      width 1.5em
+      height 1.5em
       display block
       margin -(@height/2) 0 0 -(@width/2)
-      absolute top left
+      position absolute
+      top 0
+      left 0
       background $h-blue
 
   &:hover
@@ -355,11 +485,29 @@ aside.h-popover
       color $h-pink
 
     .easing-cursor
-      transform translate3d(300px, 0 , 0)
+      left 100%
+      left calc(100% - 1.5em)
+
+  +mq('medium')
+
+    flex-row()
+
+    p,
+    .easing-test
+      display inline-block
+
+    p
+      margin-bottom 0
+      width 20%
+      text-align right
+
+    .easing-test
+      align-self center
+      flex-grow 1
 
 .easing-cursor
-  transition-property   transform
-  transition-duration   1.5s
+  transition-property   left
+  transition-duration   1s
 
   .linear &
     transition-timing-function h-ease("linear")
@@ -422,24 +570,33 @@ aside.h-popover
 
 // Github link
 aside
-  absolute top right
-  width 15em; height 11.5em;
-  overflow: hidden
+  display none
 
-  a
+  +mq('large')
     display block
-    margin-top 10em; padding .25em 1em; width 100%
-    background #444
-    text-align center; color #222; font-weight bold
-    text-shadow 1px 1px rgba(255,255,255,0.15); text-decoration none
-    transform rotate(45deg)
-    transform-origin top right
-    transition background .25s
+    position absolute
+    top 0
+    right 0
+    width 15em
+    height 11.5em
+    overflow: hidden
 
-    &:hover
-      background: #555
+    a
+      display block
+      margin-top 10em
+      padding .25em 1em
+      width 120%
+      background #444
+      text-align center; color #222; font-weight bold
+      text-shadow 1px 1px rgba(255,255,255,0.15); text-decoration none
+      transform rotate(45deg)
+      transform-origin top right
+      transition background .25s
 
-    span
-      display block; padding .25em 0
-      border dashed 1px rgba(0, 0, 0, 0.5); border-width 1px 0
-      color @color
+      &:hover
+        background: #555
+
+      span
+        display block; padding .25em 0
+        border dashed 1px rgba(0, 0, 0, 0.5); border-width 1px 0
+        color @color
