@@ -59,6 +59,20 @@
   left: 50%;
   margin-left: 1px;
 }
+.h-input-append {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
 .h-input-append input:not([type="submit"]) {
   -webkit-box-flex: 1;
   -webkit-flex: 1;

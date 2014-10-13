@@ -1,5 +1,5 @@
-@import './general'
-@import '../values'
+@import '../../mixins/general'
+@import '../../values'
 
 // Change colors
 h-btn-color(lightColor, mediumColor, darkColor)
@@ -20,7 +20,8 @@ h-btn-color(lightColor, mediumColor, darkColor)
     background-color darkColor
 
 h-btn()
-  font-size 1em; text-align center
+  font-size 1em
+  text-align center
   display inline-block;
   box-sizing border-box
   border none
@@ -38,8 +39,11 @@ h-btn()
   // see http://css-tricks.com/video-screencasts/123-if-it-moves-when-you-click-make-something-stick/
   &::after
     content ''
-    absolute top left
-    right -($h-buttons-depth); bottom @right
+    position absolute
+    top 0
+    left 0
+    right -($h-buttons-depth)
+    bottom @right
     transition all .15s
 
   &:focus
@@ -69,11 +73,13 @@ h-inset-button()
   margin 0
 
   &::after
-    right 0; bottom 0
+    right 0
+    bottom 0
 
   &:active:not(.h-disabled):not([disabled])
     transform none
     box-shadow inset $h-buttons-depth $h-buttons-depth 0 noir(.25)
 
     &::after
-      top 0; left @top
+      top 0
+      left @top

@@ -9,8 +9,8 @@ a:visited,
 .h-link {
   color: #0078a6;
   text-decoration: none;
-  -webkit-transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-          transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+  -webkit-transition: color 0.25s;
+          transition: color 0.25s;
 }
 a:hover,
 a:visited:hover,

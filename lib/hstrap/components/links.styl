@@ -1,12 +1,11 @@
-@import './values'
-@import './mixins/h-ease'
+@import '../values'
 
 a,
 a:visited
 .h-link
   color $h-dark-blue
   text-decoration none
-  transition color .25s h-ease()
+  transition color .25s
 
   &:hover
     color $h-blue

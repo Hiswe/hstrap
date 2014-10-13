@@ -29,17 +29,16 @@ var jsonFiles = [
 ];
 
 var paths = [
-  'lib/hstrap/index.styl',
-  'lib/hstrap/buttons.styl',
-  'lib/hstrap/forms/index.styl',
-  'lib/hstrap/forms/default.styl',
-  'lib/hstrap/layout.styl',
-  'lib/hstrap/links.styl',
-  'lib/hstrap/components/index.styl',
-  'lib/hstrap/components/h-box.styl',
-  'lib/hstrap/components/h-popover.styl',
-  'lib/hstrap/components/h-scrollbox.styl'
-];
+  'index.styl',
+  'layout.styl',
+  'links.styl',
+  'box.styl',
+  'buttons.styl',
+  'scrollbox.styl',
+  'popover.styl',
+  'forms.styl',
+  'forms-default.styl'
+].map(function (name){ return 'lib/hstrap/components/' + name});
 
 var banner = ['/**',
   ' * <%= pkg.name %> - <%= pkg.description %>',
@@ -134,7 +133,7 @@ gulp.task('clean-ghpage-css', function (cb) {
 });
 
 gulp.task('lib', ['clean-css'], function () {
-  gulp.src(paths, {base: './lib/hstrap/'})
+  gulp.src(paths)
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
     .pipe(autoprefixer())

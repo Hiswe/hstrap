@@ -32,7 +32,9 @@
 }
 .h-btn::after {
   content: '';
-  absolute: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
   right: -2px;
   bottom: -2px;
   -webkit-transition: all 0.15s;

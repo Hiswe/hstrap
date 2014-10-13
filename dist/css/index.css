@@ -4,24 +4,19 @@
  * @link http://hiswe.github.io/hstrap
  * @license WTFPL
  */
-a,
-a:visited,
-.h-link {
-  color: #0078a6;
-  text-decoration: none;
-  -webkit-transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-          transition: color 0.25s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+.h-box {
+  padding: 16px;
+  border: 1px solid #c2c2c2;
+  background: #fff;
+  color: #000;
+  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
 }
-a:hover,
-a:visited:hover,
-.h-link:hover {
-  color: #00b7e0;
-}
-.h-link {
-  cursor: pointer;
-  display: inline;
-  background: none;
-  border: 0;
+.h-box-inset {
+  padding: 16px;
+  border: 1px solid #c2c2c2;
+  background: #fff;
+  color: #000;
+  box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
 }
 .h-btn {
   font-size: 1em;
@@ -51,7 +46,9 @@ a:visited:hover,
 }
 .h-btn::after {
   content: '';
-  absolute: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
   right: -2px;
   bottom: -2px;
   -webkit-transition: all 0.15s;
@@ -150,31 +147,6 @@ a:visited:hover,
 .h-btn.h-big {
   font-size: 2em;
   padding: em2em(0.75em, 2em) em2em(1.5em, 2em);
-}
-.h-row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-      -ms-flex-line-pack: stretch;
-          align-content: stretch;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-}
-.h-col {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-right: 1em;
-}
-.h-col:last-child {
-  margin-right: 0;
 }
 .h-label {
   display: block;
@@ -594,19 +566,15 @@ a:visited:hover,
 .h-input-group {
   position: relative;
 }
-.h-box {
-  padding: 16px;
-  border: 1px solid #c2c2c2;
-  background: #fff;
-  color: #000;
-  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.25);
-}
-.h-box-inset {
-  padding: 16px;
-  border: 1px solid #c2c2c2;
-  background: #fff;
-  color: #000;
-  box-shadow: inset 2px 2px 0 0 rgba(0,0,0,0.15);
+.h-scrollbox {
+  background: -webkit-linear-gradient(top, #fff 30%, rgba(255,255,255,0)), -webkit-linear-gradient(top, rgba(255,255,255,0), #fff 70%) 0 100%, -webkit-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -webkit-radial-gradient(50% 100%, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;
+  background: linear-gradient(to bottom, #fff 30%, rgba(255,255,255,0)), linear-gradient(to bottom, rgba(255,255,255,0), #fff 70%) 0 100%, radial-gradient(farthest-side at 50% 0, rgba(0,0,0,0.4), rgba(0,0,0,0)), radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-attachment: local, local, scroll, scroll;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  height: 20em;
+  overflow: auto;
 }
 .h-popover {
   position: absolute;
@@ -720,13 +688,47 @@ a:visited:hover,
 .h-popover-content {
   padding: 9px 14px;
 }
-.h-scrollbox {
-  background: -webkit-linear-gradient(top, #fff 30%, rgba(255,255,255,0)), -webkit-linear-gradient(top, rgba(255,255,255,0), #fff 70%) 0 100%, -webkit-radial-gradient(50% 0, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)), -webkit-radial-gradient(50% 100%, farthest-side, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;
-  background: linear-gradient(to bottom, #fff 30%, rgba(255,255,255,0)), linear-gradient(to bottom, rgba(255,255,255,0), #fff 70%) 0 100%, radial-gradient(farthest-side at 50% 0, rgba(0,0,0,0.4), rgba(0,0,0,0)), radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,0.4), rgba(0,0,0,0)) 0 100%;
-  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-  background-attachment: local, local, scroll, scroll;
-  background-repeat: no-repeat;
-  background-color: #fff;
-  height: 20em;
-  overflow: auto;
+.h-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+.h-col {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 1em;
+}
+.h-col:last-child {
+  margin-right: 0;
+}
+a,
+a:visited,
+.h-link {
+  color: #0078a6;
+  text-decoration: none;
+  -webkit-transition: color 0.25s;
+          transition: color 0.25s;
+}
+a:hover,
+a:visited:hover,
+.h-link:hover {
+  color: #00b7e0;
+}
+.h-link {
+  cursor: pointer;
+  display: inline;
+  background: none;
+  border: 0;
 }
