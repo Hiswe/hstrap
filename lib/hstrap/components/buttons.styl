@@ -2,29 +2,36 @@
 @import '../mixins/general'
 @import './buttons/mixins'
 
-.h-btn
-  h-btn()
-  h-btn-color($h-buttons-light, $h-buttons-medium, $h-buttons-dark)
+.h-btn {
+  h-btn();
+  h-btn-color($h-buttons-light, $h-buttons-medium, $h-buttons-dark);
 
-  &.h-primary
-    h-btn-color($h-buttons-primary-light, $h-buttons-primary-medium, $h-buttons-primary-dark)
+  &.h-primary {
+    h-btn-color($h-buttons-primary-light, $h-buttons-primary-medium, $h-buttons-primary-dark);
+  }
 
-  &.h-danger
-    h-btn-color($h-buttons-danger-light, $h-buttons-danger-medium, $h-buttons-danger-dark)
+  &.h-danger {
+    h-btn-color($h-buttons-danger-light, $h-buttons-danger-medium, $h-buttons-danger-dark);
+  }
 
   &[disabled],
-  &.h-disabled
-    cursor not-allowed
-    opacity .65
+  &.h-disabled {
+    cursor: not-allowed;
+    opacity: .65;
+  }
 
-  &.h-mini
-  &.h-inset
-    h-inset-button()
+  &.h-mini,
+  &.h-inset {
+    h-inset-button();
+  }
 
-  &.h-mini
-    padding 0 .5em
-    font-size px2em(12)
+  &.h-mini {
+    padding: 0 .5em;
+    font-size: px2em(12);
+  }
 
-  &.h-big
-    font-size 2em
-    padding em2em(.75em, @font-size) em2em(1.5em, @font-size)
+  &.h-big {
+    font-size: 2em;
+    padding: em2em(.75em, @font-size) em2em(1.5em, @font-size);
+  }
+}

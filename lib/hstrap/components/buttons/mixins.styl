@@ -2,84 +2,100 @@
 @import '../../values'
 
 // Change colors
-h-btn-color(lightColor, mediumColor, darkColor)
-  if light(darkColor)
-    color black
-    text-shadow 1px 1px 0 blanc()
-  else
-    color white
-    text-shadow -1px -1px 0 noir()
+h-btn-color(lightColor, mediumColor, darkColor) {
+  if (light(darkColor)){
+      color: black;
+      text-shadow 1px 1px 0 blanc();
+  } else {
+    color: white;
+    text-shadow: -1px -1px 0 noir();
+  }
 
-  background linear-gradient(rgba(darkColor, 0), darkColor)
-  background-color mediumColor
+  background: linear-gradient(rgba(darkColor, 0), darkColor);
+  background-color: mediumColor;
 
-  &:hover:not(.h-disabled):not([disabled])
-    background-color lightColor
+  &:hover:not(.h-disabled):not([disabled]) {
+    background-color: lightColor;
+  }
 
-  &:active:not(.h-disabled):not([disabled])
-    background-color darkColor
+  &:active:not(.h-disabled):not([disabled]) {
+    background-color: darkColor;
+  }
+}
 
-h-btn()
-  font-size 1em
-  text-align center
-  display inline-block;
-  box-sizing border-box
-  border none
-  padding .75em 1.5em
-  margin $h-buttons-depth 0 -($h-buttons-depth) $h-buttons-depth $h-buttons-depth
-  vertical-align middle
-  cursor pointer
-  box-shadow $h-buttons-depth $h-buttons-depth 0 noir()
-  transform translate3d(-($h-buttons-depth), -($h-buttons-depth), 0)
-  transform-origin bottom right
-  transition background-color .25s, transform .15s, box-shadow .15s
-  position relative
+h-btn() {
+  font-size: 1em;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  border: none;
+  padding: .75em 1.5em;
+  margin: $h-buttons-depth 0 -($h-buttons-depth) $h-buttons-depth $h-buttons-depth;
+  vertical-align: middle;
+  cursor: pointer;
+  box-shadow: $h-buttons-depth $h-buttons-depth 0 noir();
+  transform: translate3d(-($h-buttons-depth), -($h-buttons-depth), 0);
+  transform-origin: bottom right;
+  transition: background-color .25s, transform .15s, box-shadow .15s;
+  position: relative;
 
   // this is for non-lickable corners
   // see http://css-tricks.com/video-screencasts/123-if-it-moves-when-you-click-make-something-stick/
-  &::after
-    content ''
-    position absolute
-    top 0
-    left 0
-    right -($h-buttons-depth)
-    bottom @right
-    transition all .15s
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -($h-buttons-depth);
+    bottom: @right;
+    transition: all .15s;
+  }
 
-  &:focus
-    outline none
+  &:focus {
+    outline: none;
+  }
 
-  &::-moz-focus-inner
-    outline none
+  &::-moz-focus-inner {
+    outline: none;
+  }
 
   &.h-active:not(.h-disabled):not([disabled]),
-  &:active:not(.h-disabled):not([disabled])
-    transform translate3d(-($h-buttons-active-depth), -($h-buttons-active-depth), 0)
-    box-shadow $h-buttons-active-depth $h-buttons-active-depth 0 noir(.75)
-    outline 0
+  &:active:not(.h-disabled):not([disabled]) {
+    transform: translate3d(-($h-buttons-active-depth), -($h-buttons-active-depth), 0);
+    box-shadow: $h-buttons-active-depth $h-buttons-active-depth 0 noir(.75);
+    outline: 0;
 
-    &::after
-      absolute bottom right
-      top -($h-buttons-depth); left @top
+    &::after {
+      absolute: bottom right;
+      top: -($h-buttons-depth);
+      left: @top;
+    }
+  }
 
-  .iconic
-    font-size 1.5em
-    line-height .5em
-    vertical-align middle
+  .iconic {
+    font-size: 1.5em;
+    line-height: .5em;
+    vertical-align: middle;
+  }
+}
 
-h-inset-button()
-  box-shadow none
-  transform none
-  margin 0
+h-inset-button() {
+  box-shadow: none;
+  transform: none;
+  margin: 0;
 
-  &::after
-    right 0
-    bottom 0
+  &::after {
+    right: 0;
+    bottom: 0;
+  }
 
-  &:active:not(.h-disabled):not([disabled])
-    transform none
-    box-shadow inset $h-buttons-depth $h-buttons-depth 0 noir(.25)
+  &:active:not(.h-disabled):not([disabled]) {
+    transform: none;
+    box-shadow: inset $h-buttons-depth $h-buttons-depth 0 noir(.25);
 
-    &::after
-      top 0
-      left @top
+    &::after {
+      top: 0;
+      left: @top;
+    }
+  }
+}

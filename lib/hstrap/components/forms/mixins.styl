@@ -47,38 +47,42 @@ h-input()
     border 1px solid $h-input-idle
     placeHolder(lighten(@color, 50%))
 
-h-search()
-  reset-form()
-  background-repeat no-repeat
-  background-position 100% px2em(7)
-  background-image embedurl('../media/magnifying_glass.svg')
+h-search() {
+  reset-form();
+  background-repeat: no-repeat;
+  background-position: 100% px2em(7);
+  background-image: embedurl('../media/magnifying_glass.svg');
 
-  &::-webkit-search-cancel-button
-    display none
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
 
 // Select box
-h-select()
-  reset-form()
-  reset-select()
-  padding-right 1.75em
-  border-radius 0
-  background-repeat no-repeat
-  background-position center right
-  background-image embedurl('../media/select_arrows.svg')
+h-select() {
+  reset-form();
+  reset-select();
+  padding-right: 1.75em;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-image: embedurl('../media/select_arrows.svg');
+}
 
-h-select-link()
-  reset-form()
-  reset-select($h-dark-blue)
-  font-size 1em
-  border none; background none
-  border-bottom 1px solid $h-input-idle
-  padding-right 1.75em
-  color $h-dark-blue
-  display inline-block
-  background-repeat no-repeat
-  background-position 100% px2em(7)
-  background-image embedurl('../media/select_arrows_link.svg')
-  border-radius 0
+h-select-link() {
+  reset-form();
+  reset-select($h-dark-blue);
+  font-size: 1em;
+  border: none;
+  background: none;
+  border-bottom: 1px solid $h-input-idle;
+  padding-right: 1.75em;
+  color: $h-dark-blue;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 100% px2em(7);
+  background-image: embedurl('../media/select_arrows_link.svg');
+  border-radius: 0;
 
   &.ng-invalid,
   &.invalid,
@@ -86,48 +90,59 @@ h-select-link()
   &.disabled,
   &.disabled:hover,
   &:disabled,
-  &:disabled:hover
-    background-image embedurl('../media/select_arrows_link_disabled.svg')
+  &:disabled:hover {
+    background-image: embedurl('../media/select_arrows_link_disabled.svg');
+  }
 
   &.ng-invalid,
   &.invalid,
-  &:focus:invalid // see for focus http://alistapart.com/article/forward-thinking-form-validation
-    border-bottom-color $h-input-invalid
-    color $h-input-invalid-color
+  &:focus:invalid {
+    // see for focus http://alistapart.com/article/forward-thinking-form-validation
+    border-bottom-color: $h-input-invalid;
+    color: $h-input-invalid-color;
+  }
 
   &.disabled,
   &.disabled:hover,
   &:disabled,
-  &:disabled:hover
-    cursor not-allowed
-    color #999
+  &:disabled:hover {
+    cursor: not-allowed;
+    color: #999;
+  }
+}
 
 // Textarea
-h-textarea()
-  min-height 5em
-  resize vertical
-  line-height 1.25em
+h-textarea() {
+  min-height: 5em;
+  resize: vertical;
+  line-height: 1.25em;
   // Firefox put Courrier without this…
-  font-family inherit
+  font-family: inherit;
 
   &.disabled,
-  &:disabled
-    resize none
+  &:disabled {
+    resize: none;
+  }
+}
 
 // Presentation
-h-fieldset()
-  border none
+h-fieldset() {
+  border: none;
+}
 
-h-label()
-  display block
-  padding .75em 0 .25em
+h-label() {
+  display: block;
+  padding: .75em 0 .25em;
+}
 
-h-legend()
-  font-size px2em(21)
-  display block
-  width 100%; padding 0
-  padding-top 1em
-  line-height 1.8em
-  color #666
-  border 0
-  border-bottom 1px solid #e5e5e5
+h-legend() {
+  font-size: px2em(21)
+  display: block
+  width: 100%;
+  padding: 0;
+  padding-top: 1em;
+  line-height: 1.8em;
+  color: #666;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}

@@ -1,46 +1,55 @@
 @import '../values'
 
 // Convert px to em, according to fs reference
-px2em(px, ref = $h-fs)
-  1em * px / ref
+px2em(px, ref = $h-fs) {
+  1em * px / ref;
+}
 
 // Fix conflict with saturate() stylus functions
-css-filter(properties)
+css-filter(properties) {
   vendor('filter', unquote(properties), only: webkit moz ms official)
+}
 
 // Add alpha chanel to white and black
-blanc(opacity = 0.5)
-  rgba(white, opacity)
+blanc(opacity = 0.5) {
+  rgba(white, opacity);
+}
 
-noir(opacity = 0.5)
-  rgba(black, opacity)
+noir(opacity = 0.5) {
+  rgba(black, opacity);
+}
 
 // Tile the background from borders
-bg-cover()
-  background-size cover
-  background-clip border-box
-  background-origin border-box
+bg-cover() {
+  background-size: cover;
+  background-clip: border-box;
+  background-origin: border-box;
+}
 
 // Generate a stem
-stem($$direction = "top", $$color = $h-components-border, $$width = .5em)
-  display block
-  width 0; height 0
-  content "" // In case of pseudo elements
-  border $$width solid transparent
+stem($$direction = "top", $$color = $h-components-border, $$width = .5em) {
+  display: block
+  width 0;
+  height 0;
+  content: ""; // In case of pseudo elements
+  border: $$width solid transparent;
 
-  if $$direction == "right"
-    border-right-width 0
-    border-left-color $$color
-  else if $$direction == "bottom"
-    border-top-color $$color
-    border-bottom-width 0
-  else if $$direction == "left"
-    border-left-width 0
-    border-right-color $$color
-  else
-    border-top-width 0
-    border-bottom-color $$color
+  if ($$direction == "right") {
+    border-right-width: 0;
+    border-left-color: $$color;
+  } else if ($$direction == "bottom") {
+    border-top-color: $$color;
+    border-bottom-width: 0;
+  } else if ($$direction == "left") {
+    border-left-width: 0;
+    border-right-color: $$color;
+  } else {
+    border-top-width: 0;
+    border-bottom-color: $$color;
+  }
+}
 
 // Everyone need circles
-circle()
-  border-radius 666em
+circle() {
+  border-radius: 666em;
+}

@@ -59,7 +59,13 @@ var stylusConf = {
 // Plumber error callback
 var onError = function onError(err) {
   gutil.beep();
-  console.log(err);
+  if (err.annotated) {
+    return gutil.log(err.annotated);
+  }
+  if (err.message) {
+    return gutil.log(err.message);
+  }
+  return gutil.log(err);
 };
 
 /////////

@@ -1,71 +1,72 @@
 // Shamefully pasted from
 // https://github.com/jhardy/compass-ceaser-easing
 
-h-ease($type = "ease")
+h-ease($type = "ease") {
   // default is "ease"
-  $easingValue = "0.250, 0.100, 0.250, 1.000"
-  if $type ==   "linear"
-    $easingValue = "0.250, 0.250, 0.750, 0.750"
-  else if $type ==  "ease"
-    $easingValue = "0.250, 0.100, 0.250, 1.000"
-  else if $type ==  "ease-in"
-    $easingValue = "0.420, 0.000, 1.000, 1.000"
-  else if $type ==  "ease-out"
-    $easingValue = "0.000, 0.000, 0.580, 1.000"
-  else if $type ==  "ease-in-out"
-    $easingValue = "0.420, 0.000, 0.580, 1.000"
+  $easingValue = ".250, .100, .250, 1.000";
 
-  else if $type ==  "easeInQuad"
-    $easingValue = "0.550, 0.085, 0.680, 0.530"
-  else if $type ==  "easeInCubic"
-    $easingValue = "0.550, 0.055, 0.675, 0.190"
-  else if $type ==  "easeInQuart"
-    $easingValue = "0.895, 0.030, 0.685, 0.220"
-  else if $type ==  "easeInQuint"
-    $easingValue = "0.755, 0.050, 0.855, 0.060"
-  else if $type ==  "easeInSine"
-    $easingValue = "0.470, 0.000, 0.745, 0.715"
-  else if $type ==  "easeInExpo"
-    $easingValue = "0.950, 0.050, 0.795, 0.035"
-  else if $type ==  "easeInCirc"
-    $easingValue = "0.600, 0.040, 0.980, 0.335"
-  else if $type ==  "easeInBack"
-    $easingValue = "0.600, -0.280, 0.735, 0.045"
+  if ($type ==  "linear") {
+    $easingValue = ".250, .250, .750, .750";
+  } else if ($type ==  "ease") {
+    $easingValue = ".250, .100, .250, 1.000";
+  } else if ($type ==  "ease-in") {
+    $easingValue = ".420, .000, 1.000, 1.000";
+  } else if ($type ==  "ease-out") {
+    $easingValue = ".000, .000, .580, 1.000";
+  } else if ($type ==  "ease-in-out") {
+    $easingValue = ".420, .000, .580, 1.000";
+  // easeIn
+  } else if ($type ==  "easeInQuad") {
+    $easingValue = ".550, .085, .680, .530";
+  } else if ($type ==  "easeInCubic") {
+    $easingValue = ".550, .055, .675, .190";
+  } else if ($type ==  "easeInQuart") {
+    $easingValue = ".895, .030, .685, .220";
+  } else if ($type ==  "easeInQuint") {
+      $easingValue = ".755, .050, .855, .060";
+  } else if ($type ==  "easeInSine") {
+    $easingValue = ".470, .000, .745, .715";
+  } else if ($type ==  "easeInExpo") {
+    $easingValue = ".950, .050, .795, .035";
+  } else if ($type ==  "easeInCirc") {
+    $easingValue = ".600, .040, .980, .335";
+  } else if ($type ==  "easeInBack") {
+    $easingValue = ".600, -.280, .735, .045";
+  // easeOut
+  } else if ($type ==  "easeOutQuad") {
+    $easingValue = ".250, .460, .450, .940";
+  } else if ($type ==  "easeOutCubic") {
+    $easingValue = ".215, .610, .355, 1.000";
+  } else if ($type ==  "easeOutQuart") {
+    $easingValue = ".165, .840, .440, 1.000";
+  } else if ($type ==  "easeOutQuint") {
+    $easingValue = ".230, 1.000, .320, 1.000";
+  } else if ($type ==  "easeOutSine") {
+    $easingValue = ".390, .575, .565, 1.000";
+  } else if ($type ==  "easeOutExpo") {
+    $easingValue = ".190, 1.000, .220, 1.000";
+  } else if ($type ==  "easeOutCirc") {
+    $easingValue = ".075, .820, .165, 1.000";
+  } else if ($type ==  "easeOutBack") {
+    $easingValue = ".175, .885, .320, 1.275";
+  // easeInOut
+  }else if ($type ==  "easeInOutQuad") {
+    $easingValue = ".455, .030, .515, .955";
+  } else if ($type ==  "easeInOutCubic") {
+    $easingValue = ".645, .045, .355, 1.000";
+  } else if ($type ==  "easeInOutQuart") {
+    $easingValue = ".770, .000, .175, 1.000";
+  } else if ($type ==  "easeInOutQuint") {
+    $easingValue = ".860, .000, .070, 1.000";
+  } else if ($type ==  "easeInOutSine") {
+    $easingValue = ".445, .050, .550, .950";
+  } else if ($type ==  "easeInOutExpo") {
+    $easingValue = "1.000, .000, .000, 1.000";
+  } else if ($type ==  "easeInOutCirc") {
+    $easingValue = ".785, .135, .150, .860";
+  } else if ($type ==  "easeInOutBack") {
+    $easingValue = ".680, -.550, .265, 1.550";
+  }
 
-
-  else if $type ==  "easeOutQuad"
-    $easingValue = "0.250, 0.460, 0.450, 0.940"
-  else if $type ==  "easeOutCubic"
-    $easingValue = "0.215, 0.610, 0.355, 1.000"
-  else if $type ==  "easeOutQuart"
-    $easingValue = "0.165, 0.840, 0.440, 1.000"
-  else if $type ==  "easeOutQuint"
-    $easingValue = "0.230, 1.000, 0.320, 1.000"
-  else if $type ==  "easeOutSine"
-    $easingValue = "0.390, 0.575, 0.565, 1.000"
-  else if $type ==  "easeOutExpo"
-    $easingValue = "0.190, 1.000, 0.220, 1.000"
-  else if $type ==  "easeOutCirc"
-    $easingValue = "0.075, 0.820, 0.165, 1.000"
-  else if $type ==  "easeOutBack"
-    $easingValue = "0.175, 0.885, 0.320, 1.275"
-
-
-  else if $type ==  "easeInOutQuad"
-    $easingValue = "0.455, 0.030, 0.515, 0.955"
-  else if $type ==  "easeInOutCubic"
-    $easingValue = "0.645, 0.045, 0.355, 1.000"
-  else if $type ==  "easeInOutQuart"
-    $easingValue = "0.770, 0.000, 0.175, 1.000"
-  else if $type ==  "easeInOutQuint"
-    $easingValue = "0.860, 0.000, 0.070, 1.000"
-  else if $type ==  "easeInOutSine"
-    $easingValue = "0.445, 0.050, 0.550, 0.950"
-  else if $type ==  "easeInOutExpo"
-    $easingValue = "1.000, 0.000, 0.000, 1.000"
-  else if $type ==  "easeInOutCirc"
-    $easingValue = "0.785, 0.135, 0.150, 0.860"
-  else if $type ==  "easeInOutBack"
-    $easingValue = "0.680, -0.550, 0.265, 1.550"
-
-  cubic-bezier(unquote($easingValue))
+  cubic-bezier(unquote($easingValue));
+}

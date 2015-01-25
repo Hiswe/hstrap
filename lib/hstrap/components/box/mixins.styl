@@ -1,18 +1,22 @@
 @import '../../values'
 
-h-box-base($$border, $$background)
-  padding $h-gutter
-  border 1px solid $$border
-  background $$background
-  if light($$background)
-    color black
-  else
-    color white
+h-box-base($$border, $$background) {
+  padding: $h-gutter;
+  border: 1px solid $$border;
+  background: $$background;
+  if (light($$background)) {
+    color: black;
+  } else {
+    color: white;
+  }
+}
 
-h-box($$border = $h-components-border, $$background = $h-components-background, $$shadow = $h-components-shadow)
-  h-box-base($$border, $$background)
-  box-shadow $h-components-depth $h-components-depth 0 0 rgba($$shadow, 0.25)
+h-box($$border = $h-components-border, $$background = $h-components-background, $$shadow = $h-components-shadow) {
+  h-box-base($$border, $$background);
+  box-shadow: $h-components-depth $h-components-depth 0 0 rgba($$shadow, .25);
+}
 
-h-box-inset($$border = $h-components-border, $$background = $h-components-background, $$shadow = $h-components-shadow)
-  h-box-base($$border, $$background)
-  box-shadow inset $h-components-depth $h-components-depth 0 0 rgba($$shadow, 0.15)
+h-box-inset($$border = $h-components-border, $$background = $h-components-background, $$shadow = $h-components-shadow) {
+  h-box-base($$border, $$background);
+  box-shadow: inset $h-components-depth $h-components-depth 0 0 rgba($$shadow, .15);
+}

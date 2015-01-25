@@ -1,13 +1,16 @@
 @import '../mixins/general'
 @import '../mixins/positions'
 
-.h-row
-  flex-row()
-  width 100%
+.h-row {
+  flex-row();
+  width: 100%;
+}
 
-.h-col
-  flex 1
-  margin-right px2em($h-gutter)
+.h-col {
+  flex: 1;
+  margin-right: px2em($h-gutter);
 
-  &:last-child
-    margin-right 0
+  &:last-child {
+    margin-right: 0;
+  }
+}

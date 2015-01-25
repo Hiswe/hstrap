@@ -26,7 +26,7 @@
   content: 'NO';
   color: rgba(255,255,255,0.35);
   left: 75%;
-  text-shadow: -1px -1px 0px rgba(0,0,0,0.5);
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.5);
 }
 .h-ios:before {
   content: 'YES';
@@ -38,8 +38,8 @@
   width: 50%;
   -moz-box-sizing: border-box;
        box-sizing: border-box;
-  -webkit-transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
-          transition: all 0.4s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(.250, .100, .250, 1.000);
+          transition: all 0.4s cubic-bezier(.250, .100, .250, 1.000);
   cursor: pointer;
   position: absolute;
   top: -1px;

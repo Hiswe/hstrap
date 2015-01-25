@@ -5,19 +5,22 @@
 // TODO should be configurable
 // http://snook.ca/archives/html_and_css/font-size-with-rem
 // http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
-rem-fs(size)
-  font-size unit(size, 'px')
-  font-size unit(size/10, 'rem')
+rem-fs($$size) {
+  font-size: unit($$size, 'px');
+  font-size: unit($$size/10, 'rem');
+}
 
 // Change the way the browser smooth the font
 // http://maximilianhoffmann.com/article/better-font-rendering-on-osx/
-crisp-font-smoothing()
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
+crisp-font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 // Gradient underline
 // https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
-underline(height = 16, color = #666665)
-  height = unit(height, 'px')
-  background 0  height / 2px 2px repeat-x
-  background-image linear-gradient(to bottom, #fff 50%, color 50%)
+underline($$height = 16, color = #666665) {
+  $$height = unit($$height, 'px');
+  background: 0  ($$height / 2px) 2px repeat-x;
+  background-image: linear-gradient(to bottom, #fff 50%, color 50%);
+}

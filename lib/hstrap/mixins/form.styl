@@ -1,41 +1,51 @@
 // try to remove default style
 // not working totally with select on Firefox & IE…
-reset-form()
-  appearance none
-  -moz-appearance none
-  -webkit-appearance none
+reset-form() {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
 
 // So there is a complement mixin here
-reset-select(color = #555)
+reset-select(color = #555) {
   // This to hide right arrow on firefox
   // http://jsfiddle.net/joaocunha/RUEbp/1/
-  text-indent 0.01px
-  text-overflow ''
+  text-indent: .01px;
+  text-overflow: '';
 
-  border-radius 0
+  border-radius: 0;
 
   // remove inner-dotted border on Firefox
   // http://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
-  &:-moz-focusring
-    color color
-    color rgba(0,0,0,0)
-    text-shadow 0 0 0 color
+  &:-moz-focusring {
+    color: color;
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0 0 0 color;
+  }
 
-  &:focus
-    outline none
+  &:focus {
+    outline: none;
+  }
 
-  &::-ms-expand
-    display none
+  &::-ms-expand {
+    display: none;
+  }
+}
 
 // style input place holder
 // Firefox 18-
 // Firefox 19+
-placeHolder(color)
-  &:-ms-input-placeholder
-    color color
-  &::-webkit-input-placeholder
-    color color
-  &:-moz-placeholder
-    color color
-  &::-moz-placeholder
-    color color
+placeHolder(color) {
+  &:-ms-input-placeholder {
+    color: color;
+  }
+  &::-webkit-input-placeholder {
+    color: color;
+  }
+  &:-moz-placeholder {
+    color: color;
+  }
+  &::-moz-placeholder {
+    color: color;
+  }
+}

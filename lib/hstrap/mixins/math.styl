@@ -1,17 +1,19 @@
 // get x & y with angle + distance
 // cos & sin function take already care of angle unit
-angle2xy($$angle = 0deg, $$distance = 1)
-  x = $$distance * cos($$angle)
-  y = $$distance * sin($$angle)
-  return x y
+angle2xy($$angle = 0deg, $$distance = 1) {
+  x = $$distance * cos($$angle);
+  y = $$distance * sin($$angle);
+  return x y;
+}
 
 // get top & left with angle + distance
 // Shift is there to correct object size
-angle2topLeft($$angle = 0deg, $$distance = 1em, $$shiftX = false, $$shiftY = false)
-  $$shiftX = 0 unless $$shiftX
-  $$shiftY = $$shiftX unless $$shiftY
+angle2topLeft($$angle = 0deg, $$distance = 1em, $$shiftX = false, $$shiftY = false) {
+  $$shiftX = 0 unless $$shiftX;
+  $$shiftY = $$shiftX unless $$shiftY;
 
-  coords = angle2xy($$angle, $$distance)
+  coords = angle2xy($$angle, $$distance);
 
-  left $$shiftX + coords[0]
-  top  $$shiftY - coords[1]
+  left $$shiftX + coords[0];
+  top  $$shiftY - coords[1];
+}

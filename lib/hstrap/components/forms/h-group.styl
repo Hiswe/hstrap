@@ -2,17 +2,20 @@
 
 @import './mixins'
 
-.h-input-append
-  flex-row()
+.h-input-append {
+  flex-row();
 
-  input:not([type="submit"])
-    flex 1
+  input:not([type="submit"]) {
+    flex: 1;
+  }
 
-  .h-btn
-    inset-button()
-    padding 0 1em
-    height 32px
-
+  .h-btn {
+    inset-button();
+    padding: 0 1em;
+    height: 32px;
+  }
+}
 // For positioning error tooltip
-.h-input-group
-  position relative
+.h-input-group {
+  position: relative;
+}
