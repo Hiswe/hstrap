@@ -29,8 +29,15 @@ flex-center() {
 }
 
 // flex box row
-flex-row() {
+flex-row(childs = '> *', gutter = $h-gutter) {
   display: flex;
   align-content: stretch;
   flex-direction: row;
+  {childs} {
+    flex: 1 1 1%;
+    margin-right: gutter;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
