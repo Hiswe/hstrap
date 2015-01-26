@@ -21,12 +21,18 @@ at [hiswe.github.io/hstrap](http://hiswe.github.io/hstrap/)
   - [CSS3 Flex grid](http://hiswe.github.io/hstrap/dist/base-css.html#layout)
 - Components *(also available as mixins)*
   - [Boxes](http://hiswe.github.io/hstrap/dist/components.html#box)
-  - [Popover](http://hiswe.github.io/hstrap/dist/components.html#popover)
   - [Scrollbox](http://hiswe.github.io/hstrap/dist/components.html#scrollbox)
 
 
 ## Release History
 
+- **1.2.0** 
+	- Remove nib
+	- Remove `popover` component
+	- Remove `Media Query` mixin
+	- Rename `v-align()` to `inline-block-valign()`
+	- Rename `percentCenter` to `transform-center`
+	- Add `flex-center()` mixin
 - **1.1.1** — Add `.h-active` class for button
 - **1.1.0**
 	- reorganize mixins files

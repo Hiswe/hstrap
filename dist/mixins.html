@@ -2,11 +2,11 @@
 <html>
 <head>
   <meta charset=utf-8>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible", content="IE=edge">
   <title>Hstrap mixins</title>
   <link rel="stylesheet" href="font/hiso-bright-font.css">
   <link rel="stylesheet" href="font/hiso-dark-font.css">
-  <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="example.css">
 </head>
 <body>
@@ -45,7 +45,7 @@
 
   <div class="container">
     <section id="general">
-      <h2>General <small>mixins/general</small></h2>
+      <h2><span>General</span> <small>mixins/general</small></h2>
       <div class="hs-box">
         <dl>
           <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L6">px2em</a>(px, [ref = 16px])</dt>
@@ -71,18 +71,24 @@
               </div>
           </dd>
           <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/general.styl#L71">circle</a>()</dt>
-          <dd class="circle-demo"><p>Excessive round corner</p></dd>
+          <dd class="circle-demo">
+            <div class="hs-box center-demo center-transform">
+              <p>Excessive round corner</p>
+            <div/>
+          </dd>
         </dl>
       </div>
     </section>
 
     <section id="positions">
-      <h2>Positions <small>mixins/positions</small></h2>
+      <h2><span>Positions</span> <small>mixins/positions</small></h2>
       <div class="hs-box">
         <dl>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">inline-block-valign</a>([child-selector = '&gt; *'])</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">inline-block-valign</a>([childs = '&gt; *'])</dt>
           <dd>vertical centering using inline-block &amp; pseudo-elements
             <span class="danger">Apply to the container</span>
+            <span class="danger">Container must have a fixed height</span>
+            <span class="danger">If the content is taller than the container, it will overflow on the bottom</span>
             <div class="hs-box center-demo v-align">
               <p contenteditable="true">
                 I'm centered without having a height defined but my parent has one
@@ -91,9 +97,10 @@
               </p>
             </div>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">center-transform</a>()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">transform-center</a>()</dt>
           <dd>absolute center using transform2d (more details on <a href="http://css-tricks.com/centering-percentage-widthheight-elements/">css-tricks</a>)
             <span class="danger">Apply to the children</span>
+            <span class="danger">If the content is taller than the container, it will overflow on the top &amp; bottom
             <div class="hs-box center-demo center-transform">
               <p contenteditable="true">
                 I'm centered without having a height defined
@@ -102,9 +109,10 @@
               </p>
             </div>
           </dd>
-          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">flex-center</a>()</dt>
+          <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/positions.styl#L66">flex-center</a>([childs = '&gt; *', gutter = $h-gutter])</dt>
           <dd>Centering using flexbox (<a href="http://caniuse.com/#feat=flexbox">IE10+</a>)
             <span class="danger">Apply to the container</span>
+            <span class="danger">Overflow will resize the container</span>
             <div class="hs-box center-demo flex-center">
               <p contenteditable="true">
                 I'm centered without having a height defined
@@ -128,7 +136,7 @@
     </section>
 
     <section id="text">
-      <h2>Text <small>mixins/text</small></h2>
+      <h2><span>Text</span> <small>mixins/text</small></h2>
       <div class="hs-box">
         <dl>
           <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/text.styl#L8">rem-fs</a>(px)</dt>
@@ -154,7 +162,7 @@
     </section>
 
     <section id="math">
-      <h2>Math <small>mixins/math</small></h2>
+      <h2><span>Math</span> <small>mixins/math</small></h2>
       <div class="hs-box">
         <dl>
           <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/math.styl#L3">angle2xy</a>([angle = 0deg], [distance = 1])</dt>
@@ -178,7 +186,7 @@
     </section>
 
     <section id="form">
-      <h2>Form <small>mixins/form</small></h2>
+      <h2><span>Form</span> <small>mixins/form</small></h2>
       <div class="hs-box">
         <dl>
           <dt><a href="https://github.com/Hiswe/hstrap/blob/master/lib/hstrap/mixins/form.styl#L3">reset-form</a>()</dt>
@@ -192,7 +200,7 @@
     </section>
 
     <section id="easing">
-      <h2>Easing functions <small>mixins/h-easing</small></h2>
+      <h2><span>Easing functions</span> <small>mixins/h-easing</small></h2>
       <div class="hs-box">
         <ul class="easing-demo">
           <li><p>linear         </p><div class="easing-test linear"><i class="easing-cursor"></i></div></li>

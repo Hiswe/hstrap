@@ -1,144 +1,198 @@
 @import './local-config'
 @import '../lib/hstrap/mixins'
+@import '../lib/hstrap/components/mixins'
+@import '../lib/hstrap/components/box'
+@import '../lib/hstrap/components/forms'
+@import '../lib/hstrap/components/buttons'
+@import '../lib/hstrap/components/links'
+@import '../lib/hstrap/components/scrollbox'
 
-$example-shadow = inset 0 0 4px noir(.15)
-$menu-height    = px2em(32)
-$width          = 50em
+$example-shadow = inset 0 0 4px noir(.15);
+$menu-height    = px2em(32);
+$width          = 50em;
+$gutter         = 16px;
+$c-bg           = #ececec;
 
+// media queries mixin
+mq(size) {
+  $small = 48em; // 768
+  $medium = 52em; // 832
+  $large = 72.5em; // 1160
 
-mq(size)
-  if size == 'small' // 768
-    @media screen and (min-width: 48em)
-      {block}
-  else if size == 'medium' // 832
-    @media screen and (min-width: 52em)
-      {block}
-  else if size == 'large' // 1160
-    @media screen and (min-width: 72.5em)
-      {block}
-  else
+  // mobile first
+  if (size == 'small') {
+    @media screen and (min-width: $small) {
+      {block};
+    }
+  } else if (size == 'medium') {
+    @media screen and (min-width: $medium) {
+      {block};
+    }
+  } else if (size == 'large') {
+    @media screen and (min-width: $large) {
+      {block};
+    }
+  // desktop first
+  } else if (size == '<small') {
+    @media screen and (max-width: $small) {
+      {block};
+    }
+  } else if (size == '<medium') {
+    @media screen and (max-width: $medium) {
+      {block};
+    }
+  } else if (size == '<large') {
+    @media screen and (max-width: $large) {
+      {block};
+    }
+  } else {
     {block}
+  }
+}
 
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
 
-html, body
-  padding 0; margin 0
+html {
+  background: $c-bg;
+  font-family: 'Helvetica', 'arial', 'sans-serif';
+}
 
-html
-  background linear-gradient(to bottom, #fff, #ececec) fixed
-  font-family 'Helvetica', 'arial', 'sans-serif'
-
-body
-  background transparent
+body {
+  background: transparent;
+}
 
 *,
 *::before,
-*::after
-  box-sizing border-box
+*::after {
+  box-sizing: border-box;
+}
 
-+mq('small')
-  .container
-    width $width
-    margin 0 auto
++mq('small') {
+  .container {
+      width: $width;
+      margin: 0 auto;
 
-    .hs-menu &
-      margin 0 auto
+    .hs-menu & {
+      margin: 0 auto;
+    }
 
-
-    > h1
-      margin 1em 0 .5em
-      color $h-pink
-      text-shadow 2px 2px 0 noir(.25)
-
-
-a.selected
-  color $h-blue
-
-// Top menu
-.hs-menu
-  background #262626
-  margin 0
-  padding 2em 0
-  border-bottom 1px solid white
-  border-top 4px solid $h-pink
-  position relative
-
-  // .hs-master-head
-  //   flex 0 0 18em
-
-  h1
-    font-family 'hiso-bright', Helvetica, sans-serif
-    font-weight normal
-    margin .25em 0
-    text-shadow 2px 2px 0 noir(.25)
-    font-size 4em
-    text-align left
-    margin-bottom .25em
-    crisp-font-smoothing()
-    text-align center
+    > h1 {
+      margin: 1em 0 .5em;
+      color: $h-pink;
+      text-shadow: 2px 2px 0 noir(.25);
+    }
+  }
+}
 
 
-    a
-      color $h-pink
+a.selected {
+  color: $h-blue;
+}
 
-      &.toggle-menu
-        rem-fs(22)
-        color $h-blue
-        position absolute
-        top .25em
-        left .25em
-        line-height .75
+///////////
+// TOP MENU
+///////////
 
-  h4
-    text-align center
-    color $h-dark-grey
-    text-shadow 1px 1px 0 noir(.25)
-    letter-spacing .25em
-    text-indent .75em
+.hs-menu {
+  background: #262626;
+  margin: 0;
+  padding: 2em 0;
+  position: relative;
 
+  h1 {
+    font-family: 'hiso-bright', Helvetica, sans-serif;
+    font-weight: normal;
+    padding: .25em 0;
+    margin: 0;
+    text-shadow: 2px 2px 0 noir(.25);
+    font-size: 4em;
+    text-align: left;
+    crisp-font-smoothing();
+    text-align: center;
 
-#menu
-  position absolute
-  top   -4px
-  left  0
-  border-top 4px solid $h-pink
-  transform translate(-100%, 0)
-  background #262626
-  padding 0
-  margin  0
+    a {
+      color: $h-pink;
 
-  li, a
-    display block
+      &.toggle-menu {
+        rem-fs(22);
+        color: $h-blue;
+        position: absolute;
+        top: .25em;
+        left: .25em;
+        line-height: .75;
+      }
+    }
+  }
 
-  li
-    padding 0
+  h4 {
+    text-align: center;
+    color: $h-dark-grey;
+    text-shadow: 1px 1px 0 noir(.25);
+    letter-spacing: .25em;
+    text-indent: .75em;
+  }
 
-  a
-    padding 1em
+  +mq('medium') {
+    border-top: 4px solid $h-pink;
 
-  &:target
-    transform translate(0, 0)
-
-+mq('medium')
-  .hs-menu
     h1,
-    h4
-      text-align left
+    h4 {
+      text-align: left;
+    }
 
-    .toggle-menu
-      display none
+    .toggle-menu {
+      display: none;
+    }
+  }
+}
 
-  #menu
-    position    static
-    border      0
-    transform   none
-    align-self  center
+#menu {
+  background: #262626;
+  padding: 0;
+  margin: 0;
 
-    li:first-child
-      display none
+  li,
+  a {
+    display: block;
+  }
 
-    li, a
-      display inline-block
+  li {
+    padding: 0;
+  }
 
+  a {
+    padding: 1em;
+  }
+
+  &:target {
+    transform: translate(0, 0);
+  }
+  +mq('<medium') {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translate(-100%, 0);
+  }
+
+  +mq('medium') {
+    li:first-child {
+      display: none;
+    }
+
+    li,
+    a {
+      display: inline-block;
+    }
+    li {
+      padding-top: 2em;
+    }
+  }
+}
 
 .hs-small-menu
   position relative
@@ -152,15 +206,10 @@ a.selected
   li
     padding-top 0
 
-.hs-title
-  font-family 'hiso-dark', Helvetica, sans-serif
-  font-weight normal
-  font-size 2.5em
-  text-align center
-
 // Home main banner
-.hs-submenu
-  display none
+.hs-submenu {
+  display: none;
+}
 
 +mq('large')
   .hs-submenu
@@ -188,136 +237,257 @@ a.selected
       padding .25em 0
       display block
 
+///////////
+// HOMEPAGE
+///////////
 
-section > h2
-  margin 1em 0 .5em
-  color $h-pink
-  font-family 'hiso-dark', Helvetica, sans-serif
-  font-weight normal
-  font-size 2.5em
-  crisp-font-smoothing()
-  text-shadow -1px -1px 0 noir(.25), 1px 1px 0 white
-  position relative
-  padding 0 0 0 .5em
-  text-align center
+.home-section {
+  padding: 0;
 
-  small
-    display block
-    font-family Helvetica, arial, sans-serif
-    font-size .5em
-    color noir(.5)
-    text-shadow none
-    font-weight normal
+  p {
+    padding: 0 $gutter;
+  }
+}
 
-    &::before
-      content '('
-    &::after
-      content ')'
+.hs-title {
+  font-family: 'hiso-dark', Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 2.5em;
+  margin: 0 0 .75em;
+  padding: .5em 0;
 
-  +mq('large')
-    text-align left
-    padding 0
+  +mq('<small') {
+    background: white;
+    text-align: center;
+  }
+}
 
-    small
-      position absolute
-      right 100%; top 20%
-      margin-right .5em
-      color #ececec
-      background noir(.2)
-      padding .25em .5em
-      transform-origin top right
-      transform skewY(-27deg)
+///////////
+// TITLES
+///////////
 
-      &::before,
-      &::after
-        display none
+section > h2 {
+  margin: 0;
+  color: black;
+  background: $h-pink;
+  crisp-font-smoothing();
+  position: relative;
+  padding: $gutter 0 0 $gutter;
+  text-align: left;
 
-table
-  width 100%
+  span {
+    font-family: 'hiso-dark', Helvetica, sans-serif;
+    font-weight: normal;
+    rem-fs($h-fs * 1.5);
+    line-height: 1;
+    vertical-align: baseline;
+  }
 
-th
-  text-align left
+  small {
+    font-family: Helvetica, arial, sans-serif;
+    rem-fs($h-fs * .75);
+    color: noir(.5);
+    text-shadow: none;
+    font-weight: normal;
+    vertical-align: text-top;
 
-ul.h-row
-  padding 0
-  margin 0
-li.h-col
-  list-style none
+    &::before {
+      content: '(';
+    }
+    &::after {
+      content: ')';
+    }
+  }
+}
 
-section
-  margin-bottom 1em
-  &.home-section
-    padding 1em 1em 0
+///////////
+// PROPERTY + DESCRIPTION BLOCK
+///////////
 
-  .h-row + .h-row
-    margin-top 1em
+dl {
+  margin: 0;
+}
 
-  .h-col
-    padding 1em
-    text-align center
-  .h-col:nth-child(1)
-    background noir(.6)
-  .h-col:nth-child(2)
-    background noir(.5)
-  .h-col:nth-child(3)
-    background noir(.4)
-  .h-col:nth-child(4)
-    background noir(.3)
-  .h-col:nth-child(5)
-    background noir(.2)
+dt,
+dd {
+  padding: $gutter;
 
-  + h4
-    margin 1em 0 .25em
+}
+dt {
+  margin: 0;
+  position: relative;
+}
 
-  table&
-    width 100%
-    border-spacing .1em
+dd {
+  margin: 0 0 .5em;
+}
 
-    th, td
-      padding .5em
++mq('<small') {
+  dt::after {
+    stem(direction: 'bottom', color: white);
+    position: absolute;
+    bottom: -.5em;
+    left: $gutter;
+    transform: translateX(-50%);
+  }
+  dd {
+    background: $c-bg;
+  }
 
-    th
-      font-weight bold
-
-.notice
-  font-family Helvetica, arial, sans-serif
-  font-style italic
-  font-size $h-fs
-  color #AAA
-  text-shadow none
+}
 
 
-dl
-  margin-bottom -.5em
++mq('small') {
+  dt,
+  dd {
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+  }
 
-dt, dd
-  padding .5em
-  margin-bottom .5em
+  dt {
+    padding-left: 1em;
+    background: rgba($h-light-pink, .25);
+  }
 
-dt
-  background rgba($h-light-pink, .25)
+  .hs-box-force-two-line {
+    dt {
+      background: none;
+      display: block;
+    }
+    dd {
+      width: auto;
+      display: block;
+    }
+  }
 
-dd
-  margin-left .5em
+  dd {
+    width: 64%;
+    padding-left: 1em;
+    margin-left: -4px;
 
-+mq('small')
-  dt, dd
-    display inline-block
-    vertical-align top
-    width 35%
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}
 
-  dt
-    padding-left 1em
+table {
+  width: 100%;
+}
 
-  dd
-    width 64%
-    padding-left 1em
-    margin-left -4px
+th {
+  text-align: left;
+}
 
-    ul
-      margin 0
-      padding 0
-      list-style none
+.h-row {
+  margin: 0;
+
+  +mq('<small') {
+    section & {
+      padding: $gutter;
+    }
+  }
+
+  +mq('small') {
+    padding: 0;
+    flex-row();
+  }
+}
+
+li.h-col {
+  list-style: none;
+}
+
+section {
+
+  +mq('small') {
+    .h-row + .h-row {
+      margin-top: 1em;
+    }
+  }
+
+  .h-col {
+    padding: 1em;
+    text-align: center;
+  }
+  .h-col:nth-child(1) {
+    background: noir(.6);
+  }
+  .h-col:nth-child(2) {
+    background: noir(.5);
+  }
+  .h-col:nth-child(3) {
+    background: noir(.4);
+  }
+  .h-col:nth-child(4) {
+    background: noir(.3);
+  }
+  .h-col:nth-child(5) {
+    background: noir(.2);
+  }
+  h4 {
+    padding: 1em $gutter;
+    margin: 0;
+    border-top: 1px solid noir(.1);
+
+    +mq('small') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+// Buttons container
+table.hs-box {
+  width: 100%;
+  border-spacing: .1em;
+
+  th,
+  td {
+    padding: .5em;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  +mq('<small') {
+    thead {
+      display: none;
+    }
+    tr {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    td {
+      &:last-child {
+        order: -1;
+        width: 100%;
+        border: solid ;
+        border-color: noir(.05) noir(0) noir(.15) noir(0);
+        border-width: 1px 0;
+      }
+    }
+  }
+
+  +mq('small') {
+    span {
+      color: noir(0);
+    }
+  }
+}
+
+.notice {
+  font-family: Helvetica, arial, sans-serif;
+  font-style: italic;
+  font-size: $h-fs;
+  color: #AAA;
+  text-shadow: none;
+}
 
 .danger
   color $h-pink
@@ -326,20 +496,25 @@ dd
   &:before
     content '! '
 
-aside.h-popover
-  position relative
 
-.hs-box
-  background-image embedurl('media/stripe_a028efdbf39d1d58806f780f3cc1d323.png')
+.hs-box {
+  background: white;
 
-  .hs-box
-    margin-top .5em
-    background-image none
+  .hs-box {
+    margin-top: .5em;
+    background-image: none;
+    background: none;
+  }
 
-  +mq('small')
-    h-box()
-    h-box-inset()
-    background-image embedurl('media/stripe_a028efdbf39d1d58806f780f3cc1d323.png')
+  +mq('small') {
+    h-box();
+    h-box-inset();
+    background-image: embedurl('media/stripe_a028efdbf39d1d58806f780f3cc1d323.png');
+    .hs-box {
+      background: white;
+    }
+  }
+}
 
 .hs-stem
   $$stem-size = .75em
@@ -358,79 +533,95 @@ aside.h-popover
 
 .underline-demo a
   transition none
-  underline(height: 16, color: rgba($h-dark-blue, .5))
+  underline(height: 14, color: rgba($h-dark-blue, .5))
 
   &:hover
-    underline(height: 16, color: rgba($h-blue, .5))
+    underline(height: 14, color: rgba($h-blue, .5))
 
-.center-demo
-  min-height 15em
-  position relative
+.center-demo {
+  min-height: 15em;
+  position: relative;
 
-  p
-    width 50%;
-    padding 1em;
-    margin 0
-    color white;
-    text-align center
-    background $h-blue
+  p {
+    width: 50%;
+    padding: 1em;
+    margin: 0;
+    color: white;
+    text-align: center;
+    background: $h-blue;
+  }
 
-  &.v-align
-    height 15em
-    text-align center
-    inline-block-valign('> p')
+  &.v-align {
+    height: 15em;
+    text-align: center;
+    inline-block-valign('> p');
+  }
 
-  &.center-transform p
-    center-transform()
+  &.center-transform p {
+    transform-center();
+  }
 
-  &.flex-center
-    flex-center()
+  &.flex-center {
+    flex-center();
+  }
+}
+.hs-box.angle-demo {
+  height: 15em;
+  position: relative;
+  background: radial-gradient(center, circle closest-side,white 74%, #ddd 75%, white 76%);
+  $$shiftX = @height/2;
+  $$shiftY = 7.5em;
+  padding: 0;
+  text-align: center;
 
-.hs-box.angle-demo
-  height 15em
-  position relative
-  background radial-gradient(center, circle closest-side,white 74%, #ddd 75%, white 76%)
-  $$shiftX = @height/2
-  $$shiftY = 7.5em
-  padding 0
-  text-align center
-
-  ul
-    display inline-block
-    position relative
-    height  @height
-    width   @height
-    padding 0
-    margin  0
+  ul {
+    display: inline-block;
+    position: relative;
+    height: @height;
+    width: @height;
+    padding: 0;
+    margin: 0;
 
     &::before,
-    &::after
-      content ''
-      center-transform()
-      circle()
-      border 2px solid noir(.25)
+    &::after {
+      content: '';
+      transform-center();
+      circle();
+      border: 2px solid noir(.25);
+    }
 
-    &::before
-      width 0
-      height @width
+    &::before {
+      width: 0;
+      height: @width;
+    }
+    &::after {
+      width: .75em;
+      height: @width;
+    }
+  }
 
-    &::after
-      width .75em
-      height @width
+  li {
+    position: absolute;
+    display: block;
+    width: 2em;
+    height: @width;
+    margin-top: -(@width/2);
+    margin-left: @margin-top;
+    color: white;
+    text-align: center;
+    line-height: @width
+    background: $h-blue;
 
-  li
-    position absolute; display block; width 2em; height @width;
-    margin-top -(@width/2)
-    margin-left @margin-top
-    color white; text-align center; line-height @width
-    background $h-blue;
+    $$distance = 5.5em;
+    $$angles = 0deg 30deg -45deg 90deg -90deg 180deg 585deg;
 
-    $$distance = 5.5em
-    $$angles = 0deg 30deg -45deg 90deg -90deg 180deg 585deg
-
-    for num in (0..6)
-      &:nth-child({num+1})
-        angle2topLeft($$angles[num], $$distance, $$shiftX, $$shiftY)
+    for num in (0..6) {
+      &:nth-child({num+1}) {
+        angle2topLeft($$angles[num], $$distance, $$shiftX, $$shiftY);
+      }
+    }
+  }
+}
 
 .circle-demo
   text-align center
@@ -456,7 +647,7 @@ aside.h-popover
   padding 0 1em
 
 .easing-demo li
-  padding .85em 0
+  padding: .85em 0 1.25em;
 
   p
     font-weight bold
@@ -497,10 +688,11 @@ aside.h-popover
 
     p
       margin-bottom 0
-      width 20%
+      flex-basis 20%
       text-align right
 
     .easing-test
+      flex-basis 80%
       align-self center
       flex-grow 1
 
@@ -568,34 +760,42 @@ aside.h-popover
     transition-timing-function h-ease("easeInOutBack")
 
 // Github link
-aside
-  display none
+aside {
+  display: none;
 
-  +mq('large')
-    display block
-    position absolute
-    top 0
-    right 0
-    width 15em
-    height 11.5em
-    overflow: hidden
+  +mq('large') {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15em;
+    height: 11.5em;
+    overflow: hidden;
 
-    a
-      display block
-      margin-top 10em
-      padding .25em 1em
-      width 120%
-      background #444
-      text-align center; color #222; font-weight bold
-      text-shadow 1px 1px rgba(255,255,255,0.15); text-decoration none
-      transform rotate(45deg)
-      transform-origin top right
-      transition background .25s
+    a {
+      display: block;
+      margin-top: 10em;
+      padding: .25em 1em;
+      width: 120%;
+      background: #444;
+      text-align: center;
+      color: #222;
+      font-weight: bold;
+      text-decoration: none;
+      transform: rotate(45deg);
+      transform-origin: top right;
+      transition: background .25s;
 
-      &:hover
-        background: #555
+      &:hover {
+        background: #555;
+      }
+    }
 
-      span
-        display block; padding .25em 0
-        border dashed 1px rgba(0, 0, 0, 0.5); border-width 1px 0
-        color @color
+    span {
+      display: block; padding .25em 0;
+      border-width: 1px 0;
+      color: @color;
+    }
+  }
+}
+

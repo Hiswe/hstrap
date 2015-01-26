@@ -1,6 +1,6 @@
 /**
  * hstrap - Stylus mixins, utilities and styles
- * @version v1.1.1
+ * @version v1.2.0
  * @link http://hiswe.github.io/hstrap
  * @license WTFPL
  */
@@ -408,6 +408,16 @@
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+.h-input-append > * {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 1%;
+      -ms-flex: 1 1 1%;
+          flex: 1 1 1%;
+  margin-right: 16px;
+}
+.h-input-append > *:last-child {
+  margin-right: 0;
 }
 .h-input-append input:not([type="submit"]) {
   -webkit-box-flex: 1;

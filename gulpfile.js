@@ -1,6 +1,7 @@
 'use strict';
 
-var lr      			= require('tiny-lr')();
+var lr            = require('tiny-lr')();
+var fs      			= require('fs');
 var del     			= require('del');
 var git     			= require('gulp-git');
 var gulp    			= require('gulp');
@@ -20,8 +21,14 @@ var autoprefixer 	= require('gulp-autoprefixer');
 /////////
 // CONF
 /////////
-var pkg     = require('./package.json');
-var version = pkg.version;
+
+
+
+function getPackage() {
+  return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+}
+
+var version = getPackage().version;
 
 var jsonFiles = [
   './package.json',
@@ -74,15 +81,15 @@ var onError = function onError(err) {
 
 // Version number and stuff
 gulp.task('version-patch', function (cb) {
-  version = semver.inc(version, 'patch');
+  version = semver.inc(getPackage().version, 'patch');
   cb();
 });
 gulp.task('version-minor', function (cb) {
-  version = semver.inc(version, 'minor');
+  version = semver.inc(getPackage().version, 'minor');
   cb();
 });
 gulp.task('version-major', function (cb) {
-  version = semver.inc(version, 'major');
+  version = semver.inc(getPackage().version, 'major');
   cb();
 });
 
@@ -143,7 +150,7 @@ gulp.task('lib', ['clean-css'], function () {
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
     .pipe(autoprefixer())
-    .pipe(header(banner, {pkg: pkg }))
+    .pipe(header(banner, {pkg: getPackage() }))
     .pipe(gulp.dest('dist/css'))
     .pipe(require('gulp-livereload')(lr))
     .pipe(notify({title: 'HSTRAP', message: 'build CSS', onLast: true}));
@@ -154,7 +161,7 @@ gulp.task('example', ['clean-ghpage-css'], function () {
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus(stylusConf))
     .pipe(autoprefixer())
-    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(header(banner, {pkg : getPackage() } ))
     .pipe(gulp.dest('dist'))
     .pipe(require('gulp-livereload')(lr))
     .pipe(notify({title: 'HSTRAP', message: 'build Gh-page CSS', onLast: true}));
@@ -179,7 +186,7 @@ gulp.task('build',['font', 'example', 'lib', 'html-version']);
 
 // Watch
 gulp.task('watch', function () {
-  gulp.watch(['./lib/hstrap/**/*.styl', './lib/hstrap/MEDIA/*.svg'], ['lib']);
+  gulp.watch(['./lib/hstrap/**/*.styl', './lib/hstrap/MEDIA/*.svg'], ['lib', 'example']);
   gulp.watch(['./dist/example.styl'], ['example']);
   // gulp.watch('./index.html', './dist/*.html').on('change', function (event) {
   //   gulp.src('README.md').pipe(notify({title: 'Hstrap', message: 'reload html'}));

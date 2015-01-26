@@ -6,7 +6,6 @@
   <title>Hstrap components</title>
   <link rel="stylesheet" href="font/hiso-bright-font.css">
   <link rel="stylesheet" href="font/hiso-dark-font.css">
-  <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="example.css">
 </head>
 <body>
@@ -46,56 +45,70 @@
 
   <div class="container">
     <section id="links">
-      <h2>Links <small>links.css</small></h2>
+      <h2><span>Links</span> <small>links.css</small></h2>
       <div class="hs-box">
-        <a href="">a link</a>
+        <dl>
+          <dd>
+            <a href="">a link</a>
+          </dd>
+        </dl>
       </div>
     </section>
 
     <section id="buttons">
-      <h2>Buttons <small>buttons.css</small></h2>
-      <table class="hs-box">
-        <thead>
-          <tr>
-            <th>Button</th>
-            <th>class=""</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><button class="h-btn">Default</button></td>
-            <td>h-btn</td>
-            <td>Standard button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-primary">Primary</button></td>
-            <td>h-btn h-primary</td>
-            <td>Standard blue button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-danger">Danger</button></td>
-            <td>h-btn h-danger</td>
-            <td>Standard red button with gradient</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn" disabled>Disabled</button></td>
-            <td>h-btn</td>
-            <td>Standard disabled</td>
-          </tr>
-          <tr>
-            <td><button class="h-btn h-inset">Inset</button></td>
-            <td>h-btn h-inset</td>
-            <td>Inset button</td>
-          </tr>
-        </tbody>
-      </table>
-      <h4>Size</h4>
-      <div class="hs-box">
-        <button class="h-btn h-primary h-big">.h-big</button> <button class="h-btn h-big">.h-big</button><br>
-        <button class="h-btn h-primary">regular</button> <button class="h-btn">regular</button><br>
-        <button class="h-btn h-primary h-mini">.h-mini</button> <button class="h-btn h-mini">.h-mini</button>
+      <h2><span>Buttons</span> <small>buttons.css</small></h2>
+      <div class="hs-box hs-box-force-two-line">
+        <dl>
+          <dt>Buttons</dt>
+          <dd>
+            <table class="hs-box">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>class</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><button class="h-btn">Default</button></td>
+                  <td><span>.</span>h-btn</td>
+                  <td>Standard button with gradient</td>
+                </tr>
+                <tr>
+                  <td><button class="h-btn h-primary">Primary</button></td>
+                  <td><span>.</span>h-btn<span>.</span>h-primary</td>
+                  <td>Standard blue button with gradient</td>
+                </tr>
+                <tr>
+                  <td><button class="h-btn h-danger">Danger</button></td>
+                  <td><span>.</span>h-btn<span>.</span>h-danger</td>
+                  <td>Standard red button with gradient</td>
+                </tr>
+                <tr>
+                  <td><button class="h-btn" disabled>Disabled</button></td>
+                  <td><span>.</span>h-btn</td>
+                  <td>Standard disabled</td>
+                </tr>
+                <tr>
+                  <td><button class="h-btn h-inset">Inset</button></td>
+                  <td><span>.</span>h-btn<span>.</span>h-inset</td>
+                  <td>Inset button</td>
+                </tr>
+              </tbody>
+            </table>
+          </dd>
+          <dt>Size</dt>
+          <dd>
+            <div class="hs-box">
+              <button class="h-btn h-primary h-big">.h-big</button> <button class="h-btn h-big">.h-big</button><br>
+              <button class="h-btn h-primary">regular</button> <button class="h-btn">regular</button><br>
+              <button class="h-btn h-primary h-mini">.h-mini</button> <button class="h-btn h-mini">.h-mini</button>
+            </div>
+          </dd>
+        </dl>
       </div>
+
       <h4>mixins/buttons</h4>
       <div class="hs-box">
         <dl>
@@ -113,7 +126,7 @@
     </section>
 
     <section id="forms">
-      <h2>Forms <small>forms.css</small></h2>
+      <h2><span>Forms</span> <small>forms.css</small></h2>
       <div class="hs-box">
         <!-- Regular form -->
         <fieldset class="h-fieldset">
@@ -219,31 +232,35 @@
     </section>
 
     <section id="layout">
-      <h2>Fluid layout<small>layout.css</small> <span class="notice">(caution with compatibility)</span></h2>
+      <h2><span>Fluid layout</span> <small>layout.css</small> <span class="notice">(caution with compatibility)</span></h2>
       <div class="hs-box">
         <ul class="h-row" >
-            <li class="h-col">First column</li>
-            <li class="h-col">Second column <br><br> With some additional text</li>
-            <li class="h-col">Third column</li>
+          <li class="h-col">First column</li>
+          <li class="h-col">Second column <br><br> With some additional text</li>
+          <li class="h-col">Third column</li>
         </ul>
         <ul class="h-row" >
-            <li class="h-col">First column</li>
-            <li class="h-col">Second column</li>
-            <li class="h-col">Third column</li>
-            <li class="h-col">Forth column
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, ipsum cum doloremque quasi excepturi ipsam nulla illum? Minima, at, beatae voluptas expedita amet distinctio dolor aperiam deleniti quia. Consectetur, est!
-              </p>
-            </li>
+          <li class="h-col">First column</li>
+          <li class="h-col">Second column</li>
+          <li class="h-col">Third column</li>
+          <li class="h-col">Forth column
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, ipsum cum doloremque quasi excepturi ipsam nulla illum? Minima, at, beatae voluptas expedita amet distinctio dolor aperiam deleniti quia. Consectetur, est!
+            </p>
+          </li>
         </ul>
       </div>
     </section>
 
     <section id="box">
-      <h2>Boxes<small>components/box.css</small></h2>
+      <h2><span>Boxes</span><small>components/box.css</small></h2>
       <div class="hs-box">
-        <div class="h-box">.h-box</div>
-        <br>
-        <div class="h-box-inset">.h-box-inset</div>
+        <dl>
+          <dd>
+            <div class="h-box">.h-box</div>
+            <br>
+            <div class="h-box-inset">.h-box-inset</div>
+          </dd>
+        </dl>
       </div>
       <h4>mixins/box</h4>
       <div class="hs-box">
@@ -256,26 +273,8 @@
       </div>
     </section>
 
-    <section id="popover">
-      <h2>popover <small>components/popover</small> <span class="notice">Shamefully adapted from Twitter boostrap</span></h2>
-      <div class="hs-box">
-        <aside class="h-popover right">
-          <h3 class="h-popover-title">.h-popover.right</h3>
-          <div class="h-popover-content">
-            Possible stem values: <br>
-            <ul>
-              <li>top</li>
-              <li>right</li>
-              <li>bottom</li>
-              <li>left</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-
     <section id="scrollbox">
-      <h2>Scrollbox <small>components/scrollbox</small> <span class="notice">Shamefully adapted from Lea verrou</span></h2>
+      <h2><span>Scrollbox</span> <small>components/scrollbox</small> <span class="notice">Shamefully adapted from Lea verrou</span></h2>
       <div class="hs-box" style="background: white">
         <p>
           Scroll the list to see the component <br>
