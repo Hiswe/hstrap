@@ -27,25 +27,25 @@ bg-cover() {
 }
 
 // Generate a stem
-stem($$direction = "top", $$color = $h-components-border, $$width = .5em) {
+stem(direction = "top", color = $h-components-border, width = .5em) {
   display: block
   width 0;
   height 0;
   content: ""; // In case of pseudo elements
-  border: $$width solid transparent;
+  border: width solid transparent;
 
-  if ($$direction == "right") {
+  if (direction == "right") {
     border-right-width: 0;
-    border-left-color: $$color;
-  } else if ($$direction == "bottom") {
-    border-top-color: $$color;
+    border-left-color: color;
+  } else if (direction == "bottom") {
+    border-top-color: color;
     border-bottom-width: 0;
-  } else if ($$direction == "left") {
+  } else if (direction == "left") {
     border-left-width: 0;
-    border-right-color: $$color;
+    border-right-color: color;
   } else {
     border-top-width: 0;
-    border-bottom-color: $$color;
+    border-bottom-color: color;
   }
 }
 
