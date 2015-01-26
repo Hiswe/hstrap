@@ -19,8 +19,10 @@ crisp-font-smoothing() {
 
 // Gradient underline
 // https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
-underline($$height = 16, color = #666665) {
-  $$height = unit($$height, 'px');
-  background: 0  ($$height / 2px) 2px repeat-x;
-  background-image: linear-gradient(to bottom, #fff 50%, color 50%);
+underline(height = 14, color = #666665, size = 1) {
+  height  = join('', height 'px/2px');
+  // stylus doesn't variables inside calc
+  size    = join('', 'calc(100% - 'size 'px)');
+  background: 0  repeat-x;
+  background-image: linear-gradient(to bottom, rgba(color, 0) unquote(size), color 50%);
 }
